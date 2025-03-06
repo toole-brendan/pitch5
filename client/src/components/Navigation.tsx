@@ -16,6 +16,7 @@ const Navigation = () => {
     { path: "/supply-chain", name: "SUPPLY CHAIN" },
     { path: "/business-model", name: "BUSINESS MODEL" },
     { path: "/call-to-action", name: "CALL TO ACTION" },
+    { path: "/commercial-solution", name: "COMMERCIAL SOLUTION" },
     { path: "/market", name: "GO-TO-MARKET" },
     { path: "/traction", name: "TRACTION" },
     { path: "/progress", name: "DEVELOPMENT" },

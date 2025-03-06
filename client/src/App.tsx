@@ -18,6 +18,7 @@ import SolutionOverview from "@/components/slides/SolutionOverview";
 import SupplyChainChallenges from "@/components/slides/SupplyChainChallenges";
 import BusinessModel from "@/components/slides/BusinessModel";
 import CallToAction from "@/components/slides/CallToAction";
+import CommercialSolution from "@/components/slides/CommercialSolution";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -35,6 +36,7 @@ function Router() {
         <Route path="/supply-chain" component={SupplyChainChallenges} />
         <Route path="/business-model" component={BusinessModel} />
         <Route path="/call-to-action" component={CallToAction} />
+        <Route path="/commercial-solution" component={CommercialSolution} />
         <Route path="/traction" component={EarlyTraction} />
         <Route path="/progress" component={DevelopmentProgress} />
         <Route path="/financials" component={FinancialProjections} />
