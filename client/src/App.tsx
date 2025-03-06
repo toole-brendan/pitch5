@@ -11,6 +11,7 @@ import DevelopmentProgress from "@/components/DevelopmentProgress";
 import EarlyTraction from "@/components/EarlyTraction";
 import FinancialProjections from "@/components/FinancialProjections";
 import FounderVision from "@/components/FounderVision";
+import GoToMarketStrategy from "@/components/GoToMarketStrategy";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
         <Route path="/progress" component={DevelopmentProgress} />
         <Route path="/financials" component={FinancialProjections} />
         <Route path="/founder" component={FounderVision} />
+        <Route path="/market" component={GoToMarketStrategy} />
         <Route component={NotFound} />
       </Switch>
     </>
