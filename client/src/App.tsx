@@ -15,6 +15,7 @@ import GoToMarketStrategy from "@/components/GoToMarketStrategy";
 import MarketOpportunity from "@/components/slides/MarketOpportunity";
 import Roadmap from "@/components/slides/Roadmap";
 import SolutionOverview from "@/components/slides/SolutionOverview";
+import SupplyChainChallenges from "@/components/slides/SupplyChainChallenges";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -29,6 +30,7 @@ function Router() {
         <Route path="/market-opportunity" component={MarketOpportunity} />
         <Route path="/roadmap" component={Roadmap} />
         <Route path="/solution" component={SolutionOverview} />
+        <Route path="/supply-chain" component={SupplyChainChallenges} />
         <Route path="/traction" component={EarlyTraction} />
         <Route path="/progress" component={DevelopmentProgress} />
         <Route path="/financials" component={FinancialProjections} />

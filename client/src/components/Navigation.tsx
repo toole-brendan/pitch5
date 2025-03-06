@@ -13,6 +13,7 @@ const Navigation = () => {
     { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
     { path: "/roadmap", name: "ROADMAP" },
     { path: "/solution", name: "SOLUTION" },
+    { path: "/supply-chain", name: "SUPPLY CHAIN" },
     { path: "/market", name: "GO-TO-MARKET" },
     { path: "/traction", name: "TRACTION" },
     { path: "/progress", name: "DEVELOPMENT" },
