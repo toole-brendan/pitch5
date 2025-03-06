@@ -7,11 +7,6 @@ import CommercialApplication from "@/components/CommercialApplication";
 import DefenseApplication from "@/components/DefenseApplication";
 import DefenseUserExperience from "@/components/DefenseUserExperience";
 import DualMarketStrategy from "@/components/DualMarketStrategy";
-import DevelopmentProgress from "@/components/DevelopmentProgress";
-import EarlyTraction from "@/components/EarlyTraction";
-import FinancialProjections from "@/components/FinancialProjections";
-import FounderVision from "@/components/FounderVision";
-import GoToMarketStrategy from "@/components/GoToMarketStrategy";
 import MarketOpportunity from "@/components/slides/MarketOpportunity";
 import Roadmap from "@/components/slides/Roadmap";
 import SolutionOverview from "@/components/slides/SolutionOverview";
@@ -19,6 +14,7 @@ import SupplyChainChallenges from "@/components/slides/SupplyChainChallenges";
 import BusinessModel from "@/components/slides/BusinessModel";
 import CallToAction from "@/components/slides/CallToAction";
 import CommercialSolution from "@/components/slides/CommercialSolution";
+import CommercialUserExperience from "@/components/slides/CommercialUserExperience";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -37,11 +33,7 @@ function Router() {
         <Route path="/business-model" component={BusinessModel} />
         <Route path="/call-to-action" component={CallToAction} />
         <Route path="/commercial-solution" component={CommercialSolution} />
-        <Route path="/traction" component={EarlyTraction} />
-        <Route path="/progress" component={DevelopmentProgress} />
-        <Route path="/financials" component={FinancialProjections} />
-        <Route path="/founder" component={FounderVision} />
-        <Route path="/market" component={GoToMarketStrategy} />
+        <Route path="/commercial-ux" component={CommercialUserExperience} />
         <Route component={NotFound} />
       </Switch>
     </>
