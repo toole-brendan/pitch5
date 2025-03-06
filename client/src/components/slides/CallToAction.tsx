@@ -60,7 +60,7 @@ const CallToAction: React.FC = () => {
           >
             <TrendingUp className="w-72 h-72 text-blue-600" />
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
             <div>
               <motion.h2
@@ -70,22 +70,22 @@ const CallToAction: React.FC = () => {
                 $2.2M Seed Round
                 <span className="block text-blue-600">Now Open_</span>
               </motion.h2>
-              
+
               <motion.p
                 variants={itemVariants}
                 className="text-gray-600 mb-6 max-w-lg"
               >
-                HandReceipt is revolutionizing inventory and asset tracking for defense and commercial applications. Our patent-pending computer vision technology enables a dramatic reduction in manual work while enhancing accuracy and compliance.
+                HandReceipt is revolutionizing supply chain management with military-grade validation adapted for commercial markets. Our blockchain-powered solution enables secure property tracking and transfers with immediate payment settlement.
               </motion.p>
-              
+
               <motion.div variants={itemVariants}>
                 <h3 className="font-semibold font-mono mb-4">KEY INVESTMENT HIGHLIGHTS_</h3>
-                
+
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   {[
-                    "$175K ARR Year 1 Target",
-                    "Defense Tech Partnerships",
                     "75-85% Gross Margins",
+                    "Token-Based Economics",
+                    "Dual Market Strategy",
                     "24+ Month Runway"
                   ].map((highlight, index) => (
                     <div key={index} className="flex items-center">
@@ -94,7 +94,7 @@ const CallToAction: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <motion.button 
                   variants={buttonVariants}
                   whileHover="hover"
@@ -105,16 +105,16 @@ const CallToAction: React.FC = () => {
                 </motion.button>
               </motion.div>
             </div>
-            
+
             <div>
               <motion.div
                 variants={itemVariants}
                 className="p-6 bg-gray-50 rounded-lg border border-gray-200"
               >
                 <h3 className="font-semibold font-mono mb-4">SEED ROUND DETAILS_</h3>
-                
+
                 <hr className="mb-4" />
-                
+
                 <div className="grid grid-cols-2 gap-4">
                   {[
                     { label: "Target Raise", value: "$2.2 Million" },
@@ -128,16 +128,16 @@ const CallToAction: React.FC = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <hr className="my-4" />
-                
-                <h3 className="font-semibold font-mono mb-4">CURRENT INVESTORS_</h3>
-                
+
+                <h3 className="font-semibold font-mono mb-4">INITIAL PARTNERSHIPS_</h3>
+
                 <div className="flex flex-wrap gap-2 mb-6">
                   {[
-                    { name: "Techstars", color: "blue" },
-                    { name: "Defense Innovation Fund", color: "purple" },
-                    { name: "Angel Syndicate", color: "green" }
+                    { name: "Defense Contractors", color: "blue" },
+                    { name: "ERP Providers", color: "purple" },
+                    { name: "Tech Integrators", color: "green" }
                   ].map((investor, index) => (
                     <span 
                       key={index}
@@ -147,9 +147,9 @@ const CallToAction: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                
+
                 <div>
-                  <p className="text-sm text-gray-600 mb-2">Committed So Far</p>
+                  <p className="text-sm text-gray-600 mb-2">Initial Traction</p>
                   <div className="relative mb-2">
                     <div className="h-2.5 w-full bg-gray-100 rounded-full" />
                     <motion.div
@@ -159,13 +159,13 @@ const CallToAction: React.FC = () => {
                       className="absolute top-0 left-0 h-2.5 bg-blue-600 rounded-full"
                     />
                   </div>
-                  <p className="text-xl font-bold">$770K / $2.2M</p>
+                  <p className="text-xl font-bold">2-3 Defense Pilots Secured</p>
                 </div>
               </motion.div>
             </div>
           </div>
         </motion.div>
-        
+
         {/* Contact Information */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <motion.div
@@ -180,23 +180,23 @@ const CallToAction: React.FC = () => {
             >
               <Sword className="w-48 h-48 text-blue-600" />
             </motion.div>
-            
+
             <div className="p-6 relative z-10">
               <h3 className="font-semibold font-mono mb-4">NEXT STEPS_</h3>
-              
+
               <p className="text-gray-600 mb-4">
-                Interested in learning more about HandReceipt's growth trajectory?
+                Join us in revolutionizing supply chain management with blockchain technology.
               </p>
-              
+
               <div className="mb-6">
-                <p className="font-semibold mb-3">We're currently offering:</p>
-                
+                <p className="font-semibold mb-3">Available Information:</p>
+
                 <ul className="space-y-2 pl-2 mb-4">
                   {[
-                    "In-depth investor presentation",
-                    "Product demonstrations",
-                    "Access to technical validation data",
-                    "Meetings with key technical team members"
+                    "Technical architecture overview",
+                    "Token economics deep-dive",
+                    "Integration roadmap",
+                    "Partnership opportunities"
                   ].map((item, index) => (
                     <li key={index} className="flex items-center">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-600 mr-3" />
@@ -205,49 +205,49 @@ const CallToAction: React.FC = () => {
                   ))}
                 </ul>
               </div>
-              
+
               <motion.button 
                 variants={buttonVariants}
                 whileHover="hover"
                 className="w-full py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg flex items-center justify-center hover:bg-blue-50 transition-colors"
               >
-                Schedule an Investor Call
+                Schedule Technical Review
                 <Calendar className="ml-2 w-5 h-5" />
               </motion.button>
             </div>
           </motion.div>
-          
+
           <motion.div
             variants={itemVariants}
             className="rounded-lg border border-gray-200 shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
           >
             <div className="p-6">
               <h3 className="font-semibold font-mono mb-4">CONTACT US_</h3>
-              
+
               <div className="mb-8">
                 <p className="text-gray-600 mb-6">
-                  Ready to join us on our mission to revolutionize inventory management for defense and commercial industries?
+                  Ready to discuss how HandReceipt can transform supply chain management in both defense and commercial sectors?
                 </p>
-                
+
                 <div className="space-y-4 mb-4">
                   <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
                     <p className="text-sm text-gray-600">Michael Adams, CEO</p>
                     <p className="font-semibold">michael@handreceipt.com</p>
                   </div>
-                  
+
                   <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                    <p className="text-sm text-gray-600">Investor Relations</p>
-                    <p className="font-semibold">invest@handreceipt.com</p>
+                    <p className="text-sm text-gray-600">Business Development</p>
+                    <p className="font-semibold">partnerships@handreceipt.com</p>
                   </div>
                 </div>
               </div>
-              
+
               <motion.button 
                 variants={buttonVariants}
                 whileHover="hover"
                 className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
               >
-                Email Us Now
+                Contact Team
                 <Mail className="ml-2 w-5 h-5" />
               </motion.button>
             </div>

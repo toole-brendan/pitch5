@@ -44,9 +44,11 @@ const cardVariants = {
 
 const GoToMarketStrategy = () => {
   const timelineItems = [
-    { quarter: 'Q3 2025', event: 'Complete beta deployments' },
-    { quarter: 'Q4 2025', event: 'First commercial deployment' },
-    { quarter: 'Q2 2026', event: 'Series A funding round' }
+    // Based on ShellToken.md Phase 1-4 timeline
+    { quarter: 'Q4 2025', event: 'Launch HandReceipt with 2-3 defense customers' },
+    { quarter: 'Q1 2026', event: 'First commercial pilot deployment' },
+    { quarter: 'Q2 2026', event: 'Integrate financial institutions for supply chain financing' },
+    { quarter: 'Q3 2026', event: 'Open network to broader retail ecosystem' }
   ];
 
   return (
@@ -66,29 +68,29 @@ const GoToMarketStrategy = () => {
             className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
           >
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-              PHASE 1: MONTHS 1-6_
+              PHASE 1: PILOT NETWORK_
             </h3>
             <div className="space-y-4">
               <p className="font-sans text-base text-gray-900 font-semibold tracking-wide">
-                Pilot with 2-3 defense customers
+                Initial Defense Sector Focus
               </p>
               <ul className="space-y-3">
                 <li className="flex gap-3 items-start">
                   <ExternalLink className="h-4 w-4 text-orange-400 mt-0.5" />
                   <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Initial deployment in controlled environments
+                    Launch with 2-3 major defense customers
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <MessageSquare className="h-4 w-4 text-orange-400 mt-0.5" />
                   <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Gather user feedback and improve product
+                    Implement core Shell token functionality
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <Shield className="h-4 w-4 text-orange-400 mt-0.5" />
                   <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Security validation with defense clients
+                    Establish HandReceipt-WMS integration
                   </span>
                 </li>
               </ul>
@@ -102,29 +104,29 @@ const GoToMarketStrategy = () => {
             className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
           >
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-              PHASE 2: MONTHS 7-12_
+              PHASE 2: ECOSYSTEM EXPANSION_
             </h3>
             <div className="space-y-4">
               <p className="font-sans text-base text-gray-900 font-semibold tracking-wide">
-                Initial commercial pilot, expand defense presence
+                Financial Integration & Growth
               </p>
               <ul className="space-y-3">
                 <li className="flex gap-3 items-start">
                   <Building2 className="h-4 w-4 text-orange-400 mt-0.5" />
                   <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    First commercial deployment
+                    Add financial institutions for supply chain financing
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <Shield className="h-4 w-4 text-orange-400 mt-0.5" />
                   <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Expand defense sector deployment
+                    Implement dynamic payment terms
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <MessageSquare className="h-4 w-4 text-orange-400 mt-0.5" />
                   <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Refine product based on market feedback
+                    Expand HandReceipt capabilities
                   </span>
                 </li>
               </ul>
@@ -138,29 +140,29 @@ const GoToMarketStrategy = () => {
             className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
           >
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-              PHASE 3: MONTHS 12-18_
+              PHASE 3: FULL ECOSYSTEM_
             </h3>
             <div className="space-y-4">
               <p className="font-sans text-base text-gray-900 font-semibold tracking-wide">
-                Scale to 5-8 total deployments, prepare for Series A
+                Scale & Development
               </p>
               <ul className="space-y-3">
                 <li className="flex gap-3 items-start">
                   <TrendingUp className="h-4 w-4 text-orange-400 mt-0.5" />
                   <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Demonstrate market traction
+                    Open network to broader retail ecosystem
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <Coins className="h-4 w-4 text-orange-400 mt-0.5" />
                   <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Series A fundraising based on validated metrics
+                    Add third-party developers platform
                   </span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <Building2 className="h-4 w-4 text-orange-400 mt-0.5" />
                   <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Expand sales and implementation teams
+                    Integrate with traditional banking systems
                   </span>
                 </li>
               </ul>
@@ -204,20 +206,20 @@ const GoToMarketStrategy = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
               {
+                title: "ERP Providers",
+                description: "SAP, NetSuite, Oracle, Microsoft Dynamics"
+              },
+              {
                 title: "Defense Contractors",
-                description: "Targeting Tier 1 suppliers to DOD"
+                description: "Tier 1 DOD suppliers"
               },
               {
-                title: "Technology Integrators",
-                description: "Cloud service providers and ERP system integrators"
+                title: "WMS Providers",
+                description: "Manhattan Associates, JDA Software"
               },
               {
-                title: "Logistics Companies",
-                description: "Global supply chain management providers"
-              },
-              {
-                title: "Industry Associations",
-                description: "Building credibility through industry partnerships"
+                title: "Financial Services",
+                description: "Supply chain financing providers"
               }
             ].map((partner, index) => (
               <motion.div
