@@ -23,15 +23,15 @@ function Router() {
       <Navigation />
       <Switch>
         <Route path="/" component={CompanyOverview} />
-        <Route path="/supply-chain" component={SupplyChainChallenges} />
-        <Route path="/solution" component={SolutionOverview} />
-        <Route path="/dual" component={DualMarketStrategy} />
+        <Route path="/supply-chain-challenges" component={SupplyChainChallenges} />
+        <Route path="/solution-overview" component={SolutionOverview} />
+        <Route path="/dual-market-strategy" component={DualMarketStrategy} />
         <Route path="/market-opportunity" component={MarketOpportunity} />
-        <Route path="/defense-app" component={DefenseApplication} />
-        <Route path="/commercial-app" component={CommercialApplication} />
-        <Route path="/defense-ux" component={DefenseUserExperience} />
-        <Route path="/commercial-solution" component={CommercialSolution} />
-        <Route path="/commercial-ux" component={CommercialUserExperience} />
+        <Route path="/defense-application" component={DefenseApplication} />
+        <Route path="/commercial-application" component={CommercialApplication} />
+        <Route path="/defense-user-experience" component={DefenseUserExperience} />
+        <Route path="/commercial-solution-showcase" component={CommercialSolution} />
+        <Route path="/commercial-user-experience" component={CommercialUserExperience} />
         <Route path="/business-model" component={BusinessModel} />
         <Route path="/call-to-action" component={CallToAction} />
         <Route component={NotFound} />

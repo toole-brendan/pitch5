@@ -6,16 +6,16 @@ const Navigation = () => {
 
   // Define the navigation order
   const routes = [
-    { path: "/company-overview", name: "COMPANY OVERVIEW" },
+    { path: "/", name: "COMPANY OVERVIEW" },
     { path: "/supply-chain-challenges", name: "SUPPLY CHAIN CHALLENGES" },
     { path: "/solution-overview", name: "SOLUTION OVERVIEW" },
     { path: "/dual-market-strategy", name: "DUAL MARKET STRATEGY" },
     { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
     { path: "/defense-application", name: "DEFENSE APPLICATION" },
     { path: "/commercial-application", name: "COMMERCIAL APPLICATION" },
-    { path: "/defense-user-experience", name: "DEFENSE UX" },
+    { path: "/defense-user-experience", name: "DEFENSE USER EXPERIENCE" },
     { path: "/commercial-solution-showcase", name: "COMMERCIAL SOLUTION SHOWCASE" },
-    { path: "/commercial-user-experience", name: "COMMERCIAL UX" },
+    { path: "/commercial-user-experience", name: "COMMERCIAL USER EXPERIENCE" },
     { path: "/business-model", name: "BUSINESS MODEL" },
     { path: "/call-to-action", name: "CALL TO ACTION" }
   ];
