@@ -13,6 +13,7 @@ const Navigation = () => {
     { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
     { path: "/defense-application", name: "DEFENSE APPLICATION" },
     { path: "/commercial-application", name: "COMMERCIAL APPLICATION" },
+    { path: "/token-economics", name: "TOKEN ECONOMICS" },
     { path: "/defense-user-experience", name: "DEFENSE USER EXPERIENCE" },
     { path: "/commercial-solution-showcase", name: "COMMERCIAL SOLUTION SHOWCASE" },
     { path: "/commercial-user-experience", name: "COMMERCIAL USER EXPERIENCE" },

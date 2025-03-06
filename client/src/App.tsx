@@ -10,6 +10,7 @@ import DualMarketStrategy from "@/components/DualMarketStrategy";
 import MarketOpportunity from "@/components/slides/MarketOpportunity";
 import DefenseApplication from "@/components/DefenseApplication";
 import CommercialApplication from "@/components/CommercialApplication";
+import TokenEconomics from "@/components/slides/TokenEconomics";
 import DefenseUserExperience from "@/components/DefenseUserExperience";
 import CommercialSolution from "@/components/slides/CommercialSolution";
 import CommercialUserExperience from "@/components/slides/CommercialUserExperience";
@@ -29,6 +30,7 @@ function Router() {
         <Route path="/market-opportunity" component={MarketOpportunity} />
         <Route path="/defense-application" component={DefenseApplication} />
         <Route path="/commercial-application" component={CommercialApplication} />
+        <Route path="/token-economics" component={TokenEconomics} />
         <Route path="/defense-user-experience" component={DefenseUserExperience} />
         <Route path="/commercial-solution-showcase" component={CommercialSolution} />
         <Route path="/commercial-user-experience" component={CommercialUserExperience} />
