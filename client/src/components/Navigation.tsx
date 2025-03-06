@@ -7,7 +7,8 @@ const Navigation = () => {
   // Define the navigation order
   const routes = [
     { path: "/", name: "COMMERCIAL" },
-    { path: "/defense", name: "DEFENSE" },
+    { path: "/defense-app", name: "DEFENSE APP" },
+    { path: "/defense-ux", name: "DEFENSE UX" },
     { path: "/dual", name: "DUAL MARKET" },
     { path: "/progress", name: "DEVELOPMENT" }
   ];
