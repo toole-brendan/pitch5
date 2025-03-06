@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
 import { Check, School, Users, TrendingUp, BarChart } from 'lucide-react';
 
-// Motion variants
+// Motion variants remain unchanged
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -56,20 +56,20 @@ const SolutionOverview: React.FC = () => {
           >
             <div className="space-y-2">
               <div className="flex items-center">
-                <span className="text-2xl font-mono text-blue-600 mr-2">75%</span>
-                <span className="text-xs text-gray-600">Faster verification_</span>
+                <span className="text-2xl font-mono text-blue-600 mr-2">60-90</span>
+                <span className="text-xs text-gray-600">Days payment reduced_</span>
               </div>
               <div className="flex items-center">
-                <span className="text-2xl font-mono text-blue-600 mr-2">90%</span>
-                <span className="text-xs text-gray-600">Less paperwork_</span>
+                <span className="text-2xl font-mono text-blue-600 mr-2">100%</span>
+                <span className="text-xs text-gray-600">Digital tracking_</span>
               </div>
               <div className="flex items-center">
-                <span className="text-2xl font-mono text-blue-600 mr-2">99.5%</span>
-                <span className="text-xs text-gray-600">Inventory accuracy_</span>
+                <span className="text-2xl font-mono text-blue-600 mr-2">Real-time</span>
+                <span className="text-xs text-gray-600">Supply chain visibility_</span>
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             variants={phoneVariants}
             initial="hidden"
@@ -81,10 +81,10 @@ const SolutionOverview: React.FC = () => {
                 <span>HANDRECEIPT_</span>
                 <span>v1.2</span>
               </div>
-              
+
               <div className="flex-1 p-4 space-y-4">
                 <h3 className="font-mono font-semibold">INVENTORY_MANAGEMENT</h3>
-                
+
                 <div className="h-40 bg-gray-50 rounded border border-gray-200 flex items-center justify-center">
                   <div className="w-4/5 h-4/5 border border-gray-300 p-3">
                     {[...Array(5)].map((_, i) => (
@@ -95,14 +95,14 @@ const SolutionOverview: React.FC = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="bg-gray-50 p-4 rounded border border-gray-200">
                   <div className="relative w-full h-2 bg-gray-200 mb-2 overflow-hidden rounded">
                     <div className="absolute top-0 left-0 h-full w-4/5 bg-blue-500" />
                   </div>
                   <p className="text-sm font-mono text-blue-600 text-center">VERIFICATION: 80%_</p>
                 </div>
-                
+
                 <button className="w-full bg-blue-600 text-white py-2 rounded font-mono">
                   SCAN_ITEM
                 </button>
@@ -110,7 +110,7 @@ const SolutionOverview: React.FC = () => {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Features Section */}
         <div className="md:col-span-8">
           <motion.div
@@ -119,17 +119,17 @@ const SolutionOverview: React.FC = () => {
             animate="visible"
             className="space-y-6"
           >
-            <h2 className="text-2xl font-mono text-gray-900">BLOCKCHAIN-POWERED PROCESS_</h2>
-            
+            <h2 className="text-2xl font-mono text-gray-900">DUAL-MARKET SOLUTION_</h2>
+
             {/* Process Steps */}
             <div className="relative">
               <div className="absolute top-8 left-[10%] w-[80%] h-0.5 bg-gray-200" />
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
                 {[
-                  { step: 1, label: "QR Scanning" },
-                  { step: 2, label: "Blockchain Verification" },
-                  { step: 3, label: "Digital Signature" },
-                  { step: 4, label: "Record Storage" }
+                  { step: 1, label: "QR/Barcode Scan" },
+                  { step: 2, label: "Blockchain Record" },
+                  { step: 3, label: "Smart Contract" },
+                  { step: 4, label: "Payment Settlement" }
                 ].map((item, index) => (
                   <div key={item.step} className="text-center">
                     <div className="w-12 h-12 mx-auto mb-2 bg-blue-600 text-white flex items-center justify-center font-mono text-lg rounded">
@@ -140,44 +140,44 @@ const SolutionOverview: React.FC = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
                 {
-                  title: "Blockchain Technology",
-                  description: "Secure, immutable record-keeping system",
+                  title: "Military Application",
+                  description: "Secure property tracking and transfers",
                   items: [
-                    "Private blockchain for military security",
-                    "Public blockchain for commercial transparency",
-                    "Smart contract capabilities"
+                    "QR-code based digital transfers",
+                    "Blockchain-secured records",
+                    "Paper process digitization"
                   ]
                 },
                 {
-                  title: "Secure Digital Records",
-                  description: "Tamper-proof documentation and tracking",
+                  title: "Commercial Integration",
+                  description: "Enterprise system compatibility",
                   items: [
-                    "Digital signatures with biometric verification",
-                    "Real-time tracking and updates",
-                    "Historical audit trail"
+                    "Existing scanning infrastructure",
+                    "ERP/WMS API integration",
+                    "Standard enterprise software APIs"
                   ]
                 },
                 {
-                  title: "Simple Mobile Interface",
-                  description: "Intuitive scanning and verification",
+                  title: "Smart Contracts",
+                  description: "Customizable payment terms",
                   items: [
-                    "Standard mobile device compatibility",
-                    "No specialized hardware required",
-                    "Works offline with sync capability"
+                    "Inventory-based triggers",
+                    "Sales level conditions",
+                    "Traditional or Shell token payments"
                   ]
                 },
                 {
-                  title: "Reduced Manual Work",
-                  description: "Streamlined operations and reporting",
+                  title: "Supply Chain Finance",
+                  description: "Integrated payment solutions",
                   items: [
-                    "90% reduction in manual documentation",
-                    "Automated compliance reporting",
-                    "Error rates reduced to under 0.5%"
+                    "Immediate settlement options",
+                    "Working capital optimization",
+                    "Reduced payment cycles"
                   ]
                 }
               ].map((feature, index) => (

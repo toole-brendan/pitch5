@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
 import { cn } from "@/lib/utils";
 
-// Motion variants
+// Motion variants remain unchanged
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -47,40 +47,40 @@ const FinancialProjections: React.FC = () => {
       revenue: '175K', 
       customers: '2-3', 
       expenses: '1.2M', 
-      cashflow: '-1.0M', 
-      revenueGrowth: '0%' 
+      cashflow: '-1.0M',
+      tokenStaking: '10K'
     },
     { 
       year: 'Year 2', 
       revenue: '1.2M', 
       customers: '5-8', 
       expenses: '1.9M', 
-      cashflow: '-700K', 
-      revenueGrowth: '585%' 
+      cashflow: '-700K',
+      tokenStaking: '50K'
     },
     { 
       year: 'Year 3', 
       revenue: '4.2M', 
       customers: '15-20', 
       expenses: '3.2M', 
-      cashflow: '1.0M', 
-      revenueGrowth: '250%' 
+      cashflow: '1.0M',
+      tokenStaking: '100K'
     },
     { 
       year: 'Year 4', 
       revenue: '9.6M', 
       customers: '28-35', 
       expenses: '6.5M', 
-      cashflow: '3.1M', 
-      revenueGrowth: '128%' 
+      cashflow: '3.1M',
+      tokenStaking: '500K'
     },
     { 
       year: 'Year 5', 
       revenue: '18.5M', 
       customers: '45-55', 
       expenses: '12.0M', 
-      cashflow: '6.5M', 
-      revenueGrowth: '92%' 
+      cashflow: '6.5M',
+      tokenStaking: '1M'
     }
   ];
 
@@ -102,13 +102,13 @@ const FinancialProjections: React.FC = () => {
         {/* Financial Overview Section */}
         <div className="bg-white border border-gray-200 rounded-lg p-6">
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
-            FIVE-YEAR PROJECTIONS_
+            FIVE-YEAR PROJECTIONS & TOKEN METRICS_
           </h3>
-          
+
           <p className="text-sm text-gray-600 mb-6 font-mono">
-            Financial forecast with conservative growth assumptions
+            Financial forecast with token economy integration
           </p>
-          
+
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
@@ -146,6 +146,17 @@ const FinancialProjections: React.FC = () => {
                 </tr>
                 <tr className="hover:bg-gray-50">
                   <td className="p-3 text-xs font-mono text-gray-500 flex items-center">
+                    <span className="text-purple-600 mr-2">🔐</span>
+                    TOKEN STAKING
+                  </td>
+                  {financialData.map((data, index) => (
+                    <td key={index} className="p-3 text-center text-purple-600 font-semibold">
+                      {data.tokenStaking} SHL
+                    </td>
+                  ))}
+                </tr>
+                <tr className="hover:bg-gray-50">
+                  <td className="p-3 text-xs font-mono text-gray-500 flex items-center">
                     <span className="text-red-600 mr-2">↑</span>
                     EXPENSES
                   </td>
@@ -171,57 +182,46 @@ const FinancialProjections: React.FC = () => {
                     </td>
                   ))}
                 </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="p-3 text-xs font-mono text-gray-500 flex items-center">
-                    <span className="text-green-600 mr-2">📈</span>
-                    REVENUE GROWTH
-                  </td>
-                  {financialData.map((data, index) => (
-                    <td key={index} className="p-3 text-center text-green-600 font-semibold">
-                      {data.revenueGrowth}
-                    </td>
-                  ))}
-                </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        {/* Key Metrics and Use of Funds */}
+        {/* Key Metrics and Token Economics */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Key Metrics */}
           <div className="bg-white border border-gray-200 rounded-lg p-6">
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
-              KEY FINANCIAL METRICS_
+              TOKEN ECONOMICS_
             </h3>
-            
+
             <p className="text-sm text-gray-600 mb-6 font-mono">
-              Target metrics and efficiency ratios
+              Shell Token (SHL) utility metrics
             </p>
-            
+
             <div className="grid grid-cols-2 gap-4">
               <motion.div variants={itemVariants} className="bg-white border-l-4 border-blue-600 p-4 shadow-sm">
-                <p className="text-xs font-mono text-gray-500 mb-1">GROSS MARGIN</p>
-                <p className="text-xl font-bold">75-85%</p>
-                <p className="text-xs text-gray-600">Target for recurring revenue</p>
+                <p className="text-xs font-mono text-gray-500 mb-1">BASE TRANSACTION FEE</p>
+                <p className="text-xl font-bold">0.1%</p>
+                <p className="text-xs text-gray-600">Per transaction value</p>
               </motion.div>
-              
+
               <motion.div variants={itemVariants} className="bg-white border-l-4 border-orange-600 p-4 shadow-sm">
-                <p className="text-xs font-mono text-gray-500 mb-1">PAYBACK PERIOD</p>
-                <p className="text-xl font-bold">18-24 mo</p>
-                <p className="text-xs text-gray-600">For customer acquisition cost</p>
+                <p className="text-xs font-mono text-gray-500 mb-1">FEE BURN RATE</p>
+                <p className="text-xl font-bold">40%</p>
+                <p className="text-xs text-gray-600">Of transaction fees</p>
               </motion.div>
-              
+
               <motion.div variants={itemVariants} className="bg-white border-l-4 border-purple-600 p-4 shadow-sm">
-                <p className="text-xs font-mono text-gray-500 mb-1">BURN RATE</p>
-                <p className="text-xl font-bold">$95-110K</p>
-                <p className="text-xs text-gray-600">Monthly in first 18 months</p>
+                <p className="text-xs font-mono text-gray-500 mb-1">VALIDATOR SHARE</p>
+                <p className="text-xl font-bold">30%</p>
+                <p className="text-xs text-gray-600">Of transaction fees</p>
               </motion.div>
-              
+
               <motion.div variants={itemVariants} className="bg-white border-l-4 border-green-600 p-4 shadow-sm">
-                <p className="text-xs font-mono text-gray-500 mb-1">RUNWAY</p>
-                <p className="text-xl font-bold">24+ mo</p>
-                <p className="text-xs text-gray-600">After seed round funding</p>
+                <p className="text-xs font-mono text-gray-500 mb-1">DEVELOPMENT FUND</p>
+                <p className="text-xl font-bold">30%</p>
+                <p className="text-xs text-gray-600">Of transaction fees</p>
               </motion.div>
             </div>
           </div>
@@ -229,19 +229,23 @@ const FinancialProjections: React.FC = () => {
           {/* Use of Funds */}
           <div className="bg-white border border-gray-200 rounded-lg p-6">
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
-              USE OF FUNDS_
+              STAKING REQUIREMENTS_
             </h3>
-            
+
             <p className="text-sm text-gray-600 mb-6 font-mono">
-              Allocation of $2.2M seed funding round
+              Minimum token holdings by participant type
             </p>
-            
+
             <div className="space-y-4">
-              {fundAllocation.map((item, index) => (
+              {[
+                { name: 'Suppliers', percent: 25, amount: '10,000 SHL' },
+                { name: 'Retailers', percent: 50, amount: '50,000 SHL' },
+                { name: 'Financial Institutions', percent: 100, amount: '100,000 SHL' }
+              ].map((item, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-mono">{item.name}</span>
-                    <span className="text-sm font-semibold">{item.amount} ({item.percent}%)</span>
+                    <span className="text-sm font-semibold">{item.amount}</span>
                   </div>
                   <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                     <motion.div
@@ -250,8 +254,7 @@ const FinancialProjections: React.FC = () => {
                         "h-full rounded-full",
                         index === 0 ? "bg-blue-600" :
                         index === 1 ? "bg-orange-600" :
-                        index === 2 ? "bg-purple-600" :
-                        "bg-green-600"
+                        "bg-purple-600"
                       )}
                       style={{ width: `${item.percent}%` }}
                     />
