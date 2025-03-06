@@ -10,6 +10,7 @@ const Navigation = () => {
     { path: "/defense-app", name: "DEFENSE APP" },
     { path: "/defense-ux", name: "DEFENSE UX" },
     { path: "/dual", name: "DUAL MARKET" },
+    { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
     { path: "/market", name: "GO-TO-MARKET" },
     { path: "/traction", name: "TRACTION" },
     { path: "/progress", name: "DEVELOPMENT" },
