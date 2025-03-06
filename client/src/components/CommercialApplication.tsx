@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
 
-// Motion variants
+// Motion variants remain unchanged
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -50,7 +50,7 @@ const CommercialApplication = () => {
         className="w-full overflow-hidden"
       >
         <div className="flex items-center mb-6">
-          <span className="bg-gray-100 text-gray-900 text-xs tracking-widest font-mono py-1.5 px-3 border border-gray-300">
+          <span className="bg-gray-100 text-gray-900 text-xs tracking-widest font-mono uppercase py-1.5 px-3 border border-gray-300">
             COMMERCIAL SOLUTIONS
           </span>
         </div>
@@ -73,12 +73,12 @@ const CommercialApplication = () => {
                   <div className="w-10 h-10 border border-gray-300 flex items-center justify-center font-mono text-gray-700">
                     01
                   </div>
-                  <h4 className="font-mono text-base text-gray-900 tracking-wide">
+                  <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
                     Supply Chain Transparency
                   </h4>
                 </div>
 
-                <p className="font-mono text-sm text-gray-600 mb-4">
+                <p className="text-sm text-gray-600 mb-4 font-sans">
                   Complete visibility from sourcing to end customer
                 </p>
 
@@ -89,7 +89,7 @@ const CommercialApplication = () => {
                   ].map((text, index) => (
                     <div key={index} className="flex gap-3 items-start">
                       <span className="font-mono text-gray-400 mt-0.5">→</span>
-                      <p className="font-mono text-xs text-gray-600 leading-relaxed">
+                      <p className="text-xs text-gray-600 leading-relaxed font-sans">
                         {text}
                       </p>
                     </div>
@@ -107,12 +107,12 @@ const CommercialApplication = () => {
                   <div className="w-10 h-10 border border-gray-300 flex items-center justify-center font-mono text-gray-700">
                     02
                   </div>
-                  <h4 className="font-mono text-base text-gray-900 tracking-wide">
+                  <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
                     Inventory Intelligence
                   </h4>
                 </div>
 
-                <p className="font-mono text-sm text-gray-600 mb-4">
+                <p className="text-sm text-gray-600 mb-4 font-sans">
                   Data-driven inventory optimization with predictive capabilities
                 </p>
 
@@ -123,7 +123,7 @@ const CommercialApplication = () => {
                   ].map((text, index) => (
                     <div key={index} className="flex gap-3 items-start">
                       <span className="font-mono text-gray-400 mt-0.5">→</span>
-                      <p className="font-mono text-xs text-gray-600 leading-relaxed">
+                      <p className="text-xs text-gray-600 leading-relaxed font-sans">
                         {text}
                       </p>
                     </div>
@@ -141,12 +141,12 @@ const CommercialApplication = () => {
                   <div className="w-10 h-10 border border-gray-300 flex items-center justify-center font-mono text-gray-700">
                     03
                   </div>
-                  <h4 className="font-mono text-base text-gray-900 tracking-wide">
+                  <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
                     Payment Automation
                   </h4>
                 </div>
 
-                <p className="font-mono text-sm text-gray-600 mb-4">
+                <p className="text-sm text-gray-600 mb-4 font-sans">
                   Streamlined supplier payments with smart contract capabilities
                 </p>
 
@@ -157,7 +157,7 @@ const CommercialApplication = () => {
                   ].map((text, index) => (
                     <div key={index} className="flex gap-3 items-start">
                       <span className="font-mono text-gray-400 mt-0.5">→</span>
-                      <p className="font-mono text-xs text-gray-600 leading-relaxed">
+                      <p className="text-xs text-gray-600 leading-relaxed font-sans">
                         {text}
                       </p>
                     </div>
@@ -196,7 +196,7 @@ const CommercialApplication = () => {
                   <h4 className="font-mono text-sm text-gray-900 tracking-wide mb-3 group-hover:text-blue-600">
                     {application.title}
                   </h4>
-                  <p className="font-mono text-xs text-gray-600 leading-relaxed">
+                  <p className="text-xs text-gray-600 leading-relaxed font-sans">
                     {application.description}
                   </p>
                 </motion.div>
