@@ -12,7 +12,8 @@ const Navigation = () => {
     { path: "/dual", name: "DUAL MARKET" },
     { path: "/traction", name: "TRACTION" },
     { path: "/progress", name: "DEVELOPMENT" },
-    { path: "/financials", name: "FINANCIALS" }
+    { path: "/financials", name: "FINANCIALS" },
+    { path: "/founder", name: "FOUNDER" }
   ];
 
   // Find current index
