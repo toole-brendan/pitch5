@@ -17,7 +17,8 @@ const Navigation = () => {
     { path: "/business-model", name: "BUSINESS MODEL" },
     { path: "/call-to-action", name: "CALL TO ACTION" },
     { path: "/commercial-solution", name: "COMMERCIAL SOLUTION" },
-    { path: "/commercial-ux", name: "COMMERCIAL UX" }
+    { path: "/commercial-ux", name: "COMMERCIAL UX" },
+    { path: "/company-overview", name: "COMPANY OVERVIEW" }
   ];
 
   // Find current index
