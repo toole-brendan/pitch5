@@ -16,6 +16,7 @@ import CallToAction from "@/components/slides/CallToAction";
 import CommercialSolution from "@/components/slides/CommercialSolution";
 import CommercialUserExperience from "@/components/slides/CommercialUserExperience";
 import CompanyOverview from "@/components/slides/CompanyOverview";
+import CompetitiveLandscape from "@/components/slides/CompetitiveLandscape";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -36,6 +37,7 @@ function Router() {
         <Route path="/commercial-solution" component={CommercialSolution} />
         <Route path="/commercial-ux" component={CommercialUserExperience} />
         <Route path="/company-overview" component={CompanyOverview} />
+        <Route path="/competitive-landscape" component={CompetitiveLandscape} />
         <Route component={NotFound} />
       </Switch>
     </>
