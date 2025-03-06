@@ -5,14 +5,18 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import CommercialApplication from "@/components/CommercialApplication";
 import DefenseUserExperience from "@/components/DefenseUserExperience";
+import Navigation from "@/components/Navigation";
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={CommercialApplication} />
-      <Route path="/defense" component={DefenseUserExperience} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <Navigation />
+      <Switch>
+        <Route path="/" component={CommercialApplication} />
+        <Route path="/defense" component={DefenseUserExperience} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
