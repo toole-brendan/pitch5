@@ -6,20 +6,18 @@ const Navigation = () => {
 
   // Define the navigation order
   const routes = [
-    { path: "/", name: "COMMERCIAL" },
-    { path: "/defense-app", name: "DEFENSE APP" },
-    { path: "/defense-ux", name: "DEFENSE UX" },
-    { path: "/dual", name: "DUAL MARKET" },
-    { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
-    { path: "/roadmap", name: "ROADMAP" },
-    { path: "/solution", name: "SOLUTION" },
-    { path: "/supply-chain", name: "SUPPLY CHAIN" },
-    { path: "/business-model", name: "BUSINESS MODEL" },
-    { path: "/call-to-action", name: "CALL TO ACTION" },
-    { path: "/commercial-solution", name: "COMMERCIAL SOLUTION" },
-    { path: "/commercial-ux", name: "COMMERCIAL UX" },
     { path: "/company-overview", name: "COMPANY OVERVIEW" },
-    { path: "/competitive-landscape", name: "COMPETITIVE LANDSCAPE" }
+    { path: "/supply-chain-challenges", name: "SUPPLY CHAIN CHALLENGES" },
+    { path: "/solution-overview", name: "SOLUTION OVERVIEW" },
+    { path: "/dual-market-strategy", name: "DUAL MARKET STRATEGY" },
+    { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
+    { path: "/defense-application", name: "DEFENSE APPLICATION" },
+    { path: "/commercial-application", name: "COMMERCIAL APPLICATION" },
+    { path: "/defense-user-experience", name: "DEFENSE UX" },
+    { path: "/commercial-solution-showcase", name: "COMMERCIAL SOLUTION SHOWCASE" },
+    { path: "/commercial-user-experience", name: "COMMERCIAL UX" },
+    { path: "/business-model", name: "BUSINESS MODEL" },
+    { path: "/call-to-action", name: "CALL TO ACTION" }
   ];
 
   // Find current index

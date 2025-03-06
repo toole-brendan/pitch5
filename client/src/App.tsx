@@ -3,20 +3,18 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
-import CommercialApplication from "@/components/CommercialApplication";
-import DefenseApplication from "@/components/DefenseApplication";
-import DefenseUserExperience from "@/components/DefenseUserExperience";
+import CompanyOverview from "@/components/slides/CompanyOverview";
+import SupplyChainChallenges from "@/components/slides/SupplyChainChallenges";
+import SolutionOverview from "@/components/slides/SolutionOverview";
 import DualMarketStrategy from "@/components/DualMarketStrategy";
 import MarketOpportunity from "@/components/slides/MarketOpportunity";
-import Roadmap from "@/components/slides/Roadmap";
-import SolutionOverview from "@/components/slides/SolutionOverview";
-import SupplyChainChallenges from "@/components/slides/SupplyChainChallenges";
-import BusinessModel from "@/components/slides/BusinessModel";
-import CallToAction from "@/components/slides/CallToAction";
+import DefenseApplication from "@/components/DefenseApplication";
+import CommercialApplication from "@/components/CommercialApplication";
+import DefenseUserExperience from "@/components/DefenseUserExperience";
 import CommercialSolution from "@/components/slides/CommercialSolution";
 import CommercialUserExperience from "@/components/slides/CommercialUserExperience";
-import CompanyOverview from "@/components/slides/CompanyOverview";
-import CompetitiveLandscape from "@/components/slides/CompetitiveLandscape";
+import BusinessModel from "@/components/slides/BusinessModel";
+import CallToAction from "@/components/slides/CallToAction";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -24,20 +22,18 @@ function Router() {
     <>
       <Navigation />
       <Switch>
-        <Route path="/" component={CommercialApplication} />
-        <Route path="/defense-app" component={DefenseApplication} />
-        <Route path="/defense-ux" component={DefenseUserExperience} />
+        <Route path="/" component={CompanyOverview} />
+        <Route path="/supply-chain" component={SupplyChainChallenges} />
+        <Route path="/solution" component={SolutionOverview} />
         <Route path="/dual" component={DualMarketStrategy} />
         <Route path="/market-opportunity" component={MarketOpportunity} />
-        <Route path="/roadmap" component={Roadmap} />
-        <Route path="/solution" component={SolutionOverview} />
-        <Route path="/supply-chain" component={SupplyChainChallenges} />
-        <Route path="/business-model" component={BusinessModel} />
-        <Route path="/call-to-action" component={CallToAction} />
+        <Route path="/defense-app" component={DefenseApplication} />
+        <Route path="/commercial-app" component={CommercialApplication} />
+        <Route path="/defense-ux" component={DefenseUserExperience} />
         <Route path="/commercial-solution" component={CommercialSolution} />
         <Route path="/commercial-ux" component={CommercialUserExperience} />
-        <Route path="/company-overview" component={CompanyOverview} />
-        <Route path="/competitive-landscape" component={CompetitiveLandscape} />
+        <Route path="/business-model" component={BusinessModel} />
+        <Route path="/call-to-action" component={CallToAction} />
         <Route component={NotFound} />
       </Switch>
     </>
