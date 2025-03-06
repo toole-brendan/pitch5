@@ -28,10 +28,10 @@ const FounderVision = () => {
 
             <div className="flex flex-wrap justify-center gap-2 mb-6">
               <span className="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full border border-blue-200">
-                Military Veteran
+                Military Logistics Expert
               </span>
               <span className="bg-green-50 text-green-700 text-xs px-3 py-1 rounded-full border border-green-200">
-                Supply Chain Expert
+                Supply Chain Innovator
               </span>
             </div>
 
@@ -42,15 +42,9 @@ const FounderVision = () => {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-blue-600">→</span>
+                  <span className="text-orange-600">→</span>
                   <p className="text-sm text-gray-600">
-                    MBA, Harvard Business School
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-blue-600">→</span>
-                  <p className="text-sm text-gray-600">
-                    BS, Computer Science, MIT
+                    US Army Logistics Officer
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
@@ -60,9 +54,15 @@ const FounderVision = () => {
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-orange-600">→</span>
+                  <span className="text-blue-600">→</span>
                   <p className="text-sm text-gray-600">
-                    US Army, 7 years of service
+                    Managed $50M+ Military Equipment
+                  </p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-purple-600">→</span>
+                  <p className="text-sm text-gray-600">
+                    Computer Science & Blockchain Expert
                   </p>
                 </div>
               </div>
@@ -77,10 +77,10 @@ const FounderVision = () => {
               THE VISION_
             </h3>
             <p className="text-sm text-gray-600 mb-4">
-              Empowering defense and commercial organizations with intelligent inventory management that reduces manual work while enhancing accuracy, efficiency, and compliance.
+              Building a blockchain-powered inventory and supply chain management solution that streamlines property tracking and transfers, bridging military precision with commercial agility.
             </p>
             <p className="text-sm text-gray-600">
-              At HandReceipt, we're building technology that solves the real-world challenges I experienced firsthand during my military service and subsequent work in commercial supply chains. Our platform represents the convergence of military precision and commercial agility.
+              HandReceipt represents the convergence of military-grade validation adapted for commercial markets, offering immediate payment settlement through Shell token integration.
             </p>
           </div>
 
@@ -95,7 +95,7 @@ const FounderVision = () => {
                   Military Experience
                 </h4>
                 <p className="text-sm text-gray-600">
-                  As a logistics officer in the US Army, I managed equipment worth over $50M and witnessed firsthand the challenges of inventory tracking in high-pressure environments.
+                  As a logistics officer, I experienced firsthand the challenges of paper-based property tracking and transfers in high-pressure environments.
                 </p>
               </div>
 
@@ -104,25 +104,25 @@ const FounderVision = () => {
                   Commercial Insight
                 </h4>
                 <p className="text-sm text-gray-600">
-                  At Point72, I analyzed dozens of supply chain companies, identifying inefficiencies and market opportunities that traditional solutions were failing to address.
+                  At Point72, I identified the opportunity to adapt military precision for commercial supply chains while making it more affordable than complex enterprise systems.
                 </p>
               </div>
 
               <div className="border-l-4 border-orange-600 bg-orange-50/80 backdrop-blur-sm p-4 rounded-r-lg">
                 <h4 className="font-sans text-base font-semibold mb-2">
-                  Technical Foundation
+                  Blockchain Innovation
                 </h4>
                 <p className="text-sm text-gray-600">
-                  My computer science background from MIT provided the technical foundation to envision a modern solution leveraging computer vision and machine learning.
+                  Integrating blockchain technology enables secure digital records and immediate payment settlement through our Shell token economy.
                 </p>
               </div>
 
               <div className="border-l-4 border-purple-600 bg-purple-50/80 backdrop-blur-sm p-4 rounded-r-lg">
                 <h4 className="font-sans text-base font-semibold mb-2">
-                  The HandReceipt Idea
+                  Dual Market Strategy
                 </h4>
                 <p className="text-sm text-gray-600">
-                  The idea for HandReceipt came from observing the gap between military accountability requirements and the inadequate tools available for tracking in dynamic environments.
+                  HandReceipt uniquely serves both military and commercial markets with a flexible solution that maintains the highest standards of security and efficiency.
                 </p>
               </div>
             </div>
@@ -130,28 +130,28 @@ const FounderVision = () => {
 
           <div className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg">
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-              WHY NOW?_
+              MARKET OPPORTUNITY_
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <p className="text-3xl font-bold text-blue-600 mb-2">85%</p>
+                <p className="text-3xl font-bold text-blue-600 mb-2">60-90</p>
                 <p className="text-sm text-gray-600">
-                  of organizations still use manual inventory processes
+                  Days payment delay in current supply chains
                 </p>
               </div>
 
               <div className="text-center">
                 <p className="text-3xl font-bold text-orange-600 mb-2">$950B</p>
                 <p className="text-sm text-gray-600">
-                  annual cost of inventory inaccuracies
+                  Annual cost of inventory inaccuracies
                 </p>
               </div>
 
               <div className="text-center">
-                <p className="text-3xl font-bold text-green-600 mb-2">97%</p>
+                <p className="text-3xl font-bold text-green-600 mb-2">85%</p>
                 <p className="text-sm text-gray-600">
-                  of defense contractors need better tracking
+                  Still use manual inventory processes
                 </p>
               </div>
             </div>
