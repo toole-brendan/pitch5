@@ -1,36 +1,35 @@
 import { Link, useLocation } from "wouter";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Navigation = () => {
   const [location] = useLocation();
 
+  // Define the navigation order
+  const routes = [
+    { path: "/", name: "COMMERCIAL" },
+    { path: "/defense", name: "DEFENSE" },
+    { path: "/dual", name: "DUAL MARKET" }
+  ];
+
+  // Find current index
+  const currentIndex = routes.findIndex(route => route.path === location);
+
+  // Calculate prev/next paths
+  const prevPath = currentIndex > 0 ? routes[currentIndex - 1].path : routes[routes.length - 1].path;
+  const nextPath = currentIndex < routes.length - 1 ? routes[currentIndex + 1].path : routes[0].path;
+
   return (
-    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm p-1.5 rounded-lg border border-gray-200 shadow-sm">
-        <Link href="/">
-          <a className={`text-xs font-mono px-4 py-2 rounded transition-all duration-300 ${
-            location === "/" 
-              ? "bg-orange-50 text-orange-800 border border-orange-200" 
-              : "text-gray-600 hover:bg-orange-50/50 hover:text-orange-800"
-          }`}>
-            COMMERCIAL_
+    <nav className="fixed inset-x-0 top-1/2 -translate-y-1/2 z-50 pointer-events-none">
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <Link href={prevPath}>
+          <a className="pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm transition-all duration-300 hover:scale-105">
+            <ChevronLeft className="w-6 h-6 text-gray-600" />
           </a>
         </Link>
-        <Link href="/defense">
-          <a className={`text-xs font-mono px-4 py-2 rounded transition-all duration-300 ${
-            location === "/defense"
-              ? "bg-blue-50 text-blue-800 border border-blue-200"
-              : "text-gray-600 hover:bg-blue-50/50 hover:text-blue-800"
-          }`}>
-            DEFENSE_
-          </a>
-        </Link>
-        <Link href="/dual">
-          <a className={`text-xs font-mono px-4 py-2 rounded transition-all duration-300 ${
-            location === "/dual"
-              ? "bg-gray-100 text-gray-900 border border-gray-300"
-              : "text-gray-600 hover:bg-gray-100/50 hover:text-gray-900"
-          }`}>
-            DUAL MARKET_
+
+        <Link href={nextPath}>
+          <a className="pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm transition-all duration-300 hover:scale-105">
+            <ChevronRight className="w-6 h-6 text-gray-600" />
           </a>
         </Link>
       </div>
