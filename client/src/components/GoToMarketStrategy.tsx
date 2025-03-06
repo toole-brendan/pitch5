@@ -1,8 +1,33 @@
 'use client';
 
 import React from 'react';
+import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
 import { ExternalLink, MessageSquare, Building2, Shield, TrendingUp, Coins } from 'lucide-react';
+
+// Motion variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.3
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+};
 
 const GoToMarketStrategy = () => {
   const timelineItems = [
@@ -13,11 +38,19 @@ const GoToMarketStrategy = () => {
 
   return (
     <Slide title="GO-TO-MARKET STRATEGY_">
-      <div className="space-y-8">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="space-y-8"
+      >
         {/* Phased Approach */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Phase 1 */}
-          <div className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg">
+          <motion.div
+            variants={itemVariants}
+            className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg"
+          >
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
               PHASE 1: MONTHS 1-6_
             </h3>
@@ -38,10 +71,13 @@ const GoToMarketStrategy = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
 
           {/* Phase 2 */}
-          <div className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg">
+          <motion.div
+            variants={itemVariants}
+            className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg"
+          >
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
               PHASE 2: MONTHS 7-12_
             </h3>
@@ -62,10 +98,13 @@ const GoToMarketStrategy = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
 
           {/* Phase 3 */}
-          <div className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg">
+          <motion.div
+            variants={itemVariants}
+            className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg"
+          >
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
               PHASE 3: MONTHS 12-18_
             </h3>
@@ -86,11 +125,14 @@ const GoToMarketStrategy = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Timeline */}
-        <div className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg">
+        <motion.div 
+          variants={itemVariants}
+          className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg"
+        >
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-6">
             TIMELINE_
           </h3>
@@ -107,10 +149,13 @@ const GoToMarketStrategy = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Strategic Partnerships */}
-        <div className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg">
+        <motion.div 
+          variants={itemVariants}
+          className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg"
+        >
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-6">
             TARGET STRATEGIC PARTNERSHIPS_
           </h3>
@@ -133,17 +178,18 @@ const GoToMarketStrategy = () => {
                 description: "Building credibility through industry partnerships"
               }
             ].map((partner, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={itemVariants}
                 className="bg-blue-50/80 backdrop-blur-sm border border-blue-200 p-4 rounded-lg"
               >
                 <h4 className="font-mono text-sm font-semibold text-center mb-2">{partner.title}</h4>
                 <p className="text-xs text-gray-600 text-center">{partner.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Slide>
   );
 };
