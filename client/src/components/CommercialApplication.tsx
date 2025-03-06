@@ -49,49 +49,47 @@ const CommercialApplication = () => {
         animate="visible"
         className="w-full overflow-hidden"
       >
-        <div className="flex items-center mb-4">
-          <span className="bg-blue-100 text-blue-800 text-sm font-ibm-mono font-medium py-1 px-2 rounded">
-            BUSINESS
+        <div className="flex items-center mb-6">
+          <span className="bg-gray-100 text-gray-900 text-xs tracking-widest font-mono py-1.5 px-3 border border-gray-300">
+            COMMERCIAL SOLUTIONS
           </span>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Column: Key Features */}
           <div>
-            <h3 className="text-base md:text-xl font-semibold font-ibm-mono uppercase tracking-wider mb-6">
-              KEY CAPABILITIES_
+            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-8">
+              KEY CAPABILITIES
             </h3>
-            
-            <div className="flex flex-col gap-4">
+
+            <div className="flex flex-col gap-6">
               {/* Card 1 */}
               <motion.div
                 variants={cardVariants}
                 custom={1}
-                className="bg-white border border-gray-200 p-4 rounded-lg shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+                className="bg-white border border-gray-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-50 text-blue-800 border border-blue-200 w-8 h-8 flex items-center justify-center font-ibm-mono font-bold flex-shrink-0">
-                    1
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 border border-gray-300 flex items-center justify-center font-mono text-gray-700">
+                    01
                   </div>
-                  <h4 className="font-semibold text-base md:text-lg">
+                  <h4 className="font-mono text-base text-gray-900 tracking-wide">
                     Supply Chain Transparency
                   </h4>
                 </div>
 
-                <p className="mt-2 text-sm md:text-base text-gray-600 font-ibm-mono">
+                <p className="font-mono text-sm text-gray-600 mb-4">
                   Complete visibility from sourcing to end customer
                 </p>
 
-                <div className="mt-3">
+                <div className="space-y-3">
                   {[
                     "Authenticated chain of custody for every component and product",
                     "Real-time verification of authenticity and quality standards"
                   ].map((text, index) => (
-                    <div key={index} className="flex items-start gap-2 mb-2 last:mb-0">
-                      <span className="text-blue-800 font-ibm-mono font-bold flex-shrink-0">
-                        &gt;
-                      </span>
-                      <p className="text-xs md:text-sm text-gray-600 font-ibm-mono leading-relaxed">
+                    <div key={index} className="flex gap-3 items-start">
+                      <span className="font-mono text-gray-400 mt-0.5">→</span>
+                      <p className="font-mono text-xs text-gray-600 leading-relaxed">
                         {text}
                       </p>
                     </div>
@@ -103,31 +101,29 @@ const CommercialApplication = () => {
               <motion.div
                 variants={cardVariants}
                 custom={2}
-                className="bg-white border border-gray-200 p-4 rounded-lg shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+                className="bg-white border border-gray-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-50 text-blue-800 border border-blue-200 w-8 h-8 flex items-center justify-center font-ibm-mono font-bold flex-shrink-0">
-                    2
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 border border-gray-300 flex items-center justify-center font-mono text-gray-700">
+                    02
                   </div>
-                  <h4 className="font-semibold text-base md:text-lg">
+                  <h4 className="font-mono text-base text-gray-900 tracking-wide">
                     Inventory Intelligence
                   </h4>
                 </div>
 
-                <p className="mt-2 text-sm md:text-base text-gray-600 font-ibm-mono">
+                <p className="font-mono text-sm text-gray-600 mb-4">
                   Data-driven inventory optimization with predictive capabilities
                 </p>
 
-                <div className="mt-3">
+                <div className="space-y-3">
                   {[
                     "Reduce inventory costs by up to 25% through just-in-time principles",
                     "Minimize stockouts and excess inventory with ML forecasting"
                   ].map((text, index) => (
-                    <div key={index} className="flex items-start gap-2 mb-2 last:mb-0">
-                      <span className="text-blue-800 font-ibm-mono font-bold flex-shrink-0">
-                        &gt;
-                      </span>
-                      <p className="text-xs md:text-sm text-gray-600 font-ibm-mono leading-relaxed">
+                    <div key={index} className="flex gap-3 items-start">
+                      <span className="font-mono text-gray-400 mt-0.5">→</span>
+                      <p className="font-mono text-xs text-gray-600 leading-relaxed">
                         {text}
                       </p>
                     </div>
@@ -139,31 +135,29 @@ const CommercialApplication = () => {
               <motion.div
                 variants={cardVariants}
                 custom={3}
-                className="bg-white border border-gray-200 p-4 rounded-lg shadow-md transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+                className="bg-white border border-gray-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="flex items-center gap-4">
-                  <div className="bg-blue-50 text-blue-800 border border-blue-200 w-8 h-8 flex items-center justify-center font-ibm-mono font-bold flex-shrink-0">
-                    3
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 border border-gray-300 flex items-center justify-center font-mono text-gray-700">
+                    03
                   </div>
-                  <h4 className="font-semibold text-base md:text-lg">
+                  <h4 className="font-mono text-base text-gray-900 tracking-wide">
                     Payment Automation
                   </h4>
                 </div>
 
-                <p className="mt-2 text-sm md:text-base text-gray-600 font-ibm-mono">
+                <p className="font-mono text-sm text-gray-600 mb-4">
                   Streamlined supplier payments with smart contract capabilities
                 </p>
 
-                <div className="mt-3">
+                <div className="space-y-3">
                   {[
                     "Reduce payment processing time from 30+ days to under 48 hours",
                     "Optional Shell token payments with near-zero transaction fees"
                   ].map((text, index) => (
-                    <div key={index} className="flex items-start gap-2 mb-2 last:mb-0">
-                      <span className="text-blue-800 font-ibm-mono font-bold flex-shrink-0">
-                        &gt;
-                      </span>
-                      <p className="text-xs md:text-sm text-gray-600 font-ibm-mono leading-relaxed">
+                    <div key={index} className="flex gap-3 items-start">
+                      <span className="font-mono text-gray-400 mt-0.5">→</span>
+                      <p className="font-mono text-xs text-gray-600 leading-relaxed">
                         {text}
                       </p>
                     </div>
@@ -172,14 +166,14 @@ const CommercialApplication = () => {
               </motion.div>
             </div>
           </div>
-          
+
           {/* Right Column: Commercial Applications */}
           <div>
-            <h3 className="text-base md:text-xl font-semibold font-ibm-mono uppercase tracking-wider mb-6">
-              COMMERCIAL APPLICATIONS_
+            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-8">
+              COMMERCIAL APPLICATIONS
             </h3>
-            
-            <div className="flex flex-col gap-4 mt-0 md:mt-4">
+
+            <div className="space-y-6">
               {[
                 {
                   title: "RETAIL INVENTORY MANAGEMENT",
@@ -197,12 +191,12 @@ const CommercialApplication = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-blue-50 border border-gray-200 p-4 rounded-lg overflow-hidden"
+                  className="bg-gray-50 border border-gray-200 p-6 group transition-all duration-300 hover:bg-white"
                 >
-                  <h4 className="font-ibm-mono font-semibold text-sm md:text-base text-blue-800 mb-2">
+                  <h4 className="font-mono text-sm text-gray-900 tracking-wide mb-3 group-hover:text-blue-600">
                     {application.title}
                   </h4>
-                  <p className="text-xs md:text-sm text-gray-600 font-ibm-mono leading-relaxed">
+                  <p className="font-mono text-xs text-gray-600 leading-relaxed">
                     {application.description}
                   </p>
                 </motion.div>
