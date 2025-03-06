@@ -11,7 +11,8 @@ const Navigation = () => {
     { path: "/defense-ux", name: "DEFENSE UX" },
     { path: "/dual", name: "DUAL MARKET" },
     { path: "/traction", name: "TRACTION" },
-    { path: "/progress", name: "DEVELOPMENT" }
+    { path: "/progress", name: "DEVELOPMENT" },
+    { path: "/financials", name: "FINANCIALS" }
   ];
 
   // Find current index

@@ -4,11 +4,12 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import CommercialApplication from "@/components/CommercialApplication";
-import DefenseUserExperience from "@/components/DefenseUserExperience";
 import DefenseApplication from "@/components/DefenseApplication";
+import DefenseUserExperience from "@/components/DefenseUserExperience";
 import DualMarketStrategy from "@/components/DualMarketStrategy";
 import DevelopmentProgress from "@/components/DevelopmentProgress";
 import EarlyTraction from "@/components/EarlyTraction";
+import FinancialProjections from "@/components/FinancialProjections";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -20,8 +21,9 @@ function Router() {
         <Route path="/defense-app" component={DefenseApplication} />
         <Route path="/defense-ux" component={DefenseUserExperience} />
         <Route path="/dual" component={DualMarketStrategy} />
-        <Route path="/progress" component={DevelopmentProgress} />
         <Route path="/traction" component={EarlyTraction} />
+        <Route path="/progress" component={DevelopmentProgress} />
+        <Route path="/financials" component={FinancialProjections} />
         <Route component={NotFound} />
       </Switch>
     </>
