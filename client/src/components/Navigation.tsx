@@ -14,6 +14,7 @@ const Navigation = () => {
     { path: "/roadmap", name: "ROADMAP" },
     { path: "/solution", name: "SOLUTION" },
     { path: "/supply-chain", name: "SUPPLY CHAIN" },
+    { path: "/business-model", name: "BUSINESS MODEL" },
     { path: "/market", name: "GO-TO-MARKET" },
     { path: "/traction", name: "TRACTION" },
     { path: "/progress", name: "DEVELOPMENT" },
