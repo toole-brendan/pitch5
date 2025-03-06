@@ -8,7 +8,8 @@ const Navigation = () => {
   const routes = [
     { path: "/", name: "COMMERCIAL" },
     { path: "/defense", name: "DEFENSE" },
-    { path: "/dual", name: "DUAL MARKET" }
+    { path: "/dual", name: "DUAL MARKET" },
+    { path: "/progress", name: "DEVELOPMENT" }
   ];
 
   // Find current index
