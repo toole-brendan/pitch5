@@ -11,6 +11,7 @@ const Navigation = () => {
     { path: "/defense-ux", name: "DEFENSE UX" },
     { path: "/dual", name: "DUAL MARKET" },
     { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
+    { path: "/roadmap", name: "ROADMAP" },
     { path: "/market", name: "GO-TO-MARKET" },
     { path: "/traction", name: "TRACTION" },
     { path: "/progress", name: "DEVELOPMENT" },

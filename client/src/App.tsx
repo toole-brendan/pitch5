@@ -13,6 +13,7 @@ import FinancialProjections from "@/components/FinancialProjections";
 import FounderVision from "@/components/FounderVision";
 import GoToMarketStrategy from "@/components/GoToMarketStrategy";
 import MarketOpportunity from "@/components/slides/MarketOpportunity";
+import Roadmap from "@/components/slides/Roadmap";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/defense-ux" component={DefenseUserExperience} />
         <Route path="/dual" component={DualMarketStrategy} />
         <Route path="/market-opportunity" component={MarketOpportunity} />
+        <Route path="/roadmap" component={Roadmap} />
         <Route path="/traction" component={EarlyTraction} />
         <Route path="/progress" component={DevelopmentProgress} />
         <Route path="/financials" component={FinancialProjections} />
