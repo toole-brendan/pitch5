@@ -10,6 +10,7 @@ import DualMarketStrategy from "@/components/DualMarketStrategy";
 import DevelopmentProgress from "@/components/DevelopmentProgress";
 import EarlyTraction from "@/components/EarlyTraction";
 import FinancialProjections from "@/components/FinancialProjections";
+import FounderVision from "@/components/FounderVision";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -24,6 +25,7 @@ function Router() {
         <Route path="/traction" component={EarlyTraction} />
         <Route path="/progress" component={DevelopmentProgress} />
         <Route path="/financials" component={FinancialProjections} />
+        <Route path="/founder" component={FounderVision} />
         <Route component={NotFound} />
       </Switch>
     </>
