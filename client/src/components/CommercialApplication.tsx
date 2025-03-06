@@ -50,7 +50,7 @@ const CommercialApplication = () => {
         className="w-full overflow-hidden"
       >
         <div className="flex items-center mb-6">
-          <span className="bg-gray-100 text-gray-900 text-xs tracking-widest font-mono uppercase py-1.5 px-3 border border-gray-300">
+          <span className="bg-orange-50 text-orange-800 text-xs tracking-widest font-mono uppercase py-1.5 px-3 border border-orange-200">
             COMMERCIAL SOLUTIONS
           </span>
         </div>
@@ -67,10 +67,10 @@ const CommercialApplication = () => {
               <motion.div
                 variants={cardVariants}
                 custom={1}
-                className="bg-white border border-gray-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 border border-gray-300 flex items-center justify-center font-mono text-gray-700">
+                  <div className="w-10 h-10 border border-orange-200 flex items-center justify-center font-mono text-orange-700">
                     01
                   </div>
                   <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
@@ -88,7 +88,7 @@ const CommercialApplication = () => {
                     "Real-time verification of authenticity and quality standards"
                   ].map((text, index) => (
                     <div key={index} className="flex gap-3 items-start">
-                      <span className="font-mono text-gray-400 mt-0.5">→</span>
+                      <span className="font-mono text-orange-400 mt-0.5">→</span>
                       <p className="text-xs text-gray-600 leading-relaxed font-sans">
                         {text}
                       </p>
@@ -101,10 +101,10 @@ const CommercialApplication = () => {
               <motion.div
                 variants={cardVariants}
                 custom={2}
-                className="bg-white border border-gray-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 border border-gray-300 flex items-center justify-center font-mono text-gray-700">
+                  <div className="w-10 h-10 border border-orange-200 flex items-center justify-center font-mono text-orange-700">
                     02
                   </div>
                   <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
@@ -122,7 +122,7 @@ const CommercialApplication = () => {
                     "Minimize stockouts and excess inventory with ML forecasting"
                   ].map((text, index) => (
                     <div key={index} className="flex gap-3 items-start">
-                      <span className="font-mono text-gray-400 mt-0.5">→</span>
+                      <span className="font-mono text-orange-400 mt-0.5">→</span>
                       <p className="text-xs text-gray-600 leading-relaxed font-sans">
                         {text}
                       </p>
@@ -135,10 +135,10 @@ const CommercialApplication = () => {
               <motion.div
                 variants={cardVariants}
                 custom={3}
-                className="bg-white border border-gray-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 border border-gray-300 flex items-center justify-center font-mono text-gray-700">
+                  <div className="w-10 h-10 border border-orange-200 flex items-center justify-center font-mono text-orange-700">
                     03
                   </div>
                   <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
@@ -156,7 +156,7 @@ const CommercialApplication = () => {
                     "Optional Shell token payments with near-zero transaction fees"
                   ].map((text, index) => (
                     <div key={index} className="flex gap-3 items-start">
-                      <span className="font-mono text-gray-400 mt-0.5">→</span>
+                      <span className="font-mono text-orange-400 mt-0.5">→</span>
                       <p className="text-xs text-gray-600 leading-relaxed font-sans">
                         {text}
                       </p>
@@ -191,9 +191,9 @@ const CommercialApplication = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-gray-50 border border-gray-200 p-6 group transition-all duration-300 hover:bg-white"
+                  className="bg-orange-50 border border-orange-200 p-6 group transition-all duration-300 hover:bg-white hover:border-orange-400"
                 >
-                  <h4 className="font-mono text-sm text-gray-900 tracking-wide mb-3 group-hover:text-blue-600">
+                  <h4 className="font-mono text-sm text-gray-900 tracking-wide mb-3 group-hover:text-orange-700">
                     {application.title}
                   </h4>
                   <p className="text-xs text-gray-600 leading-relaxed font-sans">
