@@ -41,6 +41,17 @@ const cardVariants = {
   })
 };
 
+const lineVariants = {
+  hidden: { pathLength: 0 },
+  visible: {
+    pathLength: 1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut"
+    }
+  }
+};
+
 const DualMarketStrategy = () => {
   return (
     <Slide title="Dual Market Strategy">
@@ -50,92 +61,143 @@ const DualMarketStrategy = () => {
         animate="visible"
         className="w-full overflow-hidden"
       >
-        {/* Hexagon Diagram */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
-          {/* Defense Section */}
-          <motion.div
-            variants={hexagonVariants}
-            custom={0}
-            className="w-full md:w-[350px]"
-          >
-            <div className="bg-white border border-blue-200 p-6">
-              <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-blue-600 mb-4">
-                DEFENSE_
-              </h3>
-              
-              <div className="space-y-3">
-                {[
-                  'Property Accountability',
-                  'Mission Readiness',
-                  'Regulatory Compliance'
-                ].map((feature, index) => (
-                  <div key={index} className="flex gap-3 items-start">
-                    <div className="w-8 h-8 border border-blue-200 flex items-center justify-center font-mono text-blue-700">
-                      {index + 1}
-                    </div>
-                    <p className="text-sm text-gray-600 font-sans mt-1.5">
-                      {feature}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+        {/* Technical Diagram Section */}
+        <div className="relative w-full mb-16 pt-12">
+          {/* SVG Connection Lines */}
+          <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
+            <motion.path
+              variants={lineVariants}
+              d="M200 150 L400 150"
+              stroke="#e2e8f0"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="4 4"
+            />
+            <motion.path
+              variants={lineVariants}
+              d="M600 150 L800 150"
+              stroke="#e2e8f0"
+              strokeWidth="2"
+              fill="none"
+              strokeDasharray="4 4"
+            />
+          </svg>
 
-          {/* Core Tech */}
-          <motion.div
-            variants={hexagonVariants}
-            custom={1}
-            className="w-full md:w-[200px]"
-          >
-            <div className="bg-gray-50 border border-gray-200 p-4 text-center">
-              <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-600">
-                CORE_TECH
-              </h3>
-              <p className="text-xs text-gray-500 font-sans mt-2">
-                Shared platform
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Commercial Section */}
-          <motion.div
-            variants={hexagonVariants}
-            custom={2}
-            className="w-full md:w-[350px]"
-          >
-            <div className="bg-white border border-orange-200 p-6">
-              <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-orange-600 mb-4">
-                COMMERCIAL_
-              </h3>
-              
-              <div className="space-y-3">
-                {[
-                  'Supply Chain Transparency',
-                  'Cash Flow Optimization',
-                  'Supplier Management'
-                ].map((feature, index) => (
-                  <div key={index} className="flex gap-3 items-start">
-                    <div className="w-8 h-8 border border-orange-200 flex items-center justify-center font-mono text-orange-700">
-                      {index + 1}
-                    </div>
-                    <p className="text-sm text-gray-600 font-sans mt-1.5">
-                      {feature}
-                    </p>
+          <div className="flex items-center justify-between gap-8">
+            {/* Defense Platform */}
+            <motion.div
+              variants={hexagonVariants}
+              custom={0}
+              className="w-64 relative z-10"
+            >
+              <div className="bg-white border border-blue-200 p-6">
+                <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-blue-600 mb-4">
+                  DEFENSE PLATFORM_
+                </h3>
+                <div className="space-y-2">
+                  <p className="text-xs font-mono text-gray-500">VERIFIED COMPONENTS</p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <p className="text-xs text-gray-600">Military-grade encryption</p>
                   </div>
-                ))}
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <p className="text-xs text-gray-600">Secure authentication</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+
+            {/* Shared Core */}
+            <motion.div
+              variants={hexagonVariants}
+              custom={1}
+              className="w-96 relative z-20"
+            >
+              <div className="bg-white border border-gray-200 p-8">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-gray-50 text-gray-600 text-xs tracking-widest font-mono py-1 px-3 border border-gray-200">
+                    SHARED INFRASTRUCTURE
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-2 gap-6 mt-4">
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-mono text-gray-500">BLOCKCHAIN CORE</h4>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <motion.div 
+                          className="w-2 h-2 bg-gray-400 rounded-full"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        />
+                        <p className="text-xs text-gray-600">Smart contracts</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <motion.div 
+                          className="w-2 h-2 bg-gray-400 rounded-full"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                        />
+                        <p className="text-xs text-gray-600">Distributed ledger</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <h4 className="text-xs font-mono text-gray-500">DATA LAYER</h4>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2">
+                        <motion.div 
+                          className="w-2 h-2 bg-gray-400 rounded-full"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                        />
+                        <p className="text-xs text-gray-600">Immutable records</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <motion.div 
+                          className="w-2 h-2 bg-gray-400 rounded-full"
+                          animate={{ scale: [1, 1.2, 1] }}
+                          transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+                        />
+                        <p className="text-xs text-gray-600">Asset tracking</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Commercial Platform */}
+            <motion.div
+              variants={hexagonVariants}
+              custom={2}
+              className="w-64 relative z-10"
+            >
+              <div className="bg-white border border-orange-200 p-6">
+                <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-orange-600 mb-4">
+                  COMMERCIAL PLATFORM_
+                </h3>
+                <div className="space-y-2">
+                  <p className="text-xs font-mono text-gray-500">VERIFIED COMPONENTS</p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <p className="text-xs text-gray-600">Payment processing</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+                    <p className="text-xs text-gray-600">Supply chain tracking</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Market Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {/* Defense Market Card */}
-          <motion.div
-            variants={cardVariants}
-            custom={0}
-          >
+          <motion.div variants={cardVariants} custom={0}>
             <div className="bg-white border border-blue-200 p-6 transition-all duration-300 hover:shadow-lg hover:border-blue-400">
               <div className="flex items-center gap-4 mb-6">
                 <span className="bg-blue-50 text-blue-800 text-xs tracking-widest font-mono uppercase py-1.5 px-3 border border-blue-200">
@@ -176,10 +238,7 @@ const DualMarketStrategy = () => {
           </motion.div>
 
           {/* Commercial Market Card */}
-          <motion.div
-            variants={cardVariants}
-            custom={1}
-          >
+          <motion.div variants={cardVariants} custom={1}>
             <div className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:border-orange-400">
               <div className="flex items-center gap-4 mb-6">
                 <span className="bg-orange-50 text-orange-800 text-xs tracking-widest font-mono uppercase py-1.5 px-3 border border-orange-200">
@@ -221,21 +280,18 @@ const DualMarketStrategy = () => {
         </div>
 
         {/* Strategic Advantages */}
-        <motion.div
-          variants={cardVariants}
-          custom={2}
-        >
+        <motion.div variants={cardVariants} custom={2}>
           <div className="bg-white border border-gray-200 p-6">
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-900 mb-6">
               STRATEGIC ADVANTAGES_
             </h3>
-            
+
             <div className="space-y-3">
               {[
-                "Shared R&D costs across both markets create development efficiency",
-                "Military credibility accelerates commercial trust and adoption",
-                "Diverse revenue streams provide stability through market cycles",
-                "Network effects between markets increase overall platform value"
+                "Shared infrastructure reduces development and maintenance costs",
+                "Military-grade security enhances commercial offering credibility",
+                "Dual revenue streams provide stability through market cycles",
+                "Network effects amplify value across both platforms"
               ].map((advantage, index) => (
                 <div key={index} className="flex gap-3 items-start">
                   <span className="font-mono text-gray-400 mt-0.5">→</span>
