@@ -8,6 +8,7 @@ import DefenseUserExperience from "@/components/DefenseUserExperience";
 import DefenseApplication from "@/components/DefenseApplication";
 import DualMarketStrategy from "@/components/DualMarketStrategy";
 import DevelopmentProgress from "@/components/DevelopmentProgress";
+import EarlyTraction from "@/components/EarlyTraction";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
         <Route path="/defense-ux" component={DefenseUserExperience} />
         <Route path="/dual" component={DualMarketStrategy} />
         <Route path="/progress" component={DevelopmentProgress} />
+        <Route path="/traction" component={EarlyTraction} />
         <Route component={NotFound} />
       </Switch>
     </>
