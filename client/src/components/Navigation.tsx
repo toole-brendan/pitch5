@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 
 const Navigation = () => {
   const [location] = useLocation();
-  
+
   return (
     <div className="fixed top-0 right-0 p-4 z-50">
       <div className="flex gap-4">
@@ -22,6 +22,15 @@ const Navigation = () => {
               : "bg-white text-gray-600 border-gray-200 hover:border-blue-200"
           }`}>
             DEFENSE
+          </a>
+        </Link>
+        <Link href="/dual">
+          <a className={`text-xs font-mono px-3 py-1.5 border transition-colors duration-200 ${
+            location === "/dual"
+              ? "bg-gray-100 text-gray-900 border-gray-300"
+              : "bg-white text-gray-600 border-gray-200 hover:border-gray-300"
+          }`}>
+            DUAL MARKET
           </a>
         </Link>
       </div>

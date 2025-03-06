@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import CommercialApplication from "@/components/CommercialApplication";
 import DefenseUserExperience from "@/components/DefenseUserExperience";
+import DualMarketStrategy from "@/components/DualMarketStrategy";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
       <Switch>
         <Route path="/" component={CommercialApplication} />
         <Route path="/defense" component={DefenseUserExperience} />
+        <Route path="/dual" component={DualMarketStrategy} />
         <Route component={NotFound} />
       </Switch>
     </>
