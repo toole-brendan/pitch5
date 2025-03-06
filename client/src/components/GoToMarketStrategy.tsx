@@ -50,7 +50,7 @@ const GoToMarketStrategy = () => {
   ];
 
   return (
-    <Slide title="GO-TO-MARKET STRATEGY_">
+    <Slide title="Go-to-Market Strategy">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -169,7 +169,7 @@ const GoToMarketStrategy = () => {
         </div>
 
         {/* Timeline */}
-        <motion.div 
+        <motion.div
           variants={cardVariants}
           custom={4}
           className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
@@ -193,7 +193,7 @@ const GoToMarketStrategy = () => {
         </motion.div>
 
         {/* Strategic Partnerships */}
-        <motion.div 
+        <motion.div
           variants={cardVariants}
           custom={5}
           className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
