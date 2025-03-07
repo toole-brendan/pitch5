@@ -52,7 +52,7 @@ const cardVariants = {
 
 const TokenEconomics: React.FC = () => {
   return (
-    <Slide title="SHELL TOKEN (SHL) ECONOMICS_">
+    <Slide title="Shell Token (SHL) Economics">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -66,7 +66,7 @@ const TokenEconomics: React.FC = () => {
             className="col-span-1 md:col-span-2 bg-white border border-blue-200 rounded-lg p-6 shadow-sm"
           >
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-              TOKEN UTILITY_
+              TOKEN UTILITY
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-lg">
@@ -105,7 +105,7 @@ const TokenEconomics: React.FC = () => {
             className="col-span-1 bg-white border border-blue-200 rounded-lg p-6 shadow-sm"
           >
             <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-              TRANSACTION FEES_
+              TRANSACTION FEES
             </h3>
             <div className="space-y-4">
               <div className="p-4 bg-gray-50 rounded-lg">
@@ -165,7 +165,7 @@ const TokenEconomics: React.FC = () => {
           className="bg-white border border-blue-200 rounded-lg p-6 shadow-sm"
         >
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-            SERVICE TIERS_
+            SERVICE TIERS
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
@@ -236,7 +236,7 @@ const TokenEconomics: React.FC = () => {
           className="bg-white border border-blue-200 rounded-lg p-6 shadow-sm"
         >
           <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-            STAKING REQUIREMENTS_
+            STAKING REQUIREMENTS
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
