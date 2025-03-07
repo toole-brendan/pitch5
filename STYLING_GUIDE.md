@@ -2,6 +2,23 @@
 
 ## Typography
 
+### Page Titles
+- **Main Page Titles** (used in `<Slide title="...">` component):
+  - Style: Regular case (not all caps)
+  - Font: System font (font-sans)
+  - Size: `text-2xl md:text-3xl`
+  - Weight: `font-bold`
+  - Margin: `mb-8`
+  - Format: Title Case for Primary Words
+  - Examples:
+    - "Shell Token (SHL) Economics"
+    - "Defense Application"
+    - "Commercial Solution"
+  - **Do Not Use**: 
+    - ALL CAPS
+    - Trailing underscores (_)
+    - Extra punctuation
+
 ### Font Families
 - **Monospace** (`font-mono`): Used sparingly for:
   - Section headers/labels
@@ -169,4 +186,3 @@ const itemVariants = {
     </div>
   </div>
 </motion.div>
-```
