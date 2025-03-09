@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import CompanyOverview from "@/components/slides/CompanyOverview";
+import FounderVision from "@/components/FounderVision";
 import SupplyChainChallenges from "@/components/slides/SupplyChainChallenges";
 import SolutionOverview from "@/components/slides/SolutionOverview";
 import DualMarketStrategy from "@/components/DualMarketStrategy";
@@ -25,6 +26,7 @@ function Router() {
       <Navigation />
       <Switch>
         <Route path="/" component={CompanyOverview} />
+        <Route path="/founder-vision" component={FounderVision} />
         <Route path="/supply-chain-challenges" component={SupplyChainChallenges} />
         <Route path="/solution-overview" component={SolutionOverview} />
         <Route path="/dual-market-strategy" component={DualMarketStrategy} />

@@ -7,6 +7,7 @@ const Navigation = () => {
   // Define the navigation order
   const routes = [
     { path: "/", name: "COMPANY OVERVIEW" },
+    { path: "/founder-vision", name: "FOUNDER & VISION" },
     { path: "/supply-chain-challenges", name: "SUPPLY CHAIN CHALLENGES" },
     { path: "/solution-overview", name: "SOLUTION OVERVIEW" },
     { path: "/dual-market-strategy", name: "DUAL MARKET STRATEGY" },
