@@ -1,8 +1,8 @@
-import { useLocation } from "wouter";
+import { useLocation, useRoute } from "wouter";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Navigation = () => {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
 
   // Define the navigation order
   const routes = [
@@ -30,22 +30,31 @@ const Navigation = () => {
   const prevPath = currentIndex > 0 ? routes[currentIndex - 1].path : routes[routes.length - 1].path;
   const nextPath = currentIndex < routes.length - 1 ? routes[currentIndex + 1].path : routes[0].path;
 
+  const navigateToPrev = () => setLocation(prevPath);
+  const navigateToNext = () => setLocation(nextPath);
+
   return (
     <nav className="fixed inset-x-0 top-1/2 -translate-y-1/2 z-50 pointer-events-none">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <button 
-          onClick={() => window.location.href = prevPath}
-          className="pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm transition-all duration-300 hover:scale-105"
+          onClick={navigateToPrev}
+          className="pointer-events-auto flex items-center justify-center w-12 h-12 bg-[#121212] border border-white/10 shadow-sm transition-all duration-300 hover:border-purple-800"
         >
-          <ChevronLeft className="w-6 h-6 text-gray-600" />
+          <ChevronLeft className="w-6 h-6 text-white" />
         </button>
 
         <button 
-          onClick={() => window.location.href = nextPath}
-          className="pointer-events-auto flex items-center justify-center w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm transition-all duration-300 hover:scale-105"
+          onClick={navigateToNext}
+          className="pointer-events-auto flex items-center justify-center w-12 h-12 bg-[#121212] border border-white/10 shadow-sm transition-all duration-300 hover:border-purple-800"
         >
-          <ChevronRight className="w-6 h-6 text-gray-600" />
+          <ChevronRight className="w-6 h-6 text-white" />
         </button>
+      </div>
+      
+      <div className="fixed bottom-6 left-0 right-0 flex justify-center items-center">
+        <div className="bg-[#121212] border border-white/10 py-2 px-4 text-xs text-gray-400 font-mono tracking-wider">
+          {currentIndex + 1} / {routes.length}
+        </div>
       </div>
     </nav>
   );

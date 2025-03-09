@@ -8,6 +8,112 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-black text-white;
+  }
+  
+  /* Custom font treatments for 8VC theme */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light tracking-wide;
+  }
+}
+
+@layer components {
+  /* Background patterns */
+  .bg-grid-pattern {
+    @apply bg-black;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  /* Card components */
+  .enterprise-card {
+    @apply border border-white/10 bg-[#121212] p-6 relative;
+  }
+  
+  .enterprise-card-purple {
+    @apply border-purple-800/50 bg-gradient-to-br from-purple-900/20 to-black;
+  }
+  
+  .enterprise-card-amber {
+    @apply border-amber-800/50 bg-gradient-to-br from-amber-900/20 to-black;
+  }
+  
+  /* Typography helpers */
+  .section-header {
+    @apply text-xs uppercase tracking-[0.2em] font-mono text-gray-400;
+  }
+  
+  .overline {
+    @apply text-xs uppercase tracking-[0.2em] font-mono text-gray-500/70;
+  }
+  
+  .caption {
+    @apply text-sm text-gray-400;
+  }
+  
+  /* Badges and tags */
+  .badge {
+    @apply text-xs px-3 py-1 border;
+  }
+  
+  .badge-purple {
+    @apply bg-purple-900/30 text-purple-400 border-purple-800;
+  }
+  
+  .badge-blue {
+    @apply bg-blue-900/30 text-blue-400 border-blue-800;
+  }
+  
+  .badge-amber {
+    @apply bg-amber-900/30 text-amber-400 border-amber-800;
+  }
+  
+  .badge-green {
+    @apply bg-green-900/30 text-green-400 border-green-800;
+  }
+  
+  .tag {
+    @apply absolute -top-3 left-10 bg-black text-white text-xs tracking-widest font-mono py-1 px-3 border border-white/10;
+  }
+  
+  .tag-purple {
+    @apply border-purple-800;
+  }
+  
+  .tag-amber {
+    @apply border-amber-800;
+  }
+  
+  /* Data and metrics */
+  .data-value {
+    @apply text-3xl font-light text-white mb-2;
+  }
+  
+  .data-label {
+    @apply text-sm text-gray-500;
+  }
+  
+  /* UI elements */
+  .divider {
+    @apply h-[1px] bg-white/10 w-full my-6;
+  }
+  
+  /* Button treatments */
+  .btn-dark {
+    @apply bg-[#121212] border border-white/10 py-2 px-4 transition-colors hover:border-purple-600;
+  }
+  
+  .btn-purple {
+    @apply bg-purple-900/40 border border-purple-700 py-2 px-4 transition-colors hover:bg-purple-800/40;
+  }
+  
+  /* Icon containers */
+  .icon-circle {
+    @apply w-8 h-8 rounded-full flex items-center justify-center border border-white/10;
+  }
+  
+  .icon-square {
+    @apply w-8 h-8 flex items-center justify-center border border-white/10;
   }
 }

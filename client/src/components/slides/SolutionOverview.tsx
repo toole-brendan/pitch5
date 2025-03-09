@@ -3,9 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
-import { Check, School, Users, TrendingUp, BarChart } from 'lucide-react';
+import { Check, ArrowRight, Smartphone, Database, GitMerge, CreditCard } from 'lucide-react';
 
-// Motion variants remain unchanged
+// Motion variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -44,7 +44,7 @@ const metricsVariants = {
 
 const SolutionOverview: React.FC = () => {
   return (
-    <Slide title="Solution Overview">
+    <Slide title="Solution Overview" subtitle="Blockchain-secured supply chain verification with dual-market application">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-full">
         {/* Mobile App Mockup */}
         <div className="md:col-span-4 relative flex flex-col items-center justify-center">
@@ -52,20 +52,20 @@ const SolutionOverview: React.FC = () => {
             variants={metricsVariants}
             initial="hidden"
             animate="visible"
-            className="absolute -top-5 -right-5 z-10 bg-white border border-gray-200 border-l-4 border-l-blue-500 p-4 shadow-lg"
+            className="absolute -top-5 -right-5 z-10 enterprise-card border-purple-800/50 p-4"
           >
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="flex items-center">
-                <span className="text-2xl font-mono text-blue-600 mr-2">60-90</span>
-                <span className="text-xs text-gray-600">Days payment reduced_</span>
+                <span className="text-2xl font-mono text-purple-400 mr-2">60-90</span>
+                <span className="text-xs uppercase tracking-wide text-gray-400">Days reduced_</span>
               </div>
               <div className="flex items-center">
-                <span className="text-2xl font-mono text-blue-600 mr-2">100%</span>
-                <span className="text-xs text-gray-600">Digital tracking_</span>
+                <span className="text-2xl font-mono text-purple-400 mr-2">100%</span>
+                <span className="text-xs uppercase tracking-wide text-gray-400">Digital tracking_</span>
               </div>
               <div className="flex items-center">
-                <span className="text-2xl font-mono text-blue-600 mr-2">Real-time</span>
-                <span className="text-xs text-gray-600">Supply chain visibility_</span>
+                <span className="text-2xl font-mono text-purple-400 mr-2">Real-time</span>
+                <span className="text-xs uppercase tracking-wide text-gray-400">Visibility_</span>
               </div>
             </div>
           </motion.div>
@@ -74,36 +74,36 @@ const SolutionOverview: React.FC = () => {
             variants={phoneVariants}
             initial="hidden"
             animate="visible"
-            className="w-full max-w-[280px] h-[500px] bg-gray-100 rounded-3xl p-3 shadow-xl border border-blue-500 relative"
+            className="w-full max-w-[280px] h-[500px] bg-[#121212] p-3 border border-white/10 relative"
           >
-            <div className="w-full h-full bg-white rounded-2xl overflow-hidden flex flex-col">
-              <div className="bg-blue-600 text-white px-4 py-3 flex justify-between items-center font-mono">
+            <div className="w-full h-full bg-black border border-white/5 overflow-hidden flex flex-col">
+              <div className="bg-purple-900/40 border-b border-purple-800 text-white px-4 py-3 flex justify-between items-center font-mono">
                 <span>HANDRECEIPT_</span>
                 <span>v1.2</span>
               </div>
 
-              <div className="flex-1 p-4 space-y-4">
-                <h3 className="font-mono font-semibold">INVENTORY_MANAGEMENT</h3>
+              <div className="flex-1 p-4 space-y-6">
+                <div className="section-header">INVENTORY_MANAGEMENT</div>
 
-                <div className="h-40 bg-gray-50 rounded border border-gray-200 flex items-center justify-center">
-                  <div className="w-4/5 h-4/5 border border-gray-300 p-3">
+                <div className="enterprise-card h-40 flex items-center justify-center">
+                  <div className="w-4/5 h-4/5 border border-white/10 p-3">
                     {[...Array(5)].map((_, i) => (
                       <div
                         key={i}
-                        className={`h-2 bg-gray-200 mb-2 ${i === 4 ? 'w-2/5' : 'w-full'}`}
+                        className={`h-2 bg-white/10 mb-2 ${i === 4 ? 'w-2/5' : 'w-full'}`}
                       />
                     ))}
                   </div>
                 </div>
 
-                <div className="bg-gray-50 p-4 rounded border border-gray-200">
-                  <div className="relative w-full h-2 bg-gray-200 mb-2 overflow-hidden rounded">
-                    <div className="absolute top-0 left-0 h-full w-4/5 bg-blue-500" />
+                <div className="enterprise-card p-4">
+                  <div className="relative w-full h-2 bg-white/10 mb-2 overflow-hidden">
+                    <div className="absolute top-0 left-0 h-full w-4/5 bg-purple-600" />
                   </div>
-                  <p className="text-sm font-mono text-blue-600 text-center">VERIFICATION: 80%_</p>
+                  <p className="text-sm font-mono text-purple-400 text-center">VERIFICATION: 80%_</p>
                 </div>
 
-                <button className="w-full bg-blue-600 text-white py-2 rounded font-mono">
+                <button className="w-full btn-purple font-mono">
                   SCAN_ITEM
                 </button>
               </div>
@@ -117,32 +117,33 @@ const SolutionOverview: React.FC = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="space-y-6"
+            className="space-y-8"
           >
-            <h2 className="text-2xl font-mono text-gray-900">DUAL-MARKET SOLUTION_</h2>
+            <div className="section-header mb-2">MULTI-DOMAIN SOLUTION</div>
+            <h2 className="text-2xl font-light text-white">Secure verification across military and commercial domains</h2>
 
             {/* Process Steps */}
-            <div className="relative">
-              <div className="absolute top-8 left-[10%] w-[80%] h-0.5 bg-gray-200" />
+            <div className="relative mt-12">
+              <div className="absolute top-8 left-[10%] w-[80%] h-[1px] bg-white/10" />
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
                 {[
-                  { step: 1, label: "QR/Barcode Scan" },
-                  { step: 2, label: "Blockchain Record" },
-                  { step: 3, label: "Smart Contract" },
-                  { step: 4, label: "Payment Settlement" }
+                  { step: 1, icon: <Smartphone size={18} />, label: "QR/Barcode Scan" },
+                  { step: 2, icon: <Database size={18} />, label: "Blockchain Record" },
+                  { step: 3, icon: <GitMerge size={18} />, label: "Smart Contract" },
+                  { step: 4, icon: <CreditCard size={18} />, label: "Settlement" }
                 ].map((item, index) => (
                   <div key={item.step} className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-2 bg-blue-600 text-white flex items-center justify-center font-mono text-lg rounded">
-                      {item.step}
+                    <div className="w-12 h-12 mx-auto mb-3 bg-purple-900/40 border border-purple-800 text-white flex items-center justify-center font-mono text-lg">
+                      {item.icon}
                     </div>
-                    <p className="text-sm font-mono text-gray-600">{item.label}</p>
+                    <p className="text-xs uppercase tracking-wider text-gray-400">{item.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
               {[
                 {
                   title: "Military Application",
@@ -181,19 +182,26 @@ const SolutionOverview: React.FC = () => {
                   ]
                 }
               ].map((feature, index) => (
-                <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
-                  <div className="flex items-center mb-2">
-                    <div className="w-6 h-6 bg-blue-600 text-white flex items-center justify-center font-mono text-sm mr-2">
-                      {index + 1}
+                <div key={index} className="enterprise-card">
+                  <div className="tag">{index === 0 || index === 1 ? 'DOMAIN' : 'FUNCTION'}</div>
+                  <div className="mt-4 mb-3">
+                    <div className="flex items-center mb-1">
+                      <div className="icon-square bg-purple-900/40 border-purple-800 mr-3">
+                        {index === 0 && <Database size={16} className="text-purple-400" />}
+                        {index === 1 && <Smartphone size={16} className="text-purple-400" />}
+                        {index === 2 && <GitMerge size={16} className="text-purple-400" />}
+                        {index === 3 && <CreditCard size={16} className="text-purple-400" />}
+                      </div>
+                      <h3 className="font-light text-lg text-white">{feature.title}</h3>
                     </div>
-                    <h3 className="font-mono text-lg">{feature.title}</h3>
+                    <p className="text-sm text-gray-400 ml-11">{feature.description}</p>
                   </div>
-                  <p className="text-sm text-gray-600 mb-2">{feature.description}</p>
-                  <ul className="space-y-1">
+                  <div className="divider"></div>
+                  <ul className="space-y-2">
                     {feature.items.map((item, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-blue-600 mr-2">{'>'}</span>
-                        <span className="text-sm font-mono text-gray-600">{item}</span>
+                        <span className="text-purple-400 mr-2"><ArrowRight size={14} /></span>
+                        <span className="text-sm text-gray-400">{item}</span>
                       </li>
                     ))}
                   </ul>

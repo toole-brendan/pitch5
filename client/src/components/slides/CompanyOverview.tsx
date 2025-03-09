@@ -53,9 +53,9 @@ const underlineVariants = {
 };
 
 const valueVariants = {
-  hidden: { x: -50, opacity: 0 },
+  hidden: { y: 30, opacity: 0 },
   visible: {
-    x: 0,
+    y: 0,
     opacity: 1,
     transition: {
       duration: 0.5,
@@ -74,44 +74,94 @@ const CompanyOverview: React.FC = () => {
         animate="visible"
         className="flex flex-col items-center text-center h-full w-full"
       >
-        <motion.div className="z-10 flex flex-col items-center text-center mt-8 mb-4">
+        <div className="absolute top-10 left-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-xs text-white/50 uppercase tracking-[0.2em]"
+          >
+            PRESENTATION
+          </motion.div>
+        </div>
+      
+        <motion.div className="z-10 flex flex-col items-center text-center mt-24 mb-12">
+          <motion.div 
+            className="section-header mb-4"
+            variants={itemVariants}
+          >
+            BLOCKCHAIN-POWERED SUPPLY CHAIN
+          </motion.div>
+          
           <motion.div
             variants={logoVariants}
-            className="w-[220px] h-[70px] bg-blue-600 border border-blue-600 mb-4 flex items-center justify-center text-white font-bold tracking-wider relative overflow-hidden shadow-lg shadow-blue-500/50 before:content-['>>'_] before:absolute before:left-4 before:text-white/70"
+            className="w-[220px] h-[70px] bg-[#121212] border border-purple-800 mb-6 flex items-center justify-center text-white font-bold tracking-wider relative"
           >
-            HANDRECEIPT
+            <span className="absolute left-3 text-purple-400 opacity-70 font-mono">&gt;</span>
+            <span className="font-serif tracking-widest">HANDRECEIPT</span>
           </motion.div>
           
           <motion.h1
             variants={itemVariants}
-            className="text-[clamp(2.5rem,6vw,3.5rem)] font-bold text-gray-900 dark:text-gray-100 mb-2 leading-tight font-mono uppercase tracking-wider"
+            className="text-[clamp(2.5rem,6vw,3.5rem)] font-light text-white mb-2 leading-tight uppercase tracking-wider"
           >
             SECURE SUPPLY VERIFICATION
           </motion.h1>
           
           <motion.div
             variants={underlineVariants}
-            className="w-30 h-[3px] bg-blue-600 my-6 mx-auto relative before:content-[''] before:absolute before:w-10 before:h-[3px] before:bg-blue-400 before:right-[-20px] before:top-0"
+            className="w-30 h-[1px] bg-purple-600 my-8 mx-auto"
           />
           
           <motion.h2
             variants={itemVariants}
-            className="text-[clamp(1.2rem,3vw,1.8rem)] font-medium text-gray-600 dark:text-gray-300 max-w-[70%] mx-auto font-mono"
+            className="text-xl font-light text-gray-400 max-w-[70%] mx-auto"
           >
             Military-grade validation adapted for commercial markets
           </motion.h2>
         </motion.div>
         
-        <div className="flex-grow z-10 flex flex-col justify-center items-center w-full">
+        <div className="flex-grow z-10 flex flex-col justify-center items-center w-full max-w-4xl mx-auto">
           <motion.div
             variants={valueVariants}
-            className="p-6 md:p-8 bg-white dark:bg-gray-800 border-l-4 border-blue-600 max-w-[80%] shadow-lg relative before:content-['//_'] before:absolute before:left-[-25px] before:top-1/2 before:-translate-y-1/2 before:text-blue-600 before:font-mono before:text-sm"
+            className="enterprise-card relative w-full"
           >
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-mono">
+            <div className="absolute -top-3 left-10">
+              <span className="bg-black text-white text-xs tracking-widest font-mono py-1 px-3 border border-white/10">
+                CORE PROPOSITION
+              </span>
+            </div>
+            
+            <p className="text-lg text-gray-300 leading-relaxed mt-6">
               HandReceipt delivers dual-market supply chain verification for{' '}
-              <span className="text-blue-600 font-medium">MILITARY</span> and{' '}
-              <span className="text-blue-600 font-medium">COMMERCIAL</span> applications, providing tamper-proof inventory management with cryptographic authentication.
+              <span className="text-purple-400">MILITARY</span> and{' '}
+              <span className="text-purple-400">COMMERCIAL</span> applications, providing tamper-proof inventory management with cryptographic authentication.
             </p>
+            
+            <div className="divider"></div>
+            
+            <div className="grid grid-cols-3 gap-6">
+              <div className="text-center">
+                <p className="data-value">60-90</p>
+                <p className="text-sm text-gray-400">
+                  Days payment delay in current supply chains
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <p className="data-value">$950B</p>
+                <p className="text-sm text-gray-400">
+                  Annual cost of inventory inaccuracies
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <p className="data-value">85%</p>
+                <p className="text-sm text-gray-400">
+                  Still use manual inventory processes
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </motion.div>
