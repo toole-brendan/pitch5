@@ -16,6 +16,7 @@ import CommercialSolution from "@/components/slides/CommercialSolution";
 import CommercialUserExperience from "@/components/slides/CommercialUserExperience";
 import BusinessModel from "@/components/slides/BusinessModel";
 import CallToAction from "@/components/slides/CallToAction";
+import ShellTokenArchitecture from "@/components/slides/ShellTokenArchitecture";
 import Navigation from "@/components/Navigation";
 
 function Router() {
@@ -36,6 +37,7 @@ function Router() {
         <Route path="/commercial-user-experience" component={CommercialUserExperience} />
         <Route path="/business-model" component={BusinessModel} />
         <Route path="/call-to-action" component={CallToAction} />
+        <Route path="/shell-token-architecture" component={ShellTokenArchitecture} />
         <Route component={NotFound} />
       </Switch>
     </>
