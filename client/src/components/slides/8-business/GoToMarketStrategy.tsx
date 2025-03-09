@@ -95,11 +95,11 @@ const GoToMarketStrategy = () => {
   const [expandedKPI, setExpandedKPI] = useState<number | null>(null);
   
   const timelineItems = [
-    // Based on ShellToken.md Phase 1-4 timeline
-    { quarter: 'Q4 2025', event: 'Launch HandReceipt with 2-3 defense customers', icon: <Shield size={18} /> },
-    { quarter: 'Q1 2026', event: 'First commercial pilot deployment', icon: <Building2 size={18} /> },
-    { quarter: 'Q2 2026', event: 'Integrate financial institutions for supply chain financing', icon: <Briefcase size={18} /> },
-    { quarter: 'Q3 2026', event: 'Open network to broader retail ecosystem', icon: <Globe size={18} /> }
+    // Timeline updated to reflect current date: March 2025 (early Q2 2025)
+    { quarter: 'Q2 2025', event: 'Launch HandReceipt with 2-3 defense customers', icon: <Shield size={18} /> },
+    { quarter: 'Q3 2025', event: 'First commercial pilot deployment', icon: <Building2 size={18} /> },
+    { quarter: 'Q4 2025', event: 'Integrate financial institutions for supply chain financing', icon: <Briefcase size={18} /> },
+    { quarter: 'Q1 2026', event: 'Open network to broader retail ecosystem', icon: <Globe size={18} /> }
   ];
   
   // Expanded KPI data with metrics
@@ -146,12 +146,12 @@ const GoToMarketStrategy = () => {
     }
   ];
   
-  // Phase details for interactive view
+  // Phase details for interactive view - updated timeline
   const phaseDetails = [
     {
       phase: 1,
       title: "Defense Beachhead",
-      timeline: "Q4 2025 - Q2 2026",
+      timeline: "Q2 2025 - Q4 2025",
       focus: "Establish proven track record with defense clients",
       description: "Initially targeting military logistics units to solve critical property tracking problems. This approach provides credibility, recurring revenue, and validates our blockchain architecture.",
       kpis: ["3-5 defense contracts", "85% user satisfaction", "$1.2M in initial ARR"]
@@ -159,7 +159,7 @@ const GoToMarketStrategy = () => {
     {
       phase: 2,
       title: "Commercial Expansion",
-      timeline: "Q3 2026 - Q1 2027",
+      timeline: "Q1 2026 - Q3 2026",
       focus: "Enter commercial supply chain market with validated solution",
       description: "Leverage defense success to enter manufacturing and logistics verticals, focusing on inventory management challenges and payment acceleration through Shell tokens.",
       kpis: ["12-15 commercial clients", "500K monthly transactions", "$3.5M in Year 2 ARR"]
@@ -167,7 +167,7 @@ const GoToMarketStrategy = () => {
     {
       phase: 3,
       title: "Platform Ecosystem",
-      timeline: "Q2 2027 - Q4 2027",
+      timeline: "Q4 2026 - Q2 2027",
       focus: "Open platform to developers and financial partners",
       description: "Transform into a full ecosystem by integrating with financial institutions, enabling third-party developers, and connecting with wider retail markets.",
       kpis: ["30+ enterprise clients", "$12M in Year 3 ARR", "15 integrated partners"]
@@ -524,25 +524,25 @@ const GoToMarketStrategy = () => {
                 title: "ERP Providers",
                 description: "SAP, NetSuite, Oracle",
                 icon: <BarChart3 size={18} />,
-                timing: "Q1 2026"
+                timing: "Q3 2025"
               },
               {
                 title: "Defense Contractors",
                 description: "Tier 1 DOD suppliers",
                 icon: <Shield size={18} />,
-                timing: "Q4 2025"
+                timing: "Q2 2025"
               },
               {
                 title: "WMS Providers",
                 description: "Manhattan, JDA Software",
                 icon: <Briefcase size={18} />,
-                timing: "Q2 2026"
+                timing: "Q4 2025"
               },
               {
                 title: "Financial Services",
                 description: "Supply chain financing",
                 icon: <Coins size={18} />,
-                timing: "Q3 2026"
+                timing: "Q1 2026"
               }
             ].map((partner, index) => (
               <motion.div

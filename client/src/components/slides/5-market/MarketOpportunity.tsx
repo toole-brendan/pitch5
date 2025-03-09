@@ -79,217 +79,112 @@ const MarketOpportunity: React.FC = () => {
     <Slide
       title="Market Opportunity"
       subtitle="TAM, SAM, and SOM analysis for blockchain-powered supply chain verification"
+      fullWidth={true}
     >
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="space-y-6"
-      >
-        {/* Market Size Breakdown */}
-        <div className="bg-white shadow-sm rounded-sm p-6 relative">
-          <div className="absolute -top-3 left-10">
-            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-              MARKET SIZE ANALYSIS
-            </span>
-          </div>
-          
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* TAM */}
-            <motion.div
-              variants={itemVariants}
-              className="p-4 bg-gray-50 rounded-sm border-l-4 border-l-violet-400"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <PieChart className="w-5 h-5 text-violet-600" />
-                <h3 className="text-base font-medium text-gray-900">TAM</h3>
-              </div>
-              <div className="flex items-center justify-between">
-                <p className="text-2xl font-semibold text-violet-600">$120B</p>
-                <button 
-                  className="text-violet-600 hover:text-violet-800 transition-colors"
-                  onClick={() => openCitation('tam-blockchain')}
-                >
-                  <BookOpen size={16} />
-                </button>
-              </div>
-              <p className="text-sm text-gray-600 mb-3">Total Addressable Market</p>
-              <p className="text-xs text-gray-600">
-                Global blockchain in supply chain and military logistics markets (45.8% CAGR)
-              </p>
-            </motion.div>
-            
-            {/* SAM */}
-            <motion.div
-              variants={itemVariants}
-              className="p-4 bg-gray-50 rounded-sm border-l-4 border-l-violet-400"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <TrendingUp className="w-5 h-5 text-violet-600" />
-                <h3 className="text-base font-medium text-gray-900">SAM</h3>
-              </div>
-              <div className="flex items-center justify-between">
-                <p className="text-2xl font-semibold text-violet-600">$32B</p>
-                <div className="flex space-x-1">
-                  <button 
-                    className="text-violet-600 hover:text-violet-800 transition-colors"
-                    onClick={() => openCitation('defense-sam')}
-                  >
-                    <BookOpen size={16} />
-                  </button>
-                  <button 
-                    className="text-violet-600 hover:text-violet-800 transition-colors"
-                    onClick={() => openCitation('commercial-sam')}
-                  >
-                    <BookOpen size={16} />
-                  </button>
-                </div>
-              </div>
-              <p className="text-sm text-gray-600 mb-3">Serviceable Available Market</p>
-              <p className="text-xs text-gray-600">
-                U.S. defense logistics modernization and enterprise supply chain management solutions
-              </p>
-            </motion.div>
-            
-            {/* SOM */}
-            <motion.div
-              variants={itemVariants}
-              className="p-4 bg-gray-50 rounded-sm border-l-4 border-l-violet-400"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <Target className="w-5 h-5 text-violet-600" />
-                <h3 className="text-base font-medium text-gray-900">SOM</h3>
-              </div>
-              <div className="flex items-center justify-between">
-                <p className="text-2xl font-semibold text-violet-600">$750M</p>
-                <button 
-                  className="text-violet-600 hover:text-violet-800 transition-colors"
-                  onClick={() => openCitation('som-defense')}
-                >
-                  <BookOpen size={16} />
-                </button>
-              </div>
-              <p className="text-sm text-gray-600 mb-3">Serviceable Obtainable Market</p>
-              <p className="text-xs text-gray-600">
-                Initial focus: U.S. military units and defense contractors with blockchain readiness
-              </p>
-            </motion.div>
-          </div>
-        </div>
-        
-        {/* Market Breakdown Visualization */}
-        <motion.div
-          variants={itemVariants}
-          className="bg-white shadow-sm rounded-sm p-6 relative"
-        >
-          <div className="absolute -top-3 left-10">
-            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-              MARKET BREAKDOWN
-            </span>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
-            {/* Defense vs Commercial Split */}
-            <div className="flex flex-col">
-              <h3 className="text-base font-medium text-gray-900 mb-4">Market Segmentation</h3>
-              
-              <div className="space-y-4 flex-1">
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm text-gray-600">Defense Market (40%)</span>
-                    <span className="text-sm font-medium text-violet-600">$48B</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      animate={{ width: '40%' }}
-                      transition={{ duration: 1, delay: 0.5 }}
-                      className="bg-blue-500 h-2 rounded-full"
-                    ></motion.div>
-                  </div>
-                </div>
-                
-                <div>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm text-gray-600">Commercial Market (60%)</span>
-                    <span className="text-sm font-medium text-violet-600">$72B</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      animate={{ width: '60%' }}
-                      transition={{ duration: 1, delay: 0.7 }}
-                      className="bg-orange-500 h-2 rounded-full"
-                    ></motion.div>
-                  </div>
-                </div>
-                
-                <div className="bg-gray-50 p-4 rounded-sm mt-4">
-                  <h4 className="text-sm font-medium text-gray-900 mb-2">Market Growth (2023-2028)</h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-xs text-gray-600">Defense CAGR</p>
-                      <p className="text-xl font-semibold text-violet-600">5.0%</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-600">Commercial CAGR</p>
-                      <p className="text-xl font-semibold text-violet-600">9.4%</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Left Column */}
+        <div className="space-y-6">
+          {/* Market Size Analysis */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="bg-white shadow-sm rounded-sm p-6 relative"
+          >
+            <div className="absolute -top-3 left-10">
+              <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                MARKET SIZE ANALYSIS
+              </span>
             </div>
             
-            {/* Target Segments */}
-            <div>
-              <h3 className="text-base font-medium text-gray-900 mb-4">Primary Target Segments</h3>
+            <div className="mt-6 grid grid-cols-3 gap-4">
+              {/* TAM */}
+              <motion.div
+                variants={itemVariants}
+                className="p-3 bg-gray-50 rounded-sm border-l-4 border-l-violet-400 shadow-sm"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="bg-violet-100 p-1.5 rounded-full">
+                    <PieChart className="w-4 h-4 text-violet-600" />
+                  </div>
+                  <h3 className="text-sm font-medium text-gray-900">TAM</h3>
+                </div>
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-2xl font-bold text-violet-600">$120B</p>
+                  <button 
+                    className="text-violet-600 hover:text-violet-800 transition-colors"
+                    onClick={() => openCitation('tam-blockchain')}
+                  >
+                    <BookOpen size={14} />
+                  </button>
+                </div>
+                <p className="text-xs text-gray-600 mb-1">Total Addressable Market</p>
+                <p className="text-xs text-gray-500 leading-tight">
+                  Global blockchain supply chain market
+                </p>
+              </motion.div>
               
-              <div className="grid grid-cols-1 gap-4">
-                <div className="bg-blue-50 p-4 rounded-sm border-l-2 border-l-blue-400">
-                  <h4 className="text-sm font-medium text-blue-800">Defense Segment</h4>
-                  <ul className="mt-2 space-y-1">
-                    <li className="text-xs text-gray-700 flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                      <span>DoD logistics units under DOGE efficiency mandates</span>
-                    </li>
-                    <li className="text-xs text-gray-700 flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                      <span>Tier 1 defense contractors with supply chain visibility issues</span>
-                    </li>
-                    <li className="text-xs text-gray-700 flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                      <span>Military units struggling with audit compliance</span>
-                    </li>
-                  </ul>
+              {/* SAM */}
+              <motion.div
+                variants={itemVariants}
+                className="p-3 bg-gray-50 rounded-sm border-l-4 border-l-violet-400 shadow-sm"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="bg-violet-100 p-1.5 rounded-full">
+                    <TrendingUp className="w-4 h-4 text-violet-600" />
+                  </div>
+                  <h3 className="text-sm font-medium text-gray-900">SAM</h3>
                 </div>
-                
-                <div className="bg-orange-50 p-4 rounded-sm border-l-2 border-l-orange-400">
-                  <h4 className="text-sm font-medium text-orange-800">Commercial Segment</h4>
-                  <ul className="mt-2 space-y-1">
-                    <li className="text-xs text-gray-700 flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
-                      <span>Aerospace and automotive supply chains</span>
-                    </li>
-                    <li className="text-xs text-gray-700 flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
-                      <span>Pharmaceutical and healthcare tracking</span>
-                    </li>
-                    <li className="text-xs text-gray-700 flex items-center gap-1">
-                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
-                      <span>Electronics manufacturers with payment delay issues</span>
-                    </li>
-                  </ul>
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-2xl font-bold text-violet-600">$32B</p>
+                  <div className="flex space-x-1">
+                    <button 
+                      className="text-violet-600 hover:text-violet-800 transition-colors"
+                      onClick={() => openCitation('defense-sam')}
+                    >
+                      <BookOpen size={14} />
+                    </button>
+                  </div>
                 </div>
-              </div>
+                <p className="text-xs text-gray-600 mb-1">Serviceable Available Market</p>
+                <p className="text-xs text-gray-500 leading-tight">
+                  U.S. defense & enterprise solutions
+                </p>
+              </motion.div>
+              
+              {/* SOM */}
+              <motion.div
+                variants={itemVariants}
+                className="p-3 bg-gray-50 rounded-sm border-l-4 border-l-violet-400 shadow-sm"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="bg-violet-100 p-1.5 rounded-full">
+                    <Target className="w-4 h-4 text-violet-600" />
+                  </div>
+                  <h3 className="text-sm font-medium text-gray-900">SOM</h3>
+                </div>
+                <div className="flex items-center justify-between mb-1">
+                  <p className="text-2xl font-bold text-violet-600">$750M</p>
+                  <button 
+                    className="text-violet-600 hover:text-violet-800 transition-colors"
+                    onClick={() => openCitation('som-defense')}
+                  >
+                    <BookOpen size={14} />
+                  </button>
+                </div>
+                <p className="text-xs text-gray-600 mb-1">Serviceable Obtainable Market</p>
+                <p className="text-xs text-gray-500 leading-tight">
+                  Initial defense & contractor focus
+                </p>
+              </motion.div>
             </div>
-          </div>
-        </motion.div>
-        
-        {/* Target Market Segments */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          </motion.div>
+          
           {/* Defense Market */}
           <motion.div
-            variants={itemVariants}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
             className="bg-white shadow-sm rounded-sm p-6 relative"
           >
             <div className="absolute -top-3 left-10">
@@ -298,38 +193,60 @@ const MarketOpportunity: React.FC = () => {
               </span>
             </div>
             
-            <div className="mt-6 space-y-5">
-              <div className="bg-gray-50 p-4 rounded-sm">
+            <div className="mt-4 space-y-4">
+              <div className="bg-blue-50 p-4 rounded-sm">
+                <div className="flex justify-between mb-2">
+                  <span className="font-medium text-blue-800">Market Share (40%)</span>
+                  <span className="font-semibold text-blue-800">$48B</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-3 mb-3">
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    animate={{ width: '40%' }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="bg-blue-500 h-3 rounded-full shadow-inner"
+                  ></motion.div>
+                </div>
+                <div className="flex justify-between text-xs text-gray-600">
+                  <span>Defense CAGR: <span className="font-semibold text-violet-600">5.0%</span></span>
+                  <span>2023-2028</span>
+                </div>
+              </div>
+              
+              <div className="bg-blue-50 p-4 rounded-sm">
                 <div className="flex items-center gap-3 mb-2">
                   <Users className="w-5 h-5 text-violet-600" />
                   <h3 className="text-base font-medium text-gray-900">Target Customers</h3>
                 </div>
-                <ul className="text-sm text-gray-600 space-y-2 ml-8">
+                <ul className="text-sm text-gray-600 space-y-1 ml-8">
                   <li>• U.S. Army, Navy, Air Force, Marines units</li>
                   <li>• Defense Logistics Agency</li>
                   <li>• Military contractors and suppliers</li>
-                  <li>• Forward operating bases and deployment units</li>
                 </ul>
               </div>
               
-              <div className="bg-gray-50 p-4 rounded-sm">
+              <div className="bg-blue-50 p-4 rounded-sm">
                 <div className="flex items-center gap-3 mb-2">
                   <RefreshCw className="w-5 h-5 text-violet-600" />
                   <h3 className="text-base font-medium text-gray-900">Market Dynamics</h3>
                 </div>
-                <ul className="text-sm text-gray-600 space-y-2 ml-8">
+                <ul className="text-sm text-gray-600 space-y-1 ml-8">
                   <li>• New DOGE 8% budget cut requirements</li>
                   <li>• $1.2B+ annual inventory loss pain point</li>
                   <li>• Audit compliance mandates by 2028</li>
-                  <li>• Zero-trust security requirements</li>
                 </ul>
               </div>
             </div>
           </motion.div>
-          
+        </div>
+        
+        {/* Right Column */}
+        <div className="space-y-6">
           {/* Commercial Market */}
           <motion.div
-            variants={itemVariants} 
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
             className="bg-white shadow-sm rounded-sm p-6 relative"
           >
             <div className="absolute -top-3 left-10">
@@ -338,81 +255,132 @@ const MarketOpportunity: React.FC = () => {
               </span>
             </div>
             
-            <div className="mt-6 space-y-5">
-              <div className="bg-gray-50 p-4 rounded-sm">
+            <div className="mt-4 space-y-4">
+              <div className="bg-orange-50 p-4 rounded-sm">
+                <div className="flex justify-between mb-2">
+                  <span className="font-medium text-orange-800">Market Share (60%)</span>
+                  <span className="font-semibold text-orange-800">$72B</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-3 mb-3">
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    animate={{ width: '60%' }}
+                    transition={{ duration: 1, delay: 0.7 }}
+                    className="bg-orange-500 h-3 rounded-full shadow-inner"
+                  ></motion.div>
+                </div>
+                <div className="flex justify-between text-xs text-gray-600">
+                  <span>Commercial CAGR: <span className="font-semibold text-violet-600">9.4%</span></span>
+                  <span>2023-2028</span>
+                </div>
+              </div>
+              
+              <div className="bg-orange-50 p-4 rounded-sm">
                 <div className="flex items-center gap-3 mb-2">
                   <Users className="w-5 h-5 text-violet-600" />
                   <h3 className="text-base font-medium text-gray-900">Target Industries</h3>
                 </div>
-                <ul className="text-sm text-gray-600 space-y-2 ml-8">
+                <ul className="text-sm text-gray-600 space-y-1 ml-8">
                   <li>• Aerospace and automotive manufacturing</li>
                   <li>• Pharmaceutical supply chains</li>
                   <li>• Electronics and high-value components</li>
-                  <li>• Retail with complex distribution networks</li>
                 </ul>
               </div>
               
-              <div className="bg-gray-50 p-4 rounded-sm">
+              <div className="bg-orange-50 p-4 rounded-sm">
                 <div className="flex items-center gap-3 mb-2">
                   <BarChart3 className="w-5 h-5 text-violet-600" />
                   <h3 className="text-base font-medium text-gray-900">Growth Drivers</h3>
                 </div>
-                <ul className="text-sm text-gray-600 space-y-2 ml-8">
+                <ul className="text-sm text-gray-600 space-y-1 ml-8">
                   <li>• 60-90 day payment delays in current chains</li>
                   <li>• $950B+ annual inventory inaccuracy costs</li>
                   <li>• 85% still using manual processes</li>
-                  <li>• Favorable crypto regulatory environment</li>
                 </ul>
               </div>
             </div>
           </motion.div>
-        </div>
-        
-        {/* Market Entry Strategy */}
-        <motion.div
-          variants={itemVariants}
-          className="bg-white shadow-sm rounded-sm p-6 relative"
-        >
-          <div className="absolute -top-3 left-10">
-            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-              MARKET ENTRY STRATEGY
-            </span>
-          </div>
           
-          <div className="mt-6">
-            <p className="text-gray-700 mb-4">
-              Our initial focus leverages the founder's military expertise to enter Defense logistics, building credibility and security validation as we expand into the higher-growth commercial market.
-            </p>
+          {/* Target Segments and Market Entry Strategy */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible" 
+            className="bg-white shadow-sm rounded-sm p-6 relative"
+          >
+            <div className="absolute -top-3 left-10">
+              <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                MARKET ENTRY STRATEGY
+              </span>
+            </div>
             
-            <div className="flex items-center gap-4 justify-center">
-              <div className="text-center">
-                <div className="w-32 h-16 bg-violet-50 border border-violet-200 flex items-center justify-center mb-2">
-                  <span className="text-violet-700 font-medium">Phase 1</span>
+            <div className="mt-4 space-y-5">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-blue-50 p-3 rounded-sm border-l-2 border-l-blue-400 shadow-sm">
+                  <h4 className="text-sm font-medium text-blue-800 mb-2">Defense Focus</h4>
+                  <ul className="space-y-1">
+                    <li className="text-xs text-gray-700 flex items-center gap-1">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                      <span>DoD units with DOGE mandates</span>
+                    </li>
+                    <li className="text-xs text-gray-700 flex items-center gap-1">
+                      <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                      <span>Tier 1 defense contractors</span>
+                    </li>
+                  </ul>
                 </div>
-                <p className="text-xs text-gray-600">2-3 Defense Pilots</p>
+                
+                <div className="bg-orange-50 p-3 rounded-sm border-l-2 border-l-orange-400 shadow-sm">
+                  <h4 className="text-sm font-medium text-orange-800 mb-2">Commercial Expansion</h4>
+                  <ul className="space-y-1">
+                    <li className="text-xs text-gray-700 flex items-center gap-1">
+                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                      <span>Aerospace supply chains</span>
+                    </li>
+                    <li className="text-xs text-gray-700 flex items-center gap-1">
+                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                      <span>Pharmaceutical tracking</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              
-              <div className="w-8 h-[2px] bg-violet-300"></div>
-              
-              <div className="text-center">
-                <div className="w-32 h-16 bg-violet-50 border border-violet-200 flex items-center justify-center mb-2">
-                  <span className="text-violet-700 font-medium">Phase 2</span>
+            
+              <div>
+                <p className="text-sm text-gray-700 mb-4">
+                  Our initial focus leverages the founder's military expertise to enter Defense logistics, building credibility and security validation as we expand into the higher-growth commercial market.
+                </p>
+                
+                <div className="flex items-center gap-2 justify-between w-full">
+                  <div className="text-center flex-1">
+                    <div className="bg-blue-50 border border-blue-200 rounded-sm shadow-sm flex items-center justify-center py-2 mb-1">
+                      <span className="text-violet-700 font-medium text-xs">Phase 1</span>
+                    </div>
+                    <p className="text-xs text-gray-600">Defense Pilots</p>
+                  </div>
+                  
+                  <div className="w-8 h-[2px] bg-violet-300 flex-shrink-0"></div>
+                  
+                  <div className="text-center flex-1">
+                    <div className="bg-violet-50 border border-violet-200 rounded-sm shadow-sm flex items-center justify-center py-2 mb-1">
+                      <span className="text-violet-700 font-medium text-xs">Phase 2</span>
+                    </div>
+                    <p className="text-xs text-gray-600">Defense Scale</p>
+                  </div>
+                  
+                  <div className="w-8 h-[2px] bg-violet-300 flex-shrink-0"></div>
+                  
+                  <div className="text-center flex-1">
+                    <div className="bg-orange-50 border border-orange-200 rounded-sm shadow-sm flex items-center justify-center py-2 mb-1">
+                      <span className="text-violet-700 font-medium text-xs">Phase 3</span>
+                    </div>
+                    <p className="text-xs text-gray-600">Commercial</p>
+                  </div>
                 </div>
-                <p className="text-xs text-gray-600">Defense Scale</p>
-              </div>
-              
-              <div className="w-8 h-[2px] bg-violet-300"></div>
-              
-              <div className="text-center">
-                <div className="w-32 h-16 bg-violet-50 border border-violet-200 flex items-center justify-center mb-2">
-                  <span className="text-violet-700 font-medium">Phase 3</span>
-                </div>
-                <p className="text-xs text-gray-600">Commercial Entry</p>
               </div>
             </div>
-          </div>
-        </motion.div>
-      </motion.div>
+          </motion.div>
+        </div>
+      </div>
 
       {/* Citation Dialog */}
       <Dialog open={citationDialogOpen} onOpenChange={setCitationDialogOpen}>

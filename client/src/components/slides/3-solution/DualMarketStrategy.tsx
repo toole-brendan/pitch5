@@ -45,6 +45,7 @@ const DualMarketStrategy = () => {
     <Slide 
       title="Dual Market Strategy" 
       subtitle="Leveraging shared infrastructure across defense and commercial sectors"
+      fullWidth={true}
     >
       <motion.div
         variants={containerVariants}

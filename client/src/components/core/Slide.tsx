@@ -7,9 +7,10 @@ type SlideProps = {
   subtitle?: string;
   children: React.ReactNode;
   withGridBackground?: boolean;
+  fullWidth?: boolean;
 };
 
-const Slide: React.FC<SlideProps> = ({ title, subtitle, children, withGridBackground = false }) => {
+const Slide: React.FC<SlideProps> = ({ title, subtitle, children, withGridBackground = false, fullWidth = false }) => {
   const isMobile = useIsMobile();
   
   return (
@@ -18,7 +19,7 @@ const Slide: React.FC<SlideProps> = ({ title, subtitle, children, withGridBackgr
       ${withGridBackground ? 'bg-grid-pattern' : 'bg-gray-100'} 
       ${isMobile ? 'min-h-screen' : 'h-screen overflow-hidden'}
     `}>
-      <div className={`container mx-auto max-w-7xl ${isMobile ? '' : 'h-full flex flex-col'}`}>
+      <div className={`${!fullWidth ? 'container mx-auto max-w-7xl' : 'px-6'} ${isMobile ? '' : 'h-full flex flex-col'}`}>
         {/* Content area with VC styling */}
         <div className={`vc-slide-container ${isMobile ? '' : 'flex-1'}`}>
           {/* Title area */}
