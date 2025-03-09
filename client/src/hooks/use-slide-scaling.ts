@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useLayoutEffect } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import { useIsMobile } from './use-mobile';
 
 /**
@@ -10,62 +10,61 @@ export function useSlideScaling() {
   const isMobile = useIsMobile();
   const contentRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
+  const [contentHeight, setContentHeight] = useState(0);
   
-  // Use layoutEffect to calculate scale before browser paint
-  // This helps prevent flickering and ensures content is properly scaled immediately
+  // Use layout effect to calculate scale before browser paint to avoid flicker
   useLayoutEffect(() => {
-    if (isMobile || !contentRef.current) return;
+    if (isMobile) return; // Don't scale on mobile
     
     const calculateScale = () => {
       const content = contentRef.current;
       if (!content) return;
       
-      // Reset any existing transform to get accurate measurements
+      // Reset transform to get accurate measurement
       content.style.transform = 'none';
       
-      // Get the actual viewport height minus some padding for header/margins
-      const viewportHeight = window.innerHeight - 120;
+      // Calculate available height (viewport minus header/padding)
+      // We're using a more generous padding to ensure content fits
+      const availableHeight = window.innerHeight - 180;
       
-      // Get the content's natural height
-      const contentHeight = content.scrollHeight;
+      // Get natural content height
+      const naturalHeight = content.scrollHeight;
+      setContentHeight(naturalHeight);
       
-      // Calculate the scale needed to fit content in the viewport
-      // Use a more aggressive scale factor to ensure it fits
-      if (contentHeight > viewportHeight) {
-        const newScale = Math.min(0.95, viewportHeight / contentHeight);
+      // Calculate scale - never scale up, only down
+      if (naturalHeight > availableHeight) {
+        // Scale content to fit available height, with a small safety margin
+        const newScale = (availableHeight / naturalHeight) * 0.95;
         setScale(newScale);
       } else {
+        // Content fits naturally, no scaling needed
         setScale(1);
       }
     };
     
-    // Calculate scale immediately
-    calculateScale();
+    // Slight delay to ensure content is fully rendered before measuring
+    const timer = setTimeout(() => {
+      calculateScale();
+    }, 50);
     
-    // Recalculate on window resize
+    // Handle window resize
     const handleResize = () => {
-      requestAnimationFrame(calculateScale);
+      clearTimeout(timer);
+      setTimeout(calculateScale, 50);
     };
     
     window.addEventListener('resize', handleResize);
     
-    // Set up a mutation observer to detect content changes
-    const observer = new MutationObserver(() => {
-      requestAnimationFrame(calculateScale);
-    });
-    
-    observer.observe(contentRef.current, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      characterData: true
-    });
-    
     return () => {
+      clearTimeout(timer);
       window.removeEventListener('resize', handleResize);
-      observer.disconnect();
     };
   }, [isMobile]);
   
-  return { contentRef, scale };
+  return { 
+    contentRef, 
+    scale,
+    contentHeight,
+    isMobile
+  };
 }

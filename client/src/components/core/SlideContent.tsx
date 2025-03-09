@@ -1,5 +1,4 @@
 import React from 'react';
-import { useIsMobile } from '@/hooks/use-mobile';
 import { useSlideScaling } from '@/hooks/use-slide-scaling';
 
 type SlideContentProps = {
@@ -13,20 +12,28 @@ type SlideContentProps = {
  * On desktop: Content is scaled to fit within the viewport without scrolling
  */
 const SlideContent: React.FC<SlideContentProps> = ({ children, className = '' }) => {
-  const isMobile = useIsMobile();
-  const { contentRef, scale } = useSlideScaling();
+  const { contentRef, scale, isMobile } = useSlideScaling();
   
   return (
-    <div className={`${isMobile ? '' : 'h-full flex flex-col items-center justify-center overflow-hidden'} ${className}`}>
+    <div 
+      className={`
+        ${isMobile ? '' : 'h-full flex items-center justify-center'} 
+        ${className} 
+        relative
+      `}
+    >
+      {/* Container that scales the content */}
       <div 
         ref={contentRef}
-        className={`${isMobile ? '' : ''}`}
         style={{
-          transformOrigin: 'center top',
           transform: !isMobile ? `scale(${scale})` : 'none',
-          width: isMobile ? '100%' : `${100}%`,
-          maxHeight: isMobile ? 'unset' : '100%'
+          transformOrigin: 'center top',
+          // Avoid any layout shift by ensuring width is consistent
+          width: '100%'
         }}
+        className={`
+          ${isMobile ? '' : 'transition-transform duration-300'}
+        `}
       >
         {children}
       </div>
