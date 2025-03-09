@@ -52,20 +52,20 @@ const SolutionOverview: React.FC = () => {
             variants={metricsVariants}
             initial="hidden"
             animate="visible"
-            className="absolute -top-5 -right-5 z-10 enterprise-card border-purple-800/50 p-4"
+            className="absolute -top-5 -right-5 z-10 bg-white border border-purple-200 shadow-sm p-4"
           >
             <div className="space-y-3">
               <div className="flex items-center">
-                <span className="text-2xl font-mono text-purple-400 mr-2">60-90</span>
-                <span className="text-xs uppercase tracking-wide text-gray-400">Days reduced_</span>
+                <span className="text-2xl font-mono text-purple-600 mr-2">60-90</span>
+                <span className="text-xs uppercase tracking-wide text-gray-600">Days reduced_</span>
               </div>
               <div className="flex items-center">
-                <span className="text-2xl font-mono text-purple-400 mr-2">100%</span>
-                <span className="text-xs uppercase tracking-wide text-gray-400">Digital tracking_</span>
+                <span className="text-2xl font-mono text-purple-600 mr-2">100%</span>
+                <span className="text-xs uppercase tracking-wide text-gray-600">Digital tracking_</span>
               </div>
               <div className="flex items-center">
-                <span className="text-2xl font-mono text-purple-400 mr-2">Real-time</span>
-                <span className="text-xs uppercase tracking-wide text-gray-400">Visibility_</span>
+                <span className="text-2xl font-mono text-purple-600 mr-2">Real-time</span>
+                <span className="text-xs uppercase tracking-wide text-gray-600">Visibility_</span>
               </div>
             </div>
           </motion.div>
@@ -74,10 +74,10 @@ const SolutionOverview: React.FC = () => {
             variants={phoneVariants}
             initial="hidden"
             animate="visible"
-            className="w-full max-w-[280px] h-[500px] bg-[#121212] p-3 border border-white/10 relative"
+            className="w-full max-w-[280px] h-[500px] bg-white p-3 border border-gray-300 relative shadow-md"
           >
-            <div className="w-full h-full bg-black border border-white/5 overflow-hidden flex flex-col">
-              <div className="bg-purple-900/40 border-b border-purple-800 text-white px-4 py-3 flex justify-between items-center font-mono">
+            <div className="w-full h-full bg-white border border-gray-200 overflow-hidden flex flex-col">
+              <div className="bg-purple-100 border-b border-purple-200 text-purple-800 px-4 py-3 flex justify-between items-center font-mono">
                 <span>HANDRECEIPT_</span>
                 <span>v1.2</span>
               </div>
@@ -85,25 +85,25 @@ const SolutionOverview: React.FC = () => {
               <div className="flex-1 p-4 space-y-6">
                 <div className="section-header">INVENTORY_MANAGEMENT</div>
 
-                <div className="enterprise-card h-40 flex items-center justify-center">
-                  <div className="w-4/5 h-4/5 border border-white/10 p-3">
+                <div className="bg-gray-50 border border-gray-200 h-40 flex items-center justify-center">
+                  <div className="w-4/5 h-4/5 border border-gray-300 p-3">
                     {[...Array(5)].map((_, i) => (
                       <div
                         key={i}
-                        className={`h-2 bg-white/10 mb-2 ${i === 4 ? 'w-2/5' : 'w-full'}`}
+                        className={`h-2 bg-gray-200 mb-2 ${i === 4 ? 'w-2/5' : 'w-full'}`}
                       />
                     ))}
                   </div>
                 </div>
 
-                <div className="enterprise-card p-4">
-                  <div className="relative w-full h-2 bg-white/10 mb-2 overflow-hidden">
+                <div className="bg-white border border-gray-200 p-4">
+                  <div className="relative w-full h-2 bg-gray-200 mb-2 overflow-hidden">
                     <div className="absolute top-0 left-0 h-full w-4/5 bg-purple-600" />
                   </div>
-                  <p className="text-sm font-mono text-purple-400 text-center">VERIFICATION: 80%_</p>
+                  <p className="text-sm font-mono text-purple-600 text-center">VERIFICATION: 80%_</p>
                 </div>
 
-                <button className="w-full btn-purple font-mono">
+                <button className="w-full bg-purple-100 border border-purple-300 py-2 px-4 text-purple-800 font-mono hover:bg-purple-200">
                   SCAN_ITEM
                 </button>
               </div>
@@ -120,11 +120,11 @@ const SolutionOverview: React.FC = () => {
             className="space-y-8"
           >
             <div className="section-header mb-2">MULTI-DOMAIN SOLUTION</div>
-            <h2 className="text-2xl font-light text-white">Secure verification across military and commercial domains</h2>
+            <h2 className="text-2xl font-medium text-gray-900">Secure verification across military and commercial domains</h2>
 
             {/* Process Steps */}
             <div className="relative mt-12">
-              <div className="absolute top-8 left-[10%] w-[80%] h-[1px] bg-white/10" />
+              <div className="absolute top-8 left-[10%] w-[80%] h-[1px] bg-gray-200" />
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
                 {[
                   { step: 1, icon: <Smartphone size={18} />, label: "QR/Barcode Scan" },
@@ -133,10 +133,10 @@ const SolutionOverview: React.FC = () => {
                   { step: 4, icon: <CreditCard size={18} />, label: "Settlement" }
                 ].map((item, index) => (
                   <div key={item.step} className="text-center">
-                    <div className="w-12 h-12 mx-auto mb-3 bg-purple-900/40 border border-purple-800 text-white flex items-center justify-center font-mono text-lg">
+                    <div className="w-12 h-12 mx-auto mb-3 bg-purple-100 border border-purple-200 text-purple-700 flex items-center justify-center font-mono text-lg rounded-full">
                       {item.icon}
                     </div>
-                    <p className="text-xs uppercase tracking-wider text-gray-400">{item.label}</p>
+                    <p className="text-xs uppercase tracking-wider text-gray-600">{item.label}</p>
                   </div>
                 ))}
               </div>
@@ -182,26 +182,30 @@ const SolutionOverview: React.FC = () => {
                   ]
                 }
               ].map((feature, index) => (
-                <div key={index} className="enterprise-card">
-                  <div className="tag">{index === 0 || index === 1 ? 'DOMAIN' : 'FUNCTION'}</div>
+                <div key={index} className="bg-white border border-gray-200 p-6 relative shadow-sm">
+                  <div className="absolute -top-3 left-10">
+                    <span className="bg-white text-gray-900 text-xs tracking-widest font-mono py-1 px-3 border border-gray-200 shadow-sm">
+                      {index === 0 || index === 1 ? 'DOMAIN' : 'FUNCTION'}
+                    </span>
+                  </div>
                   <div className="mt-4 mb-3">
                     <div className="flex items-center mb-1">
-                      <div className="icon-square bg-purple-900/40 border-purple-800 mr-3">
-                        {index === 0 && <Database size={16} className="text-purple-400" />}
-                        {index === 1 && <Smartphone size={16} className="text-purple-400" />}
-                        {index === 2 && <GitMerge size={16} className="text-purple-400" />}
-                        {index === 3 && <CreditCard size={16} className="text-purple-400" />}
+                      <div className="w-8 h-8 flex items-center justify-center border border-gray-200 mr-3 bg-gray-50">
+                        {index === 0 && <Database size={16} className="text-purple-600" />}
+                        {index === 1 && <Smartphone size={16} className="text-purple-600" />}
+                        {index === 2 && <GitMerge size={16} className="text-purple-600" />}
+                        {index === 3 && <CreditCard size={16} className="text-purple-600" />}
                       </div>
-                      <h3 className="font-light text-lg text-white">{feature.title}</h3>
+                      <h3 className="font-medium text-lg text-gray-900">{feature.title}</h3>
                     </div>
-                    <p className="text-sm text-gray-400 ml-11">{feature.description}</p>
+                    <p className="text-sm text-gray-600 ml-11">{feature.description}</p>
                   </div>
-                  <div className="divider"></div>
+                  <div className="h-[1px] bg-gray-200 w-full my-6"></div>
                   <ul className="space-y-2">
                     {feature.items.map((item, i) => (
                       <li key={i} className="flex items-start">
-                        <span className="text-purple-400 mr-2"><ArrowRight size={14} /></span>
-                        <span className="text-sm text-gray-400">{item}</span>
+                        <span className="text-purple-600 mr-2"><ArrowRight size={14} /></span>
+                        <span className="text-sm text-gray-700">{item}</span>
                       </li>
                     ))}
                   </ul>
