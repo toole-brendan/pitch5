@@ -1,9 +1,21 @@
-'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
-import { ExternalLink, MessageSquare, Building2, Shield, TrendingUp, Coins } from 'lucide-react';
+import { 
+  ExternalLink, 
+  MessageSquare, 
+  Building2, 
+  Shield, 
+  TrendingUp, 
+  Coins,
+  Calendar,
+  Check,
+  Globe,
+  Zap,
+  Briefcase,
+  BarChart3,
+  Network
+} from 'lucide-react';
 
 // Motion variants
 const containerVariants = {
@@ -45,198 +57,211 @@ const cardVariants = {
 const GoToMarketStrategy = () => {
   const timelineItems = [
     // Based on ShellToken.md Phase 1-4 timeline
-    { quarter: 'Q4 2025', event: 'Launch HandReceipt with 2-3 defense customers' },
-    { quarter: 'Q1 2026', event: 'First commercial pilot deployment' },
-    { quarter: 'Q2 2026', event: 'Integrate financial institutions for supply chain financing' },
-    { quarter: 'Q3 2026', event: 'Open network to broader retail ecosystem' }
+    { quarter: 'Q4 2025', event: 'Launch HandReceipt with 2-3 defense customers', icon: <Shield size={18} /> },
+    { quarter: 'Q1 2026', event: 'First commercial pilot deployment', icon: <Building2 size={18} /> },
+    { quarter: 'Q2 2026', event: 'Integrate financial institutions for supply chain financing', icon: <Briefcase size={18} /> },
+    { quarter: 'Q3 2026', event: 'Open network to broader retail ecosystem', icon: <Globe size={18} /> }
   ];
 
   return (
-    <Slide title="Go-to-Market Strategy">
+    <Slide 
+      title="Go-to-Market Strategy" 
+      subtitle="Multi-phase approach to platform and token ecosystem growth"
+    >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full overflow-hidden space-y-8"
+        className="w-full space-y-6"
       >
         {/* Phased Approach */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Phase 1 */}
-          <motion.div
-            variants={cardVariants}
-            custom={1}
-            className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
-          >
-            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-              PHASE 1: PILOT NETWORK_
-            </h3>
-            <div className="space-y-4">
-              <p className="font-sans text-base text-gray-900 font-semibold tracking-wide">
-                Initial Defense Sector Focus
-              </p>
-              <ul className="space-y-3">
-                <li className="flex gap-3 items-start">
-                  <ExternalLink className="h-4 w-4 text-orange-400 mt-0.5" />
-                  <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Launch with 2-3 major defense customers
-                  </span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <MessageSquare className="h-4 w-4 text-orange-400 mt-0.5" />
-                  <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Implement core Shell token functionality
-                  </span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <Shield className="h-4 w-4 text-orange-400 mt-0.5" />
-                  <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Establish HandReceipt-WMS integration
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </motion.div>
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              PHASED APPROACH
+            </span>
+          </div>
+          
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Phase 1 */}
+            <motion.div
+              variants={cardVariants}
+              custom={1}
+              className="bg-gray-50 p-4 rounded-sm"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <Shield className="w-5 h-5 text-violet-600" />
+                <h3 className="text-base font-medium text-gray-900">Phase 1: Pilot Network</h3>
+              </div>
+              
+              <div className="space-y-3 pl-7">
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">Launch with 2-3 major defense customers</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">Implement core Shell token functionality</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">Establish HandReceipt-WMS integration</p>
+                </div>
+              </div>
+            </motion.div>
 
-          {/* Phase 2 */}
-          <motion.div
-            variants={cardVariants}
-            custom={2}
-            className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
-          >
-            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-              PHASE 2: ECOSYSTEM EXPANSION_
-            </h3>
-            <div className="space-y-4">
-              <p className="font-sans text-base text-gray-900 font-semibold tracking-wide">
-                Financial Integration & Growth
-              </p>
-              <ul className="space-y-3">
-                <li className="flex gap-3 items-start">
-                  <Building2 className="h-4 w-4 text-orange-400 mt-0.5" />
-                  <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Add financial institutions for supply chain financing
-                  </span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <Shield className="h-4 w-4 text-orange-400 mt-0.5" />
-                  <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Implement dynamic payment terms
-                  </span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <MessageSquare className="h-4 w-4 text-orange-400 mt-0.5" />
-                  <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Expand HandReceipt capabilities
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </motion.div>
+            {/* Phase 2 */}
+            <motion.div
+              variants={cardVariants}
+              custom={2}
+              className="bg-gray-50 p-4 rounded-sm"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <Network className="w-5 h-5 text-violet-600" />
+                <h3 className="text-base font-medium text-gray-900">Phase 2: Ecosystem Expansion</h3>
+              </div>
+              
+              <div className="space-y-3 pl-7">
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">Add financial institutions for supply chain financing</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">Implement dynamic payment terms</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">Expand HandReceipt capabilities</p>
+                </div>
+              </div>
+            </motion.div>
 
-          {/* Phase 3 */}
-          <motion.div
-            variants={cardVariants}
-            custom={3}
-            className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
-          >
-            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-4">
-              PHASE 3: FULL ECOSYSTEM_
-            </h3>
-            <div className="space-y-4">
-              <p className="font-sans text-base text-gray-900 font-semibold tracking-wide">
-                Scale & Development
-              </p>
-              <ul className="space-y-3">
-                <li className="flex gap-3 items-start">
-                  <TrendingUp className="h-4 w-4 text-orange-400 mt-0.5" />
-                  <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Open network to broader retail ecosystem
-                  </span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <Coins className="h-4 w-4 text-orange-400 mt-0.5" />
-                  <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Add third-party developers platform
-                  </span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <Building2 className="h-4 w-4 text-orange-400 mt-0.5" />
-                  <span className="text-xs text-gray-600 leading-relaxed font-sans">
-                    Integrate with traditional banking systems
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </motion.div>
+            {/* Phase 3 */}
+            <motion.div
+              variants={cardVariants}
+              custom={3}
+              className="bg-gray-50 p-4 rounded-sm"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <Globe className="w-5 h-5 text-violet-600" />
+                <h3 className="text-base font-medium text-gray-900">Phase 3: Full Ecosystem</h3>
+              </div>
+              
+              <div className="space-y-3 pl-7">
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">Open network to broader retail ecosystem</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">Add third-party developers platform</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">Integrate with traditional banking systems</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Timeline */}
-        <motion.div
-          variants={cardVariants}
-          custom={4}
-          className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
-        >
-          <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-6">
-            TIMELINE_
-          </h3>
-          <div className="space-y-6">
-            {timelineItems.map((item, index) => (
-              <div key={index} className="flex items-start gap-4">
-                <div className="flex-none">
-                  <div className="h-4 w-4 rounded-full bg-orange-400" />
-                </div>
-                <div className="flex-1 space-y-1">
-                  <p className="font-mono text-orange-700">{item.quarter}</p>
-                  <p className="text-xs text-gray-600 leading-relaxed font-sans">{item.event}</p>
-                </div>
-              </div>
-            ))}
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              EXECUTION TIMELINE
+            </span>
           </div>
-        </motion.div>
+          
+          <div className="mt-6 relative">
+            <div className="hidden md:block absolute left-[100px] top-4 bottom-4 w-0.5 bg-violet-100"></div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {timelineItems.map((item, index) => (
+                <motion.div 
+                  key={index} 
+                  variants={itemVariants}
+                  className="relative md:pl-[120px]"
+                >
+                  {/* Timeline marker for desktop */}
+                  <div className="hidden md:flex absolute left-[92px] top-1/2 -translate-y-1/2 w-8 h-8 rounded-full 
+                      bg-white border-2 border-violet-300 items-center justify-center text-violet-600 z-10">
+                    {item.icon}
+                  </div>
+                  
+                  {/* Quarter label for desktop */}
+                  <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-[85px] text-right">
+                    <p className="text-sm font-medium text-violet-600">{item.quarter}</p>
+                  </div>
+                  
+                  {/* Event card */}
+                  <div className="bg-gray-50 p-4 rounded-sm">
+                    {/* Quarter label for mobile */}
+                    <div className="md:hidden flex items-center gap-2 mb-2">
+                      <Calendar className="w-4 h-4 text-violet-600" />
+                      <p className="text-sm font-medium text-violet-600">{item.quarter}</p>
+                    </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <div className="md:hidden">{item.icon}</div>
+                      <p className="text-sm text-gray-700">{item.event}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Strategic Partnerships */}
-        <motion.div
-          variants={cardVariants}
-          custom={5}
-          className="bg-white border border-orange-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-orange-400"
-        >
-          <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-6">
-            TARGET STRATEGIC PARTNERSHIPS_
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              TARGET STRATEGIC PARTNERSHIPS
+            </span>
+          </div>
+          
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               {
                 title: "ERP Providers",
-                description: "SAP, NetSuite, Oracle, Microsoft Dynamics"
+                description: "SAP, NetSuite, Oracle",
+                icon: <BarChart3 size={18} />
               },
               {
                 title: "Defense Contractors",
-                description: "Tier 1 DOD suppliers"
+                description: "Tier 1 DOD suppliers",
+                icon: <Shield size={18} />
               },
               {
                 title: "WMS Providers",
-                description: "Manhattan Associates, JDA Software"
+                description: "Manhattan, JDA Software",
+                icon: <Briefcase size={18} />
               },
               {
                 title: "Financial Services",
-                description: "Supply chain financing providers"
+                description: "Supply chain financing",
+                icon: <Coins size={18} />
               }
             ].map((partner, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-orange-50 border border-orange-200 p-4 transition-all duration-300 hover:bg-white hover:border-orange-400"
+                className="bg-gray-50 p-4 rounded-sm"
               >
-                <h4 className="font-mono text-sm font-medium text-orange-700 text-center mb-2">
-                  {partner.title}
-                </h4>
-                <p className="text-xs text-gray-600 text-center font-sans">
+                <div className="flex items-center gap-2 mb-2 justify-center">
+                  <div className="text-violet-600">{partner.icon}</div>
+                  <h4 className="text-sm font-medium text-gray-900">
+                    {partner.title}
+                  </h4>
+                </div>
+                <p className="text-sm text-gray-600 text-center">
                   {partner.description}
                 </p>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </motion.div>
     </Slide>
   );

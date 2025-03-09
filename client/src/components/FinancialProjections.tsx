@@ -1,11 +1,22 @@
-'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
 import { cn } from "@/lib/utils";
+import { 
+  DollarSign, 
+  Users, 
+  Lock, 
+  ArrowUp, 
+  ArrowRightLeft,
+  PieChart,
+  BarChart,
+  Percent,
+  Flame,
+  Shield,
+  Briefcase
+} from 'lucide-react';
 
-// Motion variants remain unchanged
+// Motion variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -92,87 +103,98 @@ const FinancialProjections: React.FC = () => {
   ];
 
   return (
-    <Slide title="Financial Projections">
+    <Slide 
+      title="Financial Projections" 
+      subtitle="Five-year forecast with token economy integration"
+    >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="space-y-8"
+        className="space-y-6"
       >
         {/* Financial Overview Section */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6">
-          <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
-            FIVE-YEAR PROJECTIONS & TOKEN METRICS_
-          </h3>
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              FIVE-YEAR PROJECTIONS
+            </span>
+          </div>
 
-          <p className="text-sm text-gray-600 mb-6 font-mono">
-            Financial forecast with token economy integration
-          </p>
-
-          <div className="overflow-x-auto">
-            <table className="w-full">
+          <div className="mt-6 overflow-x-auto">
+            <table className="w-full min-w-[600px]">
               <thead>
-                <tr className="bg-gray-50">
-                  <th className="p-3 text-left text-xs font-mono uppercase tracking-wider text-gray-500"></th>
+                <tr>
+                  <th className="p-2 text-left text-xs font-medium text-gray-500 tracking-wider"></th>
                   {financialData.map((data, index) => (
-                    <th key={index} className="p-3 text-center text-xs font-mono uppercase tracking-wider text-gray-500">
+                    <th key={index} className="p-2 text-center text-xs font-medium text-gray-500 tracking-wider">
                       {data.year}
                     </th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-gray-100">
                 <tr className="hover:bg-gray-50">
-                  <td className="p-3 text-xs font-mono text-gray-500 flex items-center">
-                    <span className="text-blue-600 mr-2">$</span>
-                    REVENUE
+                  <td className="p-2 text-xs font-medium text-gray-500 whitespace-nowrap">
+                    <div className="flex items-center">
+                      <DollarSign className="w-4 h-4 text-violet-600 mr-2" />
+                      Revenue
+                    </div>
                   </td>
                   {financialData.map((data, index) => (
-                    <td key={index} className="p-3 text-center font-semibold text-blue-600">
+                    <td key={index} className="p-2 text-center font-semibold text-violet-600">
                       ${data.revenue}
                     </td>
                   ))}
                 </tr>
                 <tr className="hover:bg-gray-50">
-                  <td className="p-3 text-xs font-mono text-gray-500 flex items-center">
-                    <span className="text-orange-600 mr-2">👥</span>
-                    CUSTOMERS
+                  <td className="p-2 text-xs font-medium text-gray-500 whitespace-nowrap">
+                    <div className="flex items-center">
+                      <Users className="w-4 h-4 text-violet-600 mr-2" />
+                      Customers
+                    </div>
                   </td>
                   {financialData.map((data, index) => (
-                    <td key={index} className="p-3 text-center">
+                    <td key={index} className="p-2 text-center text-gray-800">
                       {data.customers}
                     </td>
                   ))}
                 </tr>
                 <tr className="hover:bg-gray-50">
-                  <td className="p-3 text-xs font-mono text-gray-500 flex items-center">
-                    <span className="text-purple-600 mr-2">🔐</span>
-                    TOKEN STAKING
+                  <td className="p-2 text-xs font-medium text-gray-500 whitespace-nowrap">
+                    <div className="flex items-center">
+                      <Lock className="w-4 h-4 text-violet-600 mr-2" />
+                      Token Staking
+                    </div>
                   </td>
                   {financialData.map((data, index) => (
-                    <td key={index} className="p-3 text-center text-purple-600 font-semibold">
+                    <td key={index} className="p-2 text-center text-violet-600 font-semibold">
                       {data.tokenStaking} SHL
                     </td>
                   ))}
                 </tr>
                 <tr className="hover:bg-gray-50">
-                  <td className="p-3 text-xs font-mono text-gray-500 flex items-center">
-                    <span className="text-red-600 mr-2">↑</span>
-                    EXPENSES
+                  <td className="p-2 text-xs font-medium text-gray-500 whitespace-nowrap">
+                    <div className="flex items-center">
+                      <ArrowUp className="w-4 h-4 text-violet-600 mr-2" />
+                      Expenses
+                    </div>
                   </td>
                   {financialData.map((data, index) => (
-                    <td key={index} className="p-3 text-center text-red-600 font-semibold">
+                    <td key={index} className="p-2 text-center text-gray-800">
                       ${data.expenses}
                     </td>
                   ))}
                 </tr>
                 <tr className="hover:bg-gray-50">
-                  <td className="p-3 text-xs font-mono text-gray-500 flex items-center">
-                    <span className="text-green-600 mr-2">↔</span>
-                    NET CASH FLOW
+                  <td className="p-2 text-xs font-medium text-gray-500 whitespace-nowrap">
+                    <div className="flex items-center">
+                      <ArrowRightLeft className="w-4 h-4 text-violet-600 mr-2" />
+                      Net Cash Flow
+                    </div>
                   </td>
                   {financialData.map((data, index) => (
-                    <td key={index} className="p-3 text-center">
+                    <td key={index} className="p-2 text-center">
                       <span className={cn(
                         "font-semibold",
                         data.cashflow.includes('-') ? "text-red-600" : "text-green-600"
@@ -188,80 +210,109 @@ const FinancialProjections: React.FC = () => {
         </div>
 
         {/* Key Metrics and Token Economics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Key Metrics */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
-              TOKEN ECONOMICS_
-            </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Token Economics */}
+          <div className="bg-white shadow-sm rounded-sm p-6 relative">
+            <div className="absolute -top-3 left-10">
+              <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                TOKEN ECONOMICS
+              </span>
+            </div>
 
-            <p className="text-sm text-gray-600 mb-6 font-mono">
-              Shell Token (SHL) utility metrics
-            </p>
-
-            <div className="grid grid-cols-2 gap-4">
-              <motion.div variants={itemVariants} className="bg-white border-l-4 border-blue-600 p-4 shadow-sm">
-                <p className="text-xs font-mono text-gray-500 mb-1">BASE TRANSACTION FEE</p>
-                <p className="text-xl font-bold">0.1%</p>
-                <p className="text-xs text-gray-600">Per transaction value</p>
+            <div className="mt-6 grid grid-cols-2 gap-4">
+              <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Percent className="w-4 h-4 text-violet-600" />
+                  <p className="text-xs font-medium text-gray-700">Transaction Fee</p>
+                </div>
+                <p className="text-xl font-semibold text-violet-600">0.1%</p>
+                <p className="text-xs text-gray-600 mt-1">Per transaction value</p>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="bg-white border-l-4 border-orange-600 p-4 shadow-sm">
-                <p className="text-xs font-mono text-gray-500 mb-1">FEE BURN RATE</p>
-                <p className="text-xl font-bold">40%</p>
-                <p className="text-xs text-gray-600">Of transaction fees</p>
+              <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Flame className="w-4 h-4 text-violet-600" />
+                  <p className="text-xs font-medium text-gray-700">Fee Burn Rate</p>
+                </div>
+                <p className="text-xl font-semibold text-violet-600">40%</p>
+                <p className="text-xs text-gray-600 mt-1">Of transaction fees</p>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="bg-white border-l-4 border-purple-600 p-4 shadow-sm">
-                <p className="text-xs font-mono text-gray-500 mb-1">VALIDATOR SHARE</p>
-                <p className="text-xl font-bold">30%</p>
-                <p className="text-xs text-gray-600">Of transaction fees</p>
+              <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Shield className="w-4 h-4 text-violet-600" />
+                  <p className="text-xs font-medium text-gray-700">Validator Share</p>
+                </div>
+                <p className="text-xl font-semibold text-violet-600">30%</p>
+                <p className="text-xs text-gray-600 mt-1">Of transaction fees</p>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="bg-white border-l-4 border-green-600 p-4 shadow-sm">
-                <p className="text-xs font-mono text-gray-500 mb-1">DEVELOPMENT FUND</p>
-                <p className="text-xl font-bold">30%</p>
-                <p className="text-xs text-gray-600">Of transaction fees</p>
+              <motion.div variants={itemVariants} className="bg-gray-50 rounded-sm p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <PieChart className="w-4 h-4 text-violet-600" />
+                  <p className="text-xs font-medium text-gray-700">Development Fund</p>
+                </div>
+                <p className="text-xl font-semibold text-violet-600">30%</p>
+                <p className="text-xs text-gray-600 mt-1">Of transaction fees</p>
               </motion.div>
             </div>
           </div>
 
-          {/* Use of Funds */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6">
-            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
-              STAKING REQUIREMENTS_
-            </h3>
+          {/* Staking Requirements */}
+          <div className="bg-white shadow-sm rounded-sm p-6 relative">
+            <div className="absolute -top-3 left-10">
+              <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                STAKING REQUIREMENTS
+              </span>
+            </div>
 
-            <p className="text-sm text-gray-600 mb-6 font-mono">
-              Minimum token holdings by participant type
-            </p>
-
-            <div className="space-y-4">
+            <div className="mt-6 space-y-4">
               {[
-                { name: 'Suppliers', percent: 25, amount: '10,000 SHL' },
-                { name: 'Retailers', percent: 50, amount: '50,000 SHL' },
-                { name: 'Financial Institutions', percent: 100, amount: '100,000 SHL' }
+                { name: 'Suppliers', percent: 25, amount: '10,000 SHL', icon: <Briefcase size={16} /> },
+                { name: 'Retailers', percent: 50, amount: '50,000 SHL', icon: <BarChart size={16} /> },
+                { name: 'Financial Institutions', percent: 100, amount: '100,000 SHL', icon: <DollarSign size={16} /> }
               ].map((item, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-mono">{item.name}</span>
-                    <span className="text-sm font-semibold">{item.amount}</span>
+                    <div className="flex items-center gap-2">
+                      <div className="text-violet-600">{item.icon}</div>
+                      <span className="text-sm font-medium text-gray-700">{item.name}</span>
+                    </div>
+                    <span className="text-sm font-semibold text-violet-600">{item.amount}</span>
                   </div>
                   <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                     <motion.div
                       variants={barVariants}
-                      className={cn(
-                        "h-full rounded-full",
-                        index === 0 ? "bg-blue-600" :
-                        index === 1 ? "bg-orange-600" :
-                        "bg-purple-600"
-                      )}
+                      className="h-full bg-violet-500 rounded-full"
                       style={{ width: `${item.percent}%` }}
                     />
                   </div>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Fund Allocation */}
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              FUND ALLOCATION
+            </span>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-4">
+            {fundAllocation.map((fund, index) => (
+              <motion.div 
+                key={index} 
+                variants={itemVariants}
+                className="bg-gray-50 p-4 rounded-sm text-center"
+              >
+                <p className="text-lg font-semibold text-violet-600">{fund.percent}%</p>
+                <p className="text-xs font-medium text-gray-700 mb-1">{fund.name}</p>
+                <p className="text-sm text-gray-600">${fund.amount}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.div>

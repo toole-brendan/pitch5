@@ -1,8 +1,7 @@
-'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
+import { PieChart, TrendingUp, Users, Package, Calendar, Award, Building } from 'lucide-react';
 
 // Motion variants
 const containerVariants = {
@@ -46,104 +45,114 @@ const EarlyTraction: React.FC = () => {
   const milestones = [
     {
       date: "Q3 2021",
-      color: "military",
+      icon: <Users size={18} />,
       index: 1,
-      title: "MILITARY PILOT PROJECT_",
-      description: "Initiated pilot with Fort Liberty logistics battalion. Deployed initial version focused on sensitive item tracking and maintenance management with blockchain verification.",
+      title: "MILITARY PILOT PROJECT",
+      description: "Initiated pilot with Fort Liberty logistics battalion. Deployed initial version for sensitive item tracking with blockchain verification.",
       metrics: [
-        { label: "USERS", value: "350+", color: "military" },
-        { label: "ITEMS TRACKED", value: "15,000", color: "military" }
+        { label: "USERS", value: "350+", icon: <Users size={14} /> },
+        { label: "ITEMS TRACKED", value: "15,000", icon: <Package size={14} /> }
       ]
     },
     {
       date: "Q1 2022",
-      color: "commercial",
+      icon: <Building size={18} />,
       index: 2,
-      title: "FIRST COMMERCIAL CLIENT_",
-      description: "Secured first enterprise customer - national retail chain with 3 distribution centers. System deployed for high-value inventory tracking and supplier verification.",
+      title: "FIRST COMMERCIAL CLIENT",
+      description: "Secured first enterprise customer - national retail chain with 3 distribution centers for high-value inventory tracking.",
       metrics: [
-        { label: "LOCATIONS", value: "3", color: "commercial" },
-        { label: "INVENTORY VALUE", value: "$12M", color: "commercial" }
+        { label: "LOCATIONS", value: "3", icon: <Building size={14} /> },
+        { label: "INVENTORY VALUE", value: "$12M", icon: <PieChart size={14} /> }
       ]
     },
     {
       date: "Q4 2022",
-      color: "military",
+      icon: <Award size={18} />,
       index: 3,
-      title: "DOD CONTRACT AWARD_",
-      description: "Secured $1.8M contract to deploy HandReceipt across three Army brigades. System now used for daily operations including weapons accountability, vehicle maintenance tracking, and supply chain management.",
+      title: "DOD CONTRACT AWARD",
+      description: "Secured $1.8M contract to deploy HandReceipt across three Army brigades for weapons accountability and maintenance tracking.",
       metrics: [
-        { label: "CONTRACT VALUE", value: "$1.8M", color: "military" },
-        { label: "PERSONNEL REACH", value: "8,500+", color: "military" }
+        { label: "CONTRACT VALUE", value: "$1.8M", icon: <PieChart size={14} /> },
+        { label: "PERSONNEL REACH", value: "8,500+", icon: <Users size={14} /> }
       ]
     },
     {
       date: "Q2 2023",
-      color: "commercial",
+      icon: <TrendingUp size={18} />,
       index: 4,
-      title: "COMMERCIAL EXPANSION_",
-      description: "Expanded to 7 commercial clients including two Fortune 500 retailers and a major automotive parts distributor. Launched Shell Token payment system for accelerated supplier payments with integrated inventory verification.",
+      title: "COMMERCIAL EXPANSION",
+      description: "Expanded to 7 commercial clients including Fortune 500 retailers. Launched Shell Token payment system for accelerated supplier payments.",
       metrics: [
-        { label: "ACTIVE CLIENTS", value: "7", color: "commercial" },
-        { label: "ARR GROWTH", value: "+185%", color: "commercial" }
+        { label: "ACTIVE CLIENTS", value: "7", icon: <Building size={14} /> },
+        { label: "ARR GROWTH", value: "+185%", icon: <TrendingUp size={14} /> }
       ]
     }
   ];
 
   return (
-    <Slide title="Early Traction">
+    <Slide 
+      title="Early Traction" 
+      subtitle="Growth metrics and key milestones since founding in 2021"
+    >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full"
+        className="w-full space-y-6"
       >
         {/* Key Metrics Section */}
-        <div className="mb-12">
-          <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
-            KEY METRICS_
-          </h3>
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              KEY METRICS
+            </span>
+          </div>
           
-          <p className="text-sm text-gray-600 mb-6 font-mono">
-            Growth and adoption since founding in 2021
-          </p>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <motion.div variants={itemVariants} className="bg-white border border-gray-200 p-6 rounded-lg">
-              <p className="text-2xl font-bold text-orange-600 mb-2">12</p>
-              <p className="text-sm text-gray-600">Active Enterprise Clients</p>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <motion.div variants={itemVariants} className="bg-gray-50 p-4 rounded-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <Building className="w-4 h-4 text-violet-600" />
+                <p className="text-sm font-medium text-gray-700">Enterprise Clients</p>
+              </div>
+              <p className="text-2xl font-bold text-violet-600">12</p>
             </motion.div>
             
-            <motion.div variants={itemVariants} className="bg-white border border-gray-200 p-6 rounded-lg">
-              <p className="text-2xl font-bold text-blue-600 mb-2">$3.2M</p>
-              <p className="text-sm text-gray-600">Defense Contracts</p>
+            <motion.div variants={itemVariants} className="bg-gray-50 p-4 rounded-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <Award className="w-4 h-4 text-violet-600" />
+                <p className="text-sm font-medium text-gray-700">Defense Contracts</p>
+              </div>
+              <p className="text-2xl font-bold text-violet-600">$3.2M</p>
             </motion.div>
             
-            <motion.div variants={itemVariants} className="bg-white border border-gray-200 p-6 rounded-lg">
-              <p className="text-2xl font-bold text-orange-600 mb-2">185%</p>
-              <p className="text-sm text-gray-600">YoY Revenue Growth</p>
+            <motion.div variants={itemVariants} className="bg-gray-50 p-4 rounded-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <TrendingUp className="w-4 h-4 text-violet-600" />
+                <p className="text-sm font-medium text-gray-700">YoY Revenue Growth</p>
+              </div>
+              <p className="text-2xl font-bold text-violet-600">185%</p>
             </motion.div>
             
-            <motion.div variants={itemVariants} className="bg-white border border-gray-200 p-6 rounded-lg">
-              <p className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-orange-600 bg-clip-text text-transparent mb-2">10M+</p>
-              <p className="text-sm text-gray-600">Items Tracked Monthly</p>
+            <motion.div variants={itemVariants} className="bg-gray-50 p-4 rounded-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <Package className="w-4 h-4 text-violet-600" />
+                <p className="text-sm font-medium text-gray-700">Items Tracked Monthly</p>
+              </div>
+              <p className="text-2xl font-bold text-violet-600">10M+</p>
             </motion.div>
           </div>
         </div>
         
         {/* Timeline Section */}
-        <div className="mb-12">
-          <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
-            GROWTH TIMELINE_
-          </h3>
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              GROWTH TIMELINE
+            </span>
+          </div>
           
-          <p className="text-sm text-gray-600 mb-6 font-mono">
-            Major milestones in our company history
-          </p>
-          
-          <div className="relative pl-8">
-            {/* Timeline vertical line */}
-            <div className="absolute top-0 left-3 bottom-0 w-0.5 bg-gray-200"></div>
+          <div className="mt-6 relative">
+            <div className="hidden md:block absolute top-0 left-[115px] bottom-0 w-0.5 bg-violet-100"></div>
             
             {/* Milestones */}
             {milestones.map((milestone, index) => (
@@ -151,28 +160,30 @@ const EarlyTraction: React.FC = () => {
                 key={index}
                 variants={cardVariants}
                 custom={index}
-                className="relative mb-8 last:mb-0"
+                className="relative mb-5 last:mb-0 md:pl-[140px]"
               >
-                {/* Timeline marker */}
-                <div className={`absolute -left-5 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold font-mono ${
-                  milestone.color === 'military' ? 'bg-blue-600' : 'bg-orange-600'
-                }`}>
-                  {milestone.index}
+                {/* Date for desktop */}
+                <div className="hidden md:block absolute left-0 top-0 w-[100px] text-right">
+                  <div className="text-sm font-medium text-gray-700">{milestone.date}</div>
+                </div>
+                
+                {/* Timeline marker for desktop */}
+                <div className="hidden md:flex absolute left-[107px] top-0 w-8 h-8 rounded-full bg-white border-2 border-violet-300 items-center justify-center text-violet-600">
+                  {milestone.icon}
                 </div>
                 
                 {/* Milestone card */}
-                <div className={`bg-white border p-6 rounded-lg ${
-                  milestone.color === 'military' ? 'border-blue-200' : 'border-orange-200'
-                }`}>
-                  {/* Date badge */}
-                  <div className="inline-block bg-gray-50 px-3 py-1 text-xs font-mono font-semibold text-gray-600 border border-gray-200 rounded-full mb-4">
-                    {milestone.date}
+                <div className="bg-gray-50 p-4 md:p-5 rounded-sm shadow-sm">
+                  {/* Date for mobile */}
+                  <div className="md:hidden mb-3">
+                    <div className="inline-flex items-center px-2 py-1 bg-violet-50 text-xs font-medium text-violet-700 rounded-sm">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      {milestone.date}
+                    </div>
                   </div>
                   
-                  <h4 className={`text-sm font-mono font-semibold mb-3 ${
-                    milestone.color === 'military' ? 'text-blue-600' : 'text-orange-600'
-                  }`}>
-                    {milestone.title}
+                  <h4 className="text-base font-medium text-gray-900 mb-2 flex items-center gap-2">
+                    <span>{milestone.title}</span>
                   </h4>
                   
                   <p className="text-sm text-gray-600 mb-4">
@@ -180,22 +191,23 @@ const EarlyTraction: React.FC = () => {
                   </p>
                   
                   {/* Metrics */}
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3">
                     {milestone.metrics.map((metric, idx) => (
                       <div
                         key={idx}
-                        className={`p-3 rounded ${
-                          metric.color === 'military' ? 'bg-blue-50' : 'bg-orange-50'
-                        }`}
+                        className="flex items-center gap-3 bg-white p-3 rounded-sm border border-gray-100"
                       >
-                        <p className="text-xs font-mono font-semibold text-gray-500 mb-1">
-                          {metric.label}
-                        </p>
-                        <p className={`text-lg font-bold ${
-                          metric.color === 'military' ? 'text-blue-600' : 'text-orange-600'
-                        }`}>
-                          {metric.value}
-                        </p>
+                        <div className="text-violet-600">
+                          {metric.icon}
+                        </div>
+                        <div>
+                          <p className="text-xs font-medium text-gray-500">
+                            {metric.label}
+                          </p>
+                          <p className="text-base font-semibold text-violet-700">
+                            {metric.value}
+                          </p>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -206,37 +218,31 @@ const EarlyTraction: React.FC = () => {
         </div>
         
         {/* Clients Section */}
-        <div>
-          <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-500 mb-2">
-            SELECT CLIENTS_
-          </h3>
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              SELECT CLIENTS
+            </span>
+          </div>
           
-          <p className="text-sm text-gray-600 mb-6 font-mono">
-            Current deployments across defense and commercial sectors
-          </p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
-              { name: "U.S. ARMY", color: "military" },
-              { name: "DEFENSE LOGISTICS AGENCY", color: "military" },
-              { name: "GLOBAL RETAIL CORP", color: "commercial" },
-              { name: "LUXURY BRANDS INC", color: "commercial" },
-              { name: "10TH MOUNTAIN DIV", color: "military" },
-              { name: "FORT LIBERTY", color: "military" },
-              { name: "AUTOPARTS DIRECT", color: "commercial" },
-              { name: "TECHSUPPLY CO", color: "commercial" }
+              "U.S. ARMY",
+              "DEFENSE LOGISTICS AGENCY",
+              "GLOBAL RETAIL CORP",
+              "LUXURY BRANDS INC",
+              "10TH MOUNTAIN DIV",
+              "FORT LIBERTY",
+              "AUTOPARTS DIRECT",
+              "TECHSUPPLY CO"
             ].map((client, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`h-24 flex items-center justify-center text-center p-4 rounded-lg border ${
-                  client.color === 'military'
-                    ? 'bg-blue-50 border-blue-200 text-blue-600'
-                    : 'bg-orange-50 border-orange-200 text-orange-600'
-                }`}
+                className="h-16 flex items-center justify-center text-center bg-gray-50 p-3 rounded-sm border border-gray-100"
               >
-                <p className="text-xs font-mono font-semibold">
-                  {client.name}
+                <p className="text-xs font-medium text-gray-700">
+                  {client}
                 </p>
               </motion.div>
             ))}
