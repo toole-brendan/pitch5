@@ -1,75 +1,46 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useIsMobile } from './use-mobile';
 
-interface UseSlideScalingProps {
-  /**
-   * The ideal height that the content should fit within when on desktop
-   * This will be used to calculate the scaling factor
-   */
-  targetHeight?: number;
-  
-  /**
-   * Whether to disable scaling entirely
-   */
-  disableScaling?: boolean;
-}
-
 /**
- * A hook that calculates how much a slide's content should be scaled
- * to fit within the viewport on desktop without scrolling
+ * A hook that handles dynamic content scaling for slides on desktop
+ * On desktop: Automatically scales content to fit in viewport without scrolling
+ * On mobile: Does nothing (mobile devices should allow scrolling)
  */
-export function useSlideScaling(props?: UseSlideScalingProps) {
-  const { 
-    targetHeight = window.innerHeight - 48, // Default target height (viewport minus a small margin)
-    disableScaling = false 
-  } = props || {};
-  
+export function useSlideScaling() {
   const isMobile = useIsMobile();
   const contentRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
-  const [contentHeight, setContentHeight] = useState(0);
-
+  
   useEffect(() => {
-    if (disableScaling || isMobile || !contentRef.current) {
-      setScale(1);
-      return;
-    }
-
-    const calculateScale = () => {
+    if (isMobile || !contentRef.current) return;
+    
+    const handleResize = () => {
       const content = contentRef.current;
       if (!content) return;
       
-      // Get the actual content height (before any scaling is applied)
-      const actualHeight = content.scrollHeight;
-      setContentHeight(actualHeight);
+      // Reset scale to measure true size
+      content.style.transform = 'scale(1)';
       
-      // Only scale down, never scale up
-      if (actualHeight <= targetHeight) {
+      const viewportHeight = window.innerHeight - 100; // Allow for some padding
+      const contentHeight = content.scrollHeight;
+      
+      if (contentHeight > viewportHeight) {
+        const newScale = viewportHeight / contentHeight;
+        setScale(newScale);
+        content.style.transform = `scale(${newScale})`;
+      } else {
         setScale(1);
-        return;
+        content.style.transform = 'scale(1)';
       }
-      
-      // Calculate the scale factor needed to fit content in viewport
-      const scaleFactor = targetHeight / actualHeight;
-      setScale(scaleFactor);
     };
-
-    // Calculate initial scale
-    calculateScale();
-
-    // Recalculate on window resize
-    const handleResize = () => {
-      calculateScale();
-    };
-
+    
+    handleResize();
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isMobile, disableScaling, targetHeight, contentRef.current?.scrollHeight]);
-
-  return {
-    scale,
-    contentRef,
-    contentHeight,
-    isMobile,
-  };
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile]);
+  
+  return { contentRef, scale };
 }

@@ -1,53 +1,29 @@
 import React from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { useSlideScaling } from '@/hooks/use-slide-scaling';
 
-interface SlideContentProps {
+type SlideContentProps = {
   children: React.ReactNode;
-  /**
-   * The ideal height for the content on desktop
-   * Default is the viewport height minus a small margin (48px)
-   */
-  targetHeight?: number;
-  
-  /**
-   * Whether to disable scaling (will revert to scrollable behavior on all devices)
-   */
-  disableScaling?: boolean;
-  
-  /**
-   * Additional class names to apply to the content wrapper
-   */
   className?: string;
-}
+};
 
 /**
- * A component that wraps slide content and automatically scales it
- * to fit within the viewport on desktop without scrolling.
- * On mobile, content remains normal size and scrollable.
+ * SlideContent - A wrapper for slide content that handles responsive behavior
+ * On mobile: Content can scroll naturally
+ * On desktop: Content is scaled to fit within the viewport without scrolling
  */
-export const SlideContent: React.FC<SlideContentProps> = ({ 
-  children, 
-  targetHeight,
-  disableScaling = false,
-  className = '',
-}) => {
-  const { scale, contentRef, isMobile } = useSlideScaling({
-    targetHeight,
-    disableScaling,
-  });
-
+const SlideContent: React.FC<SlideContentProps> = ({ children, className = '' }) => {
+  const isMobile = useIsMobile();
+  const { contentRef, scale } = useSlideScaling();
+  
   return (
-    <div className={`relative ${isMobile ? 'overflow-y-auto' : 'overflow-hidden'}`}>
-      <div
+    <div className={`${isMobile ? '' : 'h-full flex flex-col items-center justify-center'} ${className}`}>
+      <div 
         ref={contentRef}
-        className={`origin-top ${className}`}
+        className={`${isMobile ? '' : 'transform-origin-center'}`}
         style={{
-          transform: !isMobile ? `scale(${scale})` : 'none',
-          // When scaled down, we need to increase the wrapper width
-          // to ensure the content still spans the full width
-          width: !isMobile && scale < 1 ? `${(1 / scale) * 100}%` : '100%',
-          // When on desktop and scaled, center horizontally
-          marginLeft: !isMobile && scale < 1 ? `${((1 - scale) / (1 / scale) / 2) * 100}%` : '0',
+          transformOrigin: 'center center',
+          maxWidth: isMobile ? '100%' : `${100 / scale}%`
         }}
       >
         {children}
