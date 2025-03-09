@@ -74,20 +74,20 @@ const CompanyOverview: React.FC = () => {
         animate="visible"
         className="flex flex-col items-center text-center h-full w-full"
       >
-        <div className="absolute top-4 md:top-10 left-4 md:left-10">
+        <div className="absolute top-10 left-10">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-xs text-gray-600 uppercase tracking-[0.2em]"
+            className="text-xs text-white/50 uppercase tracking-[0.2em]"
           >
             PRESENTATION
           </motion.div>
         </div>
       
-        <motion.div className="z-10 flex flex-col items-center text-center mt-12 md:mt-16 lg:mt-20 mb-6 md:mb-8">
+        <motion.div className="z-10 flex flex-col items-center text-center mt-24 mb-12">
           <motion.div 
-            className="section-header mb-2 md:mb-4"
+            className="section-header mb-4"
             variants={itemVariants}
           >
             BLOCKCHAIN-POWERED SUPPLY CHAIN
@@ -95,69 +95,69 @@ const CompanyOverview: React.FC = () => {
           
           <motion.div
             variants={logoVariants}
-            className="w-[180px] md:w-[220px] h-[50px] md:h-[70px] bg-white border border-purple-200 mb-4 md:mb-6 flex items-center justify-center text-gray-900 font-bold tracking-wider relative shadow-sm"
+            className="w-[220px] h-[70px] bg-[#121212] border border-purple-800 mb-6 flex items-center justify-center text-white font-bold tracking-wider relative"
           >
-            <span className="absolute left-3 text-purple-600 opacity-70 font-mono">&gt;</span>
+            <span className="absolute left-3 text-purple-400 opacity-70 font-mono">&gt;</span>
             <span className="font-serif tracking-widest">HANDRECEIPT</span>
           </motion.div>
           
           <motion.h1
             variants={itemVariants}
-            className="text-[clamp(1.75rem,5vw,3rem)] font-medium text-gray-900 mb-1 md:mb-2 leading-tight uppercase tracking-wider"
+            className="text-[clamp(2.5rem,6vw,3.5rem)] font-light text-white mb-2 leading-tight uppercase tracking-wider"
           >
             SECURE SUPPLY VERIFICATION
           </motion.h1>
           
           <motion.div
             variants={underlineVariants}
-            className="w-24 md:w-30 h-[1px] bg-purple-600 my-4 md:my-6 mx-auto"
+            className="w-30 h-[1px] bg-purple-600 my-8 mx-auto"
           />
           
           <motion.h2
             variants={itemVariants}
-            className="text-base md:text-xl font-medium text-gray-700 max-w-[80%] md:max-w-[70%] mx-auto"
+            className="text-xl font-light text-gray-400 max-w-[70%] mx-auto"
           >
             Military-grade validation adapted for commercial markets
           </motion.h2>
         </motion.div>
         
-        <div className="flex-1 z-10 flex flex-col justify-center items-center w-full max-w-4xl mx-auto">
+        <div className="flex-grow z-10 flex flex-col justify-center items-center w-full max-w-4xl mx-auto">
           <motion.div
             variants={valueVariants}
             className="enterprise-card relative w-full"
           >
-            <div className="absolute -top-3 left-4 md:left-10">
-              <span className="bg-white text-gray-900 text-xs tracking-widest font-mono py-1 px-3 border border-gray-200 shadow-sm">
+            <div className="absolute -top-3 left-10">
+              <span className="bg-black text-white text-xs tracking-widest font-mono py-1 px-3 border border-white/10">
                 CORE PROPOSITION
               </span>
             </div>
             
-            <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mt-4 md:mt-6">
+            <p className="text-lg text-gray-300 leading-relaxed mt-6">
               HandReceipt delivers dual-market supply chain verification for{' '}
-              <span className="text-purple-700">MILITARY</span> and{' '}
-              <span className="text-purple-700">COMMERCIAL</span> applications, providing tamper-proof inventory management with cryptographic authentication.
+              <span className="text-purple-400">MILITARY</span> and{' '}
+              <span className="text-purple-400">COMMERCIAL</span> applications, providing tamper-proof inventory management with cryptographic authentication.
             </p>
             
-            <div className="divider my-3 md:my-6"></div>
+            <div className="divider"></div>
             
-            <div className="grid grid-cols-3 gap-2 md:gap-6">
+            <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <p className="data-value text-xl md:text-2xl lg:text-3xl">60-90</p>
-                <p className="text-xs md:text-sm text-gray-600">
+                <p className="data-value">60-90</p>
+                <p className="text-sm text-gray-400">
                   Days payment delay in current supply chains
                 </p>
               </div>
               
               <div className="text-center">
-                <p className="data-value text-xl md:text-2xl lg:text-3xl">$950B</p>
-                <p className="text-xs md:text-sm text-gray-600">
+                <p className="data-value">$950B</p>
+                <p className="text-sm text-gray-400">
                   Annual cost of inventory inaccuracies
                 </p>
               </div>
               
               <div className="text-center">
-                <p className="data-value text-xl md:text-2xl lg:text-3xl">85%</p>
-                <p className="text-xs md:text-sm text-gray-600">
+                <p className="data-value">85%</p>
+                <p className="text-sm text-gray-400">
                   Still use manual inventory processes
                 </p>
               </div>
