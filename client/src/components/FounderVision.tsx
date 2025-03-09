@@ -11,15 +11,13 @@ const FounderVision = () => {
         <div className="md:col-span-5">
           <div className="bg-white/80 backdrop-blur-sm border border-gray-200 p-6 rounded-lg">
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full border-4 border-blue-600 overflow-hidden">
-              <img
-                src="/michael-adams.jpg"
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
+              <div className="w-full h-full flex items-center justify-center bg-blue-100">
+                <span className="text-3xl font-bold text-blue-600">BT</span>
+              </div>
             </div>
 
             <h2 className="text-xl font-semibold text-center mb-1">
-              Michael Adams
+              Brendan T. Toole
             </h2>
 
             <p className="text-sm font-mono uppercase tracking-[0.2em] text-blue-600 text-center mb-6">
@@ -28,10 +26,13 @@ const FounderVision = () => {
 
             <div className="flex flex-wrap justify-center gap-2 mb-6">
               <span className="bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full border border-blue-200">
-                Military Logistics Expert
+                Finance Expert
               </span>
               <span className="bg-green-50 text-green-700 text-xs px-3 py-1 rounded-full border border-green-200">
-                Supply Chain Innovator
+                Military Leadership
+              </span>
+              <span className="bg-orange-50 text-orange-700 text-xs px-3 py-1 rounded-full border border-orange-200">
+                Princeton Economics
               </span>
             </div>
 
@@ -42,27 +43,27 @@ const FounderVision = () => {
 
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-orange-600">→</span>
+                  <span className="text-blue-600">→</span>
                   <p className="text-sm text-gray-600">
-                    US Army Logistics Officer
+                    Research Analyst, Point72 Asset Management
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-green-600">→</span>
                   <p className="text-sm text-gray-600">
-                    Supply Chain Analyst, Point72
+                    Platoon Leader, 101st Airborne Division
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-blue-600">→</span>
+                  <span className="text-orange-600">→</span>
                   <p className="text-sm text-gray-600">
-                    Managed $50M+ Military Equipment
+                    Princeton University, Economics A.B.
                   </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-purple-600">→</span>
                   <p className="text-sm text-gray-600">
-                    Computer Science & Blockchain Expert
+                    FINRA Series 57 Registered Securities Trader
                   </p>
                 </div>
               </div>
@@ -92,37 +93,37 @@ const FounderVision = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="border-l-4 border-blue-600 bg-blue-50/80 backdrop-blur-sm p-4 rounded-r-lg">
                 <h4 className="font-sans text-base font-semibold mb-2">
-                  Military Experience
+                  Financial Expertise
                 </h4>
                 <p className="text-sm text-gray-600">
-                  As a logistics officer, I experienced firsthand the challenges of paper-based property tracking and transfers in high-pressure environments.
+                  At Point72, I analyzed healthcare supply chain dynamics and developed targeted sector analyses, providing insights into investment opportunities and market inefficiencies.
                 </p>
               </div>
 
               <div className="border-l-4 border-green-600 bg-green-50/80 backdrop-blur-sm p-4 rounded-r-lg">
                 <h4 className="font-sans text-base font-semibold mb-2">
-                  Commercial Insight
+                  Military Leadership
                 </h4>
                 <p className="text-sm text-gray-600">
-                  At Point72, I identified the opportunity to adapt military precision for commercial supply chains while making it more affordable than complex enterprise systems.
+                  As a Platoon Leader in the 101st Airborne Division, I led Air Assault operations and experienced firsthand the critical importance of reliable supply chain management in high-stakes environments.
                 </p>
               </div>
 
               <div className="border-l-4 border-orange-600 bg-orange-50/80 backdrop-blur-sm p-4 rounded-r-lg">
                 <h4 className="font-sans text-base font-semibold mb-2">
-                  Blockchain Innovation
+                  Technology Integration
                 </h4>
                 <p className="text-sm text-gray-600">
-                  Integrating blockchain technology enables secure digital records and immediate payment settlement through our Shell token economy.
+                  Leveraging AI integration experience from my finance background, I'm applying these solutions to automate routine supply chain tasks and enhance operational quality.
                 </p>
               </div>
 
               <div className="border-l-4 border-purple-600 bg-purple-50/80 backdrop-blur-sm p-4 rounded-r-lg">
                 <h4 className="font-sans text-base font-semibold mb-2">
-                  Dual Market Strategy
+                  Academic Foundation
                 </h4>
                 <p className="text-sm text-gray-600">
-                  HandReceipt uniquely serves both military and commercial markets with a flexible solution that maintains the highest standards of security and efficiency.
+                  My economics research at Princeton comparing innovation determinants between China and OECD countries provided insights into global supply chain dynamics and market opportunities.
                 </p>
               </div>
             </div>
