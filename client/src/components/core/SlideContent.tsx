@@ -17,13 +17,15 @@ const SlideContent: React.FC<SlideContentProps> = ({ children, className = '' })
   const { contentRef, scale } = useSlideScaling();
   
   return (
-    <div className={`${isMobile ? '' : 'h-full flex flex-col items-center justify-center'} ${className}`}>
+    <div className={`${isMobile ? '' : 'h-full flex flex-col items-center justify-center overflow-hidden'} ${className}`}>
       <div 
         ref={contentRef}
-        className={`${isMobile ? '' : 'transform-origin-center'}`}
+        className={`${isMobile ? '' : ''}`}
         style={{
-          transformOrigin: 'center center',
-          maxWidth: isMobile ? '100%' : `${100 / scale}%`
+          transformOrigin: 'center top',
+          transform: !isMobile ? `scale(${scale})` : 'none',
+          width: isMobile ? '100%' : `${100}%`,
+          maxHeight: isMobile ? 'unset' : '100%'
         }}
       >
         {children}

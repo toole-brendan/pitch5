@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import { useIsMobile } from './use-mobile';
 
 /**
@@ -11,34 +11,59 @@ export function useSlideScaling() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
   
-  useEffect(() => {
+  // Use layoutEffect to calculate scale before browser paint
+  // This helps prevent flickering and ensures content is properly scaled immediately
+  useLayoutEffect(() => {
     if (isMobile || !contentRef.current) return;
     
-    const handleResize = () => {
+    const calculateScale = () => {
       const content = contentRef.current;
       if (!content) return;
       
-      // Reset scale to measure true size
-      content.style.transform = 'scale(1)';
+      // Reset any existing transform to get accurate measurements
+      content.style.transform = 'none';
       
-      const viewportHeight = window.innerHeight - 100; // Allow for some padding
+      // Get the actual viewport height minus some padding for header/margins
+      const viewportHeight = window.innerHeight - 120;
+      
+      // Get the content's natural height
       const contentHeight = content.scrollHeight;
       
+      // Calculate the scale needed to fit content in the viewport
+      // Use a more aggressive scale factor to ensure it fits
       if (contentHeight > viewportHeight) {
-        const newScale = viewportHeight / contentHeight;
+        const newScale = Math.min(0.95, viewportHeight / contentHeight);
         setScale(newScale);
-        content.style.transform = `scale(${newScale})`;
       } else {
         setScale(1);
-        content.style.transform = 'scale(1)';
       }
     };
     
-    handleResize();
+    // Calculate scale immediately
+    calculateScale();
+    
+    // Recalculate on window resize
+    const handleResize = () => {
+      requestAnimationFrame(calculateScale);
+    };
+    
     window.addEventListener('resize', handleResize);
+    
+    // Set up a mutation observer to detect content changes
+    const observer = new MutationObserver(() => {
+      requestAnimationFrame(calculateScale);
+    });
+    
+    observer.observe(contentRef.current, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      characterData: true
+    });
     
     return () => {
       window.removeEventListener('resize', handleResize);
+      observer.disconnect();
     };
   }, [isMobile]);
   
