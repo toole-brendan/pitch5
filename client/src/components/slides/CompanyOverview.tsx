@@ -79,7 +79,7 @@ const CompanyOverview: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-xs text-white/50 uppercase tracking-[0.2em]"
+            className="text-xs text-gray-500 uppercase tracking-[0.2em]"
           >
             PRESENTATION
           </motion.div>
@@ -103,7 +103,7 @@ const CompanyOverview: React.FC = () => {
           
           <motion.h1
             variants={itemVariants}
-            className="text-[clamp(2.5rem,6vw,3.5rem)] font-light text-white mb-2 leading-tight uppercase tracking-wider"
+            className="text-[clamp(2.5rem,6vw,3.5rem)] font-light text-gray-900 mb-2 leading-tight uppercase tracking-wider"
           >
             SECURE SUPPLY VERIFICATION
           </motion.h1>
@@ -115,7 +115,7 @@ const CompanyOverview: React.FC = () => {
           
           <motion.h2
             variants={itemVariants}
-            className="text-xl font-light text-gray-400 max-w-[70%] mx-auto"
+            className="text-xl font-light text-gray-600 max-w-[70%] mx-auto"
           >
             Military-grade validation adapted for commercial markets
           </motion.h2>
@@ -127,15 +127,15 @@ const CompanyOverview: React.FC = () => {
             className="enterprise-card relative w-full"
           >
             <div className="absolute -top-3 left-10">
-              <span className="bg-black text-white text-xs tracking-widest font-mono py-1 px-3 border border-white/10">
+              <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
                 CORE PROPOSITION
               </span>
             </div>
             
-            <p className="text-lg text-gray-300 leading-relaxed mt-6">
+            <p className="text-lg text-gray-700 leading-relaxed mt-6">
               HandReceipt delivers dual-market supply chain verification for{' '}
-              <span className="text-purple-400">MILITARY</span> and{' '}
-              <span className="text-purple-400">COMMERCIAL</span> applications, providing tamper-proof inventory management with cryptographic authentication.
+              <span className="text-violet-600 font-medium">MILITARY</span> and{' '}
+              <span className="text-violet-600 font-medium">COMMERCIAL</span> applications, providing tamper-proof inventory management with cryptographic authentication.
             </p>
             
             <div className="divider"></div>
@@ -143,21 +143,21 @@ const CompanyOverview: React.FC = () => {
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
                 <p className="data-value">60-90</p>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-600">
                   Days payment delay in current supply chains
                 </p>
               </div>
               
               <div className="text-center">
                 <p className="data-value">$950B</p>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-600">
                   Annual cost of inventory inaccuracies
                 </p>
               </div>
               
               <div className="text-center">
                 <p className="data-value">85%</p>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-600">
                   Still use manual inventory processes
                 </p>
               </div>

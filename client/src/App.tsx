@@ -20,11 +20,17 @@ import CallToAction from "@/components/slides/CallToAction";
 import ShellTokenArchitecture from "@/components/slides/ShellTokenArchitecture";
 import Navigation from "@/components/Navigation";
 
+// VC styled slides
+import VCInvestingCircle from "@/components/slides/VCInvestingCircle";
+import IndustrySectorsSlide from "@/components/slides/IndustrySectorsSlide";
+import FundAnnouncementSlide from "@/components/slides/FundAnnouncementSlide";
+
 function Router() {
   return (
     <>
       <Navigation />
       <Switch>
+        {/* Original slides */}
         <Route path="/" component={CompanyOverview} />
         <Route path="/founder-vision" component={FounderVision} />
         <Route path="/supply-chain-challenges" component={SupplyChainChallenges} />
@@ -40,6 +46,12 @@ function Router() {
         <Route path="/business-model" component={BusinessModel} />
         <Route path="/call-to-action" component={CallToAction} />
         <Route path="/shell-token-architecture" component={ShellTokenArchitecture} />
+        
+        {/* VC styled slides */}
+        <Route path="/vc-investing-circle" component={VCInvestingCircle} />
+        <Route path="/vc-industry-sectors" component={IndustrySectorsSlide} />
+        <Route path="/vc-fund-announcement" component={FundAnnouncementSlide} />
+        
         <Route component={NotFound} />
       </Switch>
     </>
