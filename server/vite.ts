@@ -2,7 +2,7 @@ import express, { type Express } from "express";
 import fs from "fs";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-import { createServer as createViteServer, createLogger } from "vite";
+import { createServer as createViteServer, createLogger, type ServerOptions } from "vite";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 import { type Server } from "http";
@@ -23,9 +23,15 @@ export function log(message: string, source = "express") {
 }
 
 export async function setupVite(app: Express, server: Server) {
-  const serverOptions = {
+  const port = app.locals.port || 3000;
+  
+  const serverOptions: ServerOptions = {
     middlewareMode: true,
-    hmr: { server },
+    hmr: { 
+      server,
+      port,
+      host: 'localhost'
+    },
     allowedHosts: true,
   };
 

@@ -27,11 +27,11 @@ const cardVariants = {
   })
 };
 
-const FounderVision = () => {
+const FounderBackground = () => {
   return (
     <Slide 
-      title="Founder & Leadership"
-      subtitle="Bringing together military precision and financial expertise"
+      title="Founder Background"
+      subtitle="Bridging military logistics and financial expertise"
     >      
       <motion.div
         variants={containerVariants}
@@ -47,7 +47,7 @@ const FounderVision = () => {
               variants={cardVariants}
               custom={0}
             >
-              <div className="vc-category mb-6">LEADERSHIP</div>
+              <div className="vc-category mb-6">FOUNDER</div>
               
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 border border-violet-200 bg-violet-50 rounded-sm flex items-center justify-center">
@@ -137,24 +137,24 @@ const FounderVision = () => {
               variants={cardVariants}
               custom={2}
             >
-              <div className="vc-category mb-4">FOUNDER'S JOURNEY</div>
+              <div className="vc-category mb-4">ORIGIN STORY</div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="border-l-2 border-violet-400 pl-4">
                   <h4 className="text-gray-900 font-medium text-lg mb-2">
-                    Financial Expertise
+                    Military Experience
                   </h4>
                   <p className="text-sm text-gray-600">
-                    At Point72, analyzed healthcare supply chain dynamics and developed targeted sector analyses, providing insights into investment opportunities.
+                    As a Platoon Leader in the 101st Airborne Division, I witnessed the inefficiencies of paper-based supply tracking and the critical need for reliable, secure inventory management.
                   </p>
                 </div>
 
                 <div className="border-l-2 border-violet-400 pl-4">
                   <h4 className="text-gray-900 font-medium text-lg mb-2">
-                    Military Leadership
+                    Financial Insight
                   </h4>
                   <p className="text-sm text-gray-600">
-                    As a Platoon Leader in the 101st Airborne Division, led Air Assault operations and experienced firsthand the critical importance of reliable supply chain management.
+                    At Point72, I analyzed supply chain dynamics across multiple sectors, recognizing a market opportunity to solve these challenges with blockchain technology.
                   </p>
                 </div>
               </div>
@@ -165,30 +165,11 @@ const FounderVision = () => {
               variants={cardVariants}
               custom={3}
             >
-              <div className="vc-category mb-4">MARKET OPPORTUNITY</div>
+              <div className="vc-category mb-4">WHY I STARTED HANDRECEIPT</div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <p className="data-value">60-90</p>
-                  <p className="text-sm text-gray-600">
-                    Days payment delay in current supply chains
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <p className="data-value">$950B</p>
-                  <p className="text-sm text-gray-600">
-                    Annual cost of inventory inaccuracies
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <p className="data-value">85%</p>
-                  <p className="text-sm text-gray-600">
-                    Still use manual inventory processes
-                  </p>
-                </div>
-              </div>
+              <p className="text-gray-700 mb-4">
+                I've personally experienced the challenges of managing critical inventory with outdated systems. The military's paper-based "hand receipt" system represents a vulnerability in national security and an inefficiency that can be solved with modern technology. These same challenges exist in commercial supply chains, and I'm uniquely positioned to bridge both worlds.
+              </p>
             </motion.div>
           </div>
         </div>
@@ -197,4 +178,4 @@ const FounderVision = () => {
   );
 };
 
-export default FounderVision;
+export default FounderBackground; 

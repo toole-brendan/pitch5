@@ -33,4 +33,14 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
+  server: {
+    // Don't set a fixed port in the config, it will be set dynamically at runtime
+    strictPort: false,
+    hmr: {
+      // Will be overridden at runtime
+      overlay: true,
+      // Let server decide the port
+      port: undefined
+    }
+  }
 });

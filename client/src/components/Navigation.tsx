@@ -4,34 +4,29 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const Navigation = () => {
   const [location, setLocation] = useLocation();
 
-  // Define the navigation order
+  // Define the navigation order with the exact specified order
   const routes = [
+    // Main Presentation (16 slides)
     { path: "/", name: "COMPANY OVERVIEW" },
-    { path: "/founder-vision", name: "FOUNDER & VISION" },
+    { path: "/founder-background", name: "FOUNDER BACKGROUND" },
     { path: "/supply-chain-challenges", name: "SUPPLY CHAIN CHALLENGES" },
     { path: "/solution-overview", name: "SOLUTION OVERVIEW" },
     { path: "/dual-market-strategy", name: "DUAL MARKET STRATEGY" },
+    { path: "/why-now", name: "WHY NOW" },
     { path: "/market-opportunity", name: "MARKET OPPORTUNITY" },
     { path: "/competitive-landscape", name: "COMPETITIVE LANDSCAPE" },
-    { path: "/defense-application", name: "DEFENSE APPLICATION" },
-    { path: "/commercial-application", name: "COMMERCIAL APPLICATION" },
-    { path: "/defense-user-experience", name: "DEFENSE USER EXPERIENCE" },
-    { path: "/commercial-solution-showcase", name: "COMMERCIAL SOLUTION SHOWCASE" },
-    { path: "/commercial-user-experience", name: "COMMERCIAL USER EXPERIENCE" },
-    { path: "/early-traction", name: "EARLY TRACTION" },
-    { path: "/token-economics", name: "TOKEN ECONOMICS" },
-    { path: "/shell-token-architecture", name: "SHELL TOKEN ARCHITECTURE" },
+    { path: "/product-features", name: "PRODUCT FEATURES" },
+    { path: "/user-experience", name: "USER EXPERIENCE" },
     { path: "/business-model", name: "BUSINESS MODEL" },
     { path: "/go-to-market-strategy", name: "GO TO MARKET STRATEGY" },
     { path: "/financial-projections", name: "FINANCIAL PROJECTIONS" },
-    { path: "/development-progress", name: "DEVELOPMENT PROGRESS" },
-    { path: "/roadmap", name: "ROADMAP" },
-    { path: "/call-to-action", name: "CALL TO ACTION" },
+    { path: "/operational-costs", name: "OPERATIONAL COSTS" },
+    { path: "/funding-request", name: "FUNDING REQUEST" },
+    { path: "/team-and-roadmap", name: "TEAM & ROADMAP" },
     
-    // VC-styled slides
-    { path: "/vc-investing-circle", name: "VC INVESTING CIRCLE" },
-    { path: "/vc-industry-sectors", name: "INDUSTRY SECTORS" },
-    { path: "/vc-fund-announcement", name: "FUND ANNOUNCEMENT" }
+    // Appendix (2 slides)
+    { path: "/shell-token-architecture", name: "SHELL TOKEN ARCHITECTURE (APPENDIX)" },
+    { path: "/token-economics", name: "TOKEN ECONOMICS (APPENDIX)" }
   ];
 
   // Find current index
