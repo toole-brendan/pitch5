@@ -1,10 +1,9 @@
-'use client';
-
+import React from 'react';
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
-import { SearchCode, BarChart3, CreditCard } from 'lucide-react';
+import { SearchCode, BarChart3, CreditCard, Check, Building2, Boxes, Factory } from 'lucide-react';
 
-// Motion variants remain unchanged
+// Motion variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -43,165 +42,157 @@ const cardVariants = {
 
 const CommercialApplication = () => {
   return (
-    <Slide title="Commercial Application">
+    <Slide 
+      title="Commercial Application" 
+      subtitle="Supply chain solutions for enterprise businesses"
+    >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full overflow-hidden"
+        className="w-full"
       >
-        <div className="flex items-center mb-6">
-          <span className="bg-amber-50 text-amber-800 text-xs tracking-widest font-mono uppercase py-1.5 px-3 border border-amber-200">
-            COMMERCIAL SOLUTIONS
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Left Column: Key Features */}
-          <div>
-            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-700 mb-8">
-              KEY CAPABILITIES_
-            </h3>
+          <div className="md:col-span-5">
+            <div className="bg-white shadow-sm rounded-sm p-6 relative">
+              <div className="absolute -top-3 left-10">
+                <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                  KEY CAPABILITIES
+                </span>
+              </div>
 
-            <div className="flex flex-col gap-6">
-              {/* Card 1 */}
-              <motion.div
-                variants={cardVariants}
-                custom={1}
-                className="bg-white border border-amber-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-amber-400"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 border border-amber-200 flex items-center justify-center text-amber-700 bg-amber-50">
-                    <SearchCode className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
-                    Supply Chain Transparency
-                  </h4>
-                </div>
-
-                <p className="text-sm text-gray-600 mb-4 font-sans">
-                  Complete visibility from sourcing to end customer
-                </p>
-
-                <div className="space-y-3">
-                  {[
-                    "Authenticated chain of custody for every component and product",
-                    "Real-time verification of authenticity and quality standards"
-                  ].map((text, index) => (
-                    <div key={index} className="flex gap-3 items-start">
-                      <span className="font-mono text-amber-600 mt-0.5">→</span>
-                      <p className="text-xs text-gray-600 leading-relaxed font-sans">
-                        {text}
-                      </p>
+              <div className="flex flex-col gap-6 mt-6">
+                {/* Key capabilities */}
+                {[
+                  { 
+                    title: "Supply Chain Transparency", 
+                    description: "Complete visibility from sourcing to end customer",
+                    icon: <SearchCode className="w-5 h-5 text-violet-600" />,
+                    points: [
+                      "Authenticated chain of custody for every component",
+                      "Real-time verification of authenticity and quality"
+                    ]
+                  },
+                  { 
+                    title: "Inventory Intelligence", 
+                    description: "Data-driven optimization with predictive analytics",
+                    icon: <BarChart3 className="w-5 h-5 text-violet-600" />,
+                    points: [
+                      "Reduce inventory costs by up to 25% through JIT",
+                      "Minimize stockouts with ML forecasting"
+                    ]
+                  },
+                  { 
+                    title: "Payment Automation", 
+                    description: "Streamlined payments with smart contract capabilities",
+                    icon: <CreditCard className="w-5 h-5 text-violet-600" />,
+                    points: [
+                      "Reduce payment processing from 30+ days to 48 hours",
+                      "Optional Shell token payments with near-zero fees"
+                    ]
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    variants={cardVariants}
+                    custom={index + 1}
+                    className={index < 2 ? "border-b border-gray-200 pb-6" : ""}
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="text-violet-600 flex-shrink-0">
+                        {item.icon}
+                      </div>
+                      <h4 className="text-base font-medium text-gray-900">
+                        {item.title}
+                      </h4>
                     </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Card 2 */}
-              <motion.div
-                variants={cardVariants}
-                custom={2}
-                className="bg-white border border-amber-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-amber-400"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 border border-amber-200 flex items-center justify-center text-amber-700 bg-amber-50">
-                    <BarChart3 className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
-                    Inventory Intelligence
-                  </h4>
-                </div>
-
-                <p className="text-sm text-gray-600 mb-4 font-sans">
-                  Data-driven inventory optimization with predictive capabilities
-                </p>
-
-                <div className="space-y-3">
-                  {[
-                    "Reduce inventory costs by up to 25% through just-in-time principles",
-                    "Minimize stockouts and excess inventory with ML forecasting"
-                  ].map((text, index) => (
-                    <div key={index} className="flex gap-3 items-start">
-                      <span className="font-mono text-amber-600 mt-0.5">→</span>
-                      <p className="text-xs text-gray-600 leading-relaxed font-sans">
-                        {text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Card 3 */}
-              <motion.div
-                variants={cardVariants}
-                custom={3}
-                className="bg-white border border-amber-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-amber-400"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 border border-amber-200 flex items-center justify-center text-amber-700 bg-amber-50">
-                    <CreditCard className="w-5 h-5" />
-                  </div>
-                  <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
-                    Payment Automation
-                  </h4>
-                </div>
-
-                <p className="text-sm text-gray-600 mb-4 font-sans">
-                  Streamlined supplier payments with smart contract capabilities
-                </p>
-
-                <div className="space-y-3">
-                  {[
-                    "Reduce payment processing time from 30+ days to under 48 hours",
-                    "Optional Shell token payments with near-zero transaction fees"
-                  ].map((text, index) => (
-                    <div key={index} className="flex gap-3 items-start">
-                      <span className="font-mono text-amber-600 mt-0.5">→</span>
-                      <p className="text-xs text-gray-600 leading-relaxed font-sans">
-                        {text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
+                    <p className="text-sm text-gray-600 mb-3 ml-8">
+                      {item.description}
+                    </p>
+                    <ul className="space-y-2 ml-8">
+                      {item.points.map((point, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm text-gray-700">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
 
           {/* Right Column: Commercial Applications */}
-          <div>
-            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-700 mb-8">
-              COMMERCIAL APPLICATIONS_
-            </h3>
+          <div className="md:col-span-7">
+            <div className="bg-white shadow-sm rounded-sm p-6 relative">
+              <div className="absolute -top-3 left-10">
+                <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                  INDUSTRY APPLICATIONS
+                </span>
+              </div>
 
-            <div className="space-y-6">
-              {[
-                {
-                  title: "RETAIL INVENTORY MANAGEMENT",
-                  description: "Retailers can track inventory across multiple locations with precise accuracy, automate reordering, and verify product authenticity instantly with QR code scanning."
-                },
-                {
-                  title: "SUPPLIER MANAGEMENT",
-                  description: "Supply chain managers can maintain immutable records of supplier performance metrics, dramatically simplify audits, and automate multi-tier supplier compliance verification."
-                },
-                {
-                  title: "MANUFACTURING OPTIMIZATION",
-                  description: "Factory operators can track in-process inventory, reduce waste through precise material tracking, and create transparent records for quality control and certifications."
-                }
-              ].map((application, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="bg-amber-50 border border-amber-200 p-6 group transition-all duration-300 hover:bg-white hover:border-amber-400"
-                >
-                  <h4 className="font-mono text-sm text-gray-900 tracking-wide mb-3 group-hover:text-amber-700">
-                    {application.title}
-                  </h4>
-                  <p className="text-xs text-gray-600 leading-relaxed font-sans">
-                    {application.description}
-                  </p>
-                </motion.div>
-              ))}
+              <div className="mt-6 space-y-6">
+                {[
+                  {
+                    title: "Retail Inventory Management",
+                    description: "Precision inventory tracking across multiple locations",
+                    icon: <Building2 className="w-5 h-5 text-violet-600" />,
+                    points: [
+                      "Track inventory across locations with precise accuracy",
+                      "Automate reordering based on real-time sales data",
+                      "Verify product authenticity instantly with QR scanning"
+                    ]
+                  },
+                  {
+                    title: "Supplier Management",
+                    description: "Simplified multi-tier supplier management",
+                    icon: <Boxes className="w-5 h-5 text-violet-600" />,
+                    points: [
+                      "Maintain immutable records of supplier performance",
+                      "Dramatically simplify compliance and audit processes",
+                      "Automated multi-tier supplier verification"
+                    ]
+                  },
+                  {
+                    title: "Manufacturing Operations",
+                    description: "End-to-end tracking for production excellence",
+                    icon: <Factory className="w-5 h-5 text-violet-600" />,
+                    points: [
+                      "Track in-process inventory with pinpoint accuracy",
+                      "Reduce waste through precise material tracking",
+                      "Create transparent records for quality control"
+                    ]
+                  }
+                ].map((application, index) => (
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="p-4 bg-gray-50 rounded-sm"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="text-violet-600 flex-shrink-0">
+                        {application.icon}
+                      </div>
+                      <h4 className="text-base font-medium text-gray-900">
+                        {application.title}
+                      </h4>
+                    </div>
+                    <p className="text-sm text-gray-600 mb-3 ml-8">
+                      {application.description}
+                    </p>
+                    <ul className="space-y-2 ml-8">
+                      {application.points.map((point, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm text-gray-700">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
