@@ -1,9 +1,7 @@
-'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
-import { ShieldCheck, Layers, Code, Wallet, Settings, Network, Lock, Database, CircuitBoard, Cpu } from 'lucide-react';
+import { ShieldCheck, Layers, Code, Wallet, Settings, Network, Lock, Database, CircuitBoard, Cpu, Check } from 'lucide-react';
 
 // Animation variants
 const containerVariants = {
@@ -46,7 +44,7 @@ const ShellTokenArchitecture: React.FC = () => {
   const architectureComponents = [
     {
       title: "Core Blockchain",
-      icon: <Layers className="h-5 w-5 text-amber-600" />,
+      icon: <Layers className="h-5 w-5 text-violet-600" />,
       description: "DPoSC consensus with 21-30 validators and 3-5 second block times",
       details: [
         "PBFT-inspired finality mechanism",
@@ -56,7 +54,7 @@ const ShellTokenArchitecture: React.FC = () => {
     },
     {
       title: "Token Economics",
-      icon: <Wallet className="h-5 w-5 text-amber-600" />,
+      icon: <Wallet className="h-5 w-5 text-violet-600" />,
       description: "Fixed supply of 100M tokens with 8 decimal places",
       details: [
         "Minimal transaction fees",
@@ -66,7 +64,7 @@ const ShellTokenArchitecture: React.FC = () => {
     },
     {
       title: "Smart Contracts",
-      icon: <Code className="h-5 w-5 text-amber-600" />,
+      icon: <Code className="h-5 w-5 text-violet-600" />,
       description: "Custom VM optimized for supply chain operations",
       details: [
         "Payment and escrow contracts",
@@ -76,7 +74,7 @@ const ShellTokenArchitecture: React.FC = () => {
     },
     {
       title: "HandReceipt Integration",
-      icon: <Database className="h-5 w-5 text-amber-600" />,
+      icon: <Database className="h-5 w-5 text-violet-600" />,
       description: "Cross-chain communication protocol",
       details: [
         "Event verification bridge",
@@ -86,7 +84,7 @@ const ShellTokenArchitecture: React.FC = () => {
     },
     {
       title: "Wallet Infrastructure",
-      icon: <ShieldCheck className="h-5 w-5 text-amber-600" />,
+      icon: <ShieldCheck className="h-5 w-5 text-violet-600" />,
       description: "Multi-signature corporate wallets with role-based access",
       details: [
         "Batch operations",
@@ -96,7 +94,7 @@ const ShellTokenArchitecture: React.FC = () => {
     },
     {
       title: "Governance System",
-      icon: <Settings className="h-5 w-5 text-amber-600" />,
+      icon: <Settings className="h-5 w-5 text-violet-600" />,
       description: "On-chain weighted voting system based on stake",
       details: [
         "Parameter governance",
@@ -105,79 +103,104 @@ const ShellTokenArchitecture: React.FC = () => {
       ]
     }
   ];
+  
+  // Innovations array
+  const innovations = [
+    {
+      title: "Supply Chain Verification Proofs",
+      icon: <Cpu className="h-5 w-5 text-violet-600" />
+    },
+    {
+      title: "Delegated Proof of Supply Chain Consensus",
+      icon: <Network className="h-5 w-5 text-violet-600" />
+    },
+    {
+      title: "Conditional Payment Channels",
+      icon: <CircuitBoard className="h-5 w-5 text-violet-600" />
+    },
+    {
+      title: "Cross-Chain Verification Protocol",
+      icon: <Lock className="h-5 w-5 text-violet-600" />
+    }
+  ];
 
   return (
-    <Slide title="Appendix: Shell Token Architecture">
+    <Slide 
+      title="Shell Token Architecture" 
+      subtitle="Technical foundation for supply chain cryptocurrency"
+    >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full h-full"
+        className="space-y-6"
       >
-        <div className="grid grid-cols-1 gap-6">
-          {/* Introduction */}
-          <motion.div variants={itemVariants} className="mb-2">
-            <h2 className="text-xl font-semibold font-mono uppercase tracking-wider">
-              TECHNICAL FOUNDATION_
-            </h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300 font-mono">
-              Supply chain-oriented cryptocurrency for automated payments
-            </p>
-          </motion.div>
-
-          {/* Architecture Grid */}
-          <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Architecture Grid */}
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              BLOCKCHAIN COMPONENTS
+            </span>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
             {architectureComponents.map((component, index) => (
               <motion.div 
                 key={index}
                 variants={cardVariants}
                 custom={index}
-                className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm p-4 hover:shadow-md transition-all duration-200"
+                className="p-4 bg-gray-50 rounded-sm"
               >
-                <div className="flex items-center mb-3">
-                  {component.icon}
-                  <h3 className="ml-2 text-lg font-mono font-semibold">{component.title}</h3>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="flex-shrink-0">
+                    {component.icon}
+                  </div>
+                  <h3 className="text-base font-medium text-gray-900">{component.title}</h3>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{component.description}</p>
-                <ul className="space-y-1">
+                <p className="text-sm text-gray-600 mb-3 ml-8">{component.description}</p>
+                <ul className="space-y-2 ml-8">
                   {component.details.map((detail, i) => (
-                    <li key={i} className="flex items-start text-xs">
-                      <span className="text-amber-600 mr-2">•</span>
-                      <span className="font-mono text-gray-600 dark:text-gray-400">{detail}</span>
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <Check className="w-4 h-4 text-violet-600 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">{detail}</span>
                     </li>
                   ))}
                 </ul>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
+        </div>
 
-          {/* Technical Innovations */}
-          <motion.div 
-            variants={itemVariants}
-            className="mt-6 bg-gradient-to-r from-amber-50 to-white dark:from-gray-900 dark:to-gray-800 border border-amber-100 dark:border-gray-700 rounded-lg p-4"
-          >
-            <h3 className="text-lg font-semibold font-mono uppercase tracking-wider text-amber-700 dark:text-amber-500 mb-2">
-              Unique Technical Innovations_
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              <div className="flex items-start">
-                <Cpu className="h-4 w-4 text-amber-600 mr-2 mt-0.5" />
-                <p className="text-sm">Supply Chain Verification Proofs</p>
-              </div>
-              <div className="flex items-start">
-                <Network className="h-4 w-4 text-amber-600 mr-2 mt-0.5" />
-                <p className="text-sm">Delegated Proof of Supply Chain Consensus</p>
-              </div>
-              <div className="flex items-start">
-                <CircuitBoard className="h-4 w-4 text-amber-600 mr-2 mt-0.5" />
-                <p className="text-sm">Conditional Payment Channels</p>
-              </div>
-              <div className="flex items-start">
-                <Lock className="h-4 w-4 text-amber-600 mr-2 mt-0.5" />
-                <p className="text-sm">Cross-Chain Verification Protocol</p>
-              </div>
-            </div>
-          </motion.div>
+        {/* Technical Innovations */}
+        <div className="bg-white shadow-sm rounded-sm p-6 relative">
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              TECHNICAL INNOVATIONS
+            </span>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+            {innovations.map((innovation, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="flex items-start gap-3 p-4 bg-gray-50 rounded-sm"
+              >
+                <div className="flex-shrink-0 mt-0.5">
+                  {innovation.icon}
+                </div>
+                <div>
+                  <h4 className="text-base font-medium text-gray-900 mb-1">{innovation.title}</h4>
+                  <p className="text-sm text-gray-600">
+                    {index === 0 ? "Cryptographic proof of physical goods handling in the supply chain" :
+                     index === 1 ? "Modified consensus algorithm prioritizing supply chain validators" :
+                     index === 2 ? "Payment channels triggered by validated supply chain events" :
+                     "Secure mechanism for validating events across different blockchains"}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
     </Slide>
