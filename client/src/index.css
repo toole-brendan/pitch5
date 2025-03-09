@@ -8,48 +8,48 @@
   }
 
   body {
-    @apply font-sans antialiased bg-black text-white;
+    @apply font-sans antialiased bg-white text-gray-900;
   }
   
   /* Custom font treatments for 8VC theme */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-light tracking-wide;
+    @apply font-medium tracking-wide;
   }
 }
 
 @layer components {
   /* Background patterns */
   .bg-grid-pattern {
-    @apply bg-black;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    @apply bg-gray-50;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
   }
   
   /* Card components */
   .enterprise-card {
-    @apply border border-white/10 bg-[#121212] p-6 relative;
+    @apply border border-gray-200 bg-white p-6 relative shadow-sm;
   }
   
   .enterprise-card-purple {
-    @apply border-purple-800/50 bg-gradient-to-br from-purple-900/20 to-black;
+    @apply border-purple-200 bg-purple-50;
   }
   
   .enterprise-card-amber {
-    @apply border-amber-800/50 bg-gradient-to-br from-amber-900/20 to-black;
+    @apply border-amber-200 bg-amber-50;
   }
   
   /* Typography helpers */
   .section-header {
-    @apply text-xs uppercase tracking-[0.2em] font-mono text-gray-400;
+    @apply text-xs uppercase tracking-[0.2em] font-mono text-gray-700;
   }
   
   .overline {
-    @apply text-xs uppercase tracking-[0.2em] font-mono text-gray-500/70;
+    @apply text-xs uppercase tracking-[0.2em] font-mono text-gray-600;
   }
   
   .caption {
-    @apply text-sm text-gray-400;
+    @apply text-sm text-gray-600;
   }
   
   /* Badges and tags */
@@ -58,62 +58,62 @@
   }
   
   .badge-purple {
-    @apply bg-purple-900/30 text-purple-400 border-purple-800;
+    @apply bg-purple-50 text-purple-700 border-purple-200;
   }
   
   .badge-blue {
-    @apply bg-blue-900/30 text-blue-400 border-blue-800;
+    @apply bg-blue-50 text-blue-700 border-blue-200;
   }
   
   .badge-amber {
-    @apply bg-amber-900/30 text-amber-400 border-amber-800;
+    @apply bg-amber-50 text-amber-700 border-amber-200;
   }
   
   .badge-green {
-    @apply bg-green-900/30 text-green-400 border-green-800;
+    @apply bg-green-50 text-green-700 border-green-200;
   }
   
   .tag {
-    @apply absolute -top-3 left-10 bg-black text-white text-xs tracking-widest font-mono py-1 px-3 border border-white/10;
+    @apply absolute -top-3 left-10 bg-white text-gray-900 text-xs tracking-widest font-mono py-1 px-3 border border-gray-200;
   }
   
   .tag-purple {
-    @apply border-purple-800;
+    @apply border-purple-200 bg-purple-50 text-purple-700;
   }
   
   .tag-amber {
-    @apply border-amber-800;
+    @apply border-amber-200 bg-amber-50 text-amber-700;
   }
   
   /* Data and metrics */
   .data-value {
-    @apply text-3xl font-light text-white mb-2;
+    @apply text-3xl font-medium text-gray-900 mb-2;
   }
   
   .data-label {
-    @apply text-sm text-gray-500;
+    @apply text-sm text-gray-600;
   }
   
   /* UI elements */
   .divider {
-    @apply h-[1px] bg-white/10 w-full my-6;
+    @apply h-[1px] bg-gray-200 w-full my-6;
   }
   
   /* Button treatments */
   .btn-dark {
-    @apply bg-[#121212] border border-white/10 py-2 px-4 transition-colors hover:border-purple-600;
+    @apply bg-gray-50 border border-gray-200 py-2 px-4 transition-colors hover:border-purple-400;
   }
   
   .btn-purple {
-    @apply bg-purple-900/40 border border-purple-700 py-2 px-4 transition-colors hover:bg-purple-800/40;
+    @apply bg-purple-100 border border-purple-300 py-2 px-4 transition-colors hover:bg-purple-200;
   }
   
   /* Icon containers */
   .icon-circle {
-    @apply w-8 h-8 rounded-full flex items-center justify-center border border-white/10;
+    @apply w-8 h-8 rounded-full flex items-center justify-center border border-gray-200;
   }
   
   .icon-square {
-    @apply w-8 h-8 flex items-center justify-center border border-white/10;
+    @apply w-8 h-8 flex items-center justify-center border border-gray-200;
   }
 }

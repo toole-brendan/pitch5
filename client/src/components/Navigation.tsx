@@ -38,21 +38,21 @@ const Navigation = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <button 
           onClick={navigateToPrev}
-          className="pointer-events-auto flex items-center justify-center w-12 h-12 bg-[#121212] border border-white/10 shadow-sm transition-all duration-300 hover:border-purple-800"
+          className="pointer-events-auto flex items-center justify-center w-12 h-12 bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:border-purple-400"
         >
-          <ChevronLeft className="w-6 h-6 text-white" />
+          <ChevronLeft className="w-6 h-6 text-gray-700" />
         </button>
 
         <button 
           onClick={navigateToNext}
-          className="pointer-events-auto flex items-center justify-center w-12 h-12 bg-[#121212] border border-white/10 shadow-sm transition-all duration-300 hover:border-purple-800"
+          className="pointer-events-auto flex items-center justify-center w-12 h-12 bg-white border border-gray-200 shadow-sm transition-all duration-300 hover:border-purple-400"
         >
-          <ChevronRight className="w-6 h-6 text-white" />
+          <ChevronRight className="w-6 h-6 text-gray-700" />
         </button>
       </div>
       
       <div className="fixed bottom-6 left-0 right-0 flex justify-center items-center">
-        <div className="bg-[#121212] border border-white/10 py-2 px-4 text-xs text-gray-400 font-mono tracking-wider">
+        <div className="bg-white border border-gray-200 py-2 px-4 text-xs text-gray-600 font-mono tracking-wider shadow-sm">
           {currentIndex + 1} / {routes.length}
         </div>
       </div>
