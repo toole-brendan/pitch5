@@ -1,9 +1,7 @@
-'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
-import { Check, DollarSign, Building2, Settings, RefreshCcw, Truck, Sword, Flag, Factory } from 'lucide-react';
+import { Check, Building2, Settings, RefreshCcw, Truck, Sword, Flag, Factory } from 'lucide-react';
 
 // Animation variants
 const containerVariants = {
@@ -30,7 +28,10 @@ const itemVariants = {
 
 const BusinessModel: React.FC = () => {  
   return (
-    <Slide title="Business Model">
+    <Slide 
+      title="Business Model & Pricing Strategy" 
+      subtitle="Subscription-based model with tiered approach for different markets"
+    >
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -39,52 +40,44 @@ const BusinessModel: React.FC = () => {
       >
         {/* Revenue Streams */}
         <div className="mb-8">
-          <h3 className="text-xl font-semibold font-mono uppercase tracking-wider mb-1">
-            PRICING STRATEGY_
-          </h3>
-          
-          <p className="text-sm text-gray-600 font-mono mb-6">
-            Subscription-based model with tiered pricing for different markets
-          </p>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Defense Tier */}
             <motion.div
               variants={itemVariants}
-              className="rounded-lg border border-gray-200 shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+              className="bg-white shadow-sm rounded-sm border border-gray-200"
             >
-              <div className="bg-blue-50 p-4 border-b border-gray-200 flex items-center">
-                <Sword className="text-blue-600 mr-2" />
-                <h4 className="font-mono font-semibold">Defense</h4>
+              <div className="bg-violet-50 p-4 border-b border-gray-200 flex items-center">
+                <Sword className="text-violet-600 mr-2" />
+                <h4 className="font-medium">Defense Tier</h4>
               </div>
               <div className="p-4">
                 <div className="text-center mb-4">
-                  <p className="text-2xl font-bold mb-1">$250K - $1M</p>
+                  <p className="text-2xl font-medium text-violet-600 mb-1">$250K - $1M</p>
                   <p className="text-sm text-gray-600">Annual license per deployment</p>
                   <p className="text-xs text-gray-500">Based on scale and customization</p>
                 </div>
                 
-                <hr className="my-4" />
+                <div className="divider"></div>
                 
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <Check className="text-blue-600 w-5 h-5 mt-0.5 mr-2" />
+                    <Check className="text-violet-600 w-5 h-5 mt-0.5 mr-2" />
                     <div>
-                      <p className="font-semibold">Enterprise-grade deployment</p>
+                      <p className="font-medium">Enterprise-grade deployment</p>
                       <p className="text-sm text-gray-600">Full security compliance</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-blue-600 w-5 h-5 mt-0.5 mr-2" />
+                    <Check className="text-violet-600 w-5 h-5 mt-0.5 mr-2" />
                     <div>
-                      <p className="font-semibold">Custom integrations</p>
+                      <p className="font-medium">Custom integrations</p>
                       <p className="text-sm text-gray-600">Works with existing systems</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-blue-600 w-5 h-5 mt-0.5 mr-2" />
+                    <Check className="text-violet-600 w-5 h-5 mt-0.5 mr-2" />
                     <div>
-                      <p className="font-semibold">Dedicated support team</p>
+                      <p className="font-medium">Dedicated support team</p>
                       <p className="text-sm text-gray-600">24/7 mission-critical support</p>
                     </div>
                   </li>
@@ -95,41 +88,41 @@ const BusinessModel: React.FC = () => {
             {/* Enterprise Tier */}
             <motion.div
               variants={itemVariants}
-              className="rounded-lg border border-gray-200 shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+              className="bg-white shadow-sm rounded-sm border border-gray-200"
             >
-              <div className="bg-purple-50 p-4 border-b border-gray-200 flex items-center">
-                <Building2 className="text-purple-600 mr-2" />
-                <h4 className="font-mono font-semibold">Commercial Enterprise</h4>
+              <div className="bg-violet-50 p-4 border-b border-gray-200 flex items-center">
+                <Building2 className="text-violet-600 mr-2" />
+                <h4 className="font-medium">Commercial Enterprise</h4>
               </div>
               <div className="p-4">
                 <div className="text-center mb-4">
-                  <p className="text-2xl font-bold mb-1">$75K - $150K</p>
+                  <p className="text-2xl font-medium text-violet-600 mb-1">$75K - $150K</p>
                   <p className="text-sm text-gray-600">Annual license</p>
                   <p className="text-xs text-gray-500">Per business unit/facility</p>
                 </div>
                 
-                <hr className="my-4" />
+                <div className="divider"></div>
                 
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <Check className="text-purple-600 w-5 h-5 mt-0.5 mr-2" />
+                    <Check className="text-violet-600 w-5 h-5 mt-0.5 mr-2" />
                     <div>
-                      <p className="font-semibold">Full platform capabilities</p>
+                      <p className="font-medium">Full platform capabilities</p>
                       <p className="text-sm text-gray-600">Customizable dashboard</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-purple-600 w-5 h-5 mt-0.5 mr-2" />
+                    <Check className="text-violet-600 w-5 h-5 mt-0.5 mr-2" />
                     <div>
-                      <p className="font-semibold">ERP integration suite</p>
+                      <p className="font-medium">ERP integration suite</p>
                       <p className="text-sm text-gray-600">Works with existing systems</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-purple-600 w-5 h-5 mt-0.5 mr-2" />
+                    <Check className="text-violet-600 w-5 h-5 mt-0.5 mr-2" />
                     <div>
-                      <p className="font-semibold">Priority support</p>
-                      <p className="text-sm text-gray-600">Business hours + emergency support</p>
+                      <p className="font-medium">Priority support</p>
+                      <p className="text-sm text-gray-600">Business hours + emergency</p>
                     </div>
                   </li>
                 </ul>
@@ -139,40 +132,40 @@ const BusinessModel: React.FC = () => {
             {/* Additional Services */}
             <motion.div
               variants={itemVariants}
-              className="rounded-lg border border-gray-200 shadow-md hover:-translate-y-1 hover:shadow-lg transition-all duration-200"
+              className="bg-white shadow-sm rounded-sm border border-gray-200"
             >
-              <div className="bg-cyan-50 p-4 border-b border-gray-200 flex items-center">
-                <Settings className="text-cyan-600 mr-2" />
-                <h4 className="font-mono font-semibold">Additional Services</h4>
+              <div className="bg-violet-50 p-4 border-b border-gray-200 flex items-center">
+                <Settings className="text-violet-600 mr-2" />
+                <h4 className="font-medium">Additional Services</h4>
               </div>
               <div className="p-4">
                 <div className="text-center mb-4">
-                  <p className="text-2xl font-bold mb-1">$25K - $150K</p>
+                  <p className="text-2xl font-medium text-violet-600 mb-1">$25K - $150K</p>
                   <p className="text-sm text-gray-600">Additional service fees</p>
-                  <p className="text-xs text-gray-500">Implementation & consulting services</p>
+                  <p className="text-xs text-gray-500">Implementation & consulting</p>
                 </div>
                 
-                <hr className="my-4" />
+                <div className="divider"></div>
                 
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <Check className="text-cyan-600 w-5 h-5 mt-0.5 mr-2" />
+                    <Check className="text-violet-600 w-5 h-5 mt-0.5 mr-2" />
                     <div>
-                      <p className="font-semibold">Implementation services</p>
+                      <p className="font-medium">Implementation services</p>
                       <p className="text-sm text-gray-600">Customized onboarding</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-cyan-600 w-5 h-5 mt-0.5 mr-2" />
+                    <Check className="text-violet-600 w-5 h-5 mt-0.5 mr-2" />
                     <div>
-                      <p className="font-semibold">Custom development</p>
+                      <p className="font-medium">Custom development</p>
                       <p className="text-sm text-gray-600">Specialized integrations</p>
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <Check className="text-cyan-600 w-5 h-5 mt-0.5 mr-2" />
+                    <Check className="text-violet-600 w-5 h-5 mt-0.5 mr-2" />
                     <div>
-                      <p className="font-semibold">Training & certification</p>
+                      <p className="font-medium">Training & certification</p>
                       <p className="text-sm text-gray-600">User and admin training</p>
                     </div>
                   </li>
@@ -187,47 +180,41 @@ const BusinessModel: React.FC = () => {
           {/* Target Markets */}
           <motion.div
             variants={itemVariants}
-            className="p-6 rounded-lg border border-gray-200 shadow-md"
+            className="bg-white shadow-sm rounded-sm p-6 relative"
           >
-            <h3 className="text-xl font-semibold font-mono uppercase tracking-wider mb-1">
-              TARGET MARKETS_
-            </h3>
+            <div className="absolute -top-3 left-10">
+              <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                TARGET MARKETS
+              </span>
+            </div>
             
-            <p className="text-sm text-gray-600 font-mono mb-6">
-              Initial market focus prioritizing high-value inventory environments
-            </p>
-            
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 mt-6">
               {[
                 {
                   title: "Defense",
-                  description: "Military logistics units, defense contractors, and base operations",
+                  description: "Military logistics units, defense contractors",
                   icon: Flag,
-                  color: "blue"
                 },
                 {
                   title: "Manufacturing",
-                  description: "Precision manufacturing, electronics, aerospace parts production",
+                  description: "Precision manufacturing, aerospace",
                   icon: Factory,
-                  color: "purple"
                 },
                 {
                   title: "Logistics",
-                  description: "3PL providers, warehousing operations, distribution centers",
+                  description: "3PL providers, warehousing operations",
                   icon: Truck,
-                  color: "cyan"
                 },
                 {
                   title: "Maintenance",
-                  description: "Aviation MRO, industrial equipment maintenance, facility management",
+                  description: "Aviation MRO, industrial equipment",
                   icon: RefreshCcw,
-                  color: "orange"
                 }
               ].map((market, index) => (
-                <div key={index} className="p-4 rounded-lg border border-gray-200 hover:-translate-y-1 hover:shadow-md transition-all duration-200">
+                <div key={index} className="p-4 bg-gray-50 rounded-sm">
                   <div className="flex items-center mb-2">
-                    <market.icon className={`text-${market.color}-600 w-5 h-5 mr-2`} />
-                    <h4 className="font-semibold">{market.title}</h4>
+                    <market.icon className="text-violet-600 w-5 h-5 mr-2" />
+                    <h4 className="font-medium">{market.title}</h4>
                   </div>
                   <p className="text-sm text-gray-600">{market.description}</p>
                 </div>
@@ -238,26 +225,24 @@ const BusinessModel: React.FC = () => {
           {/* Unit Economics */}
           <motion.div
             variants={itemVariants}
-            className="p-6 rounded-lg border border-gray-200 shadow-md"
+            className="bg-white shadow-sm rounded-sm p-6 relative"
           >
-            <h3 className="text-xl font-semibold font-mono uppercase tracking-wider mb-1">
-              UNIT ECONOMICS_
-            </h3>
+            <div className="absolute -top-3 left-10">
+              <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                UNIT ECONOMICS
+              </span>
+            </div>
             
-            <p className="text-sm text-gray-600 font-mono mb-6">
-              Favorable economics driven by software margins and recurring revenue
-            </p>
-            
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="p-4 rounded-lg border border-blue-200 border-l-4 border-l-blue-500">
-                <p className="text-xs font-mono text-gray-600 mb-1">CUSTOMER ACQUISITION</p>
-                <p className="text-xl font-bold">$50K - $75K</p>
+            <div className="grid grid-cols-2 gap-4 mb-6 mt-6">
+              <div className="p-4 bg-gray-50 rounded-sm border-l-4 border-l-violet-500">
+                <p className="text-xs uppercase tracking-wider text-gray-600 mb-1">CUSTOMER ACQUISITION</p>
+                <p className="text-xl font-medium text-gray-900">$50K - $75K</p>
                 <p className="text-sm text-gray-600">CAC for defense & enterprise</p>
               </div>
               
-              <div className="p-4 rounded-lg border border-purple-200 border-l-4 border-l-purple-500">
-                <p className="text-xs font-mono text-gray-600 mb-1">CUSTOMER LIFETIME VALUE</p>
-                <p className="text-xl font-bold">$750K - $3M</p>
+              <div className="p-4 bg-gray-50 rounded-sm border-l-4 border-l-violet-500">
+                <p className="text-xs uppercase tracking-wider text-gray-600 mb-1">CUSTOMER LTV</p>
+                <p className="text-xl font-medium text-gray-900">$750K - $3M</p>
                 <p className="text-sm text-gray-600">5-year contract value</p>
               </div>
             </div>
@@ -267,31 +252,27 @@ const BusinessModel: React.FC = () => {
                 {
                   label: "GROSS MARGIN",
                   value: "85%",
-                  description: "Software revenue",
-                  color: "blue"
+                  description: "Software revenue"
                 },
                 {
                   label: "SERVICES MARGIN",
                   value: "65%",
-                  description: "Implementation & consulting",
-                  color: "purple"
+                  description: "Implementation & consulting"
                 },
                 {
                   label: "LTV:CAC RATIO",
                   value: "10:1",
-                  description: "Target ratio at scale",
-                  color: "cyan"
+                  description: "Target ratio at scale"
                 },
                 {
                   label: "NET RETENTION",
                   value: "120%",
-                  description: "Projected annual retention",
-                  color: "orange"
+                  description: "Projected annual retention"
                 }
               ].map((metric, index) => (
-                <div key={index} className="p-4 rounded-lg bg-gray-50 border border-gray-200">
-                  <p className="text-xs font-mono text-gray-600 mb-1">{metric.label}</p>
-                  <p className={`text-xl font-bold text-${metric.color}-600`}>{metric.value}</p>
+                <div key={index} className="p-4 bg-gray-50 rounded-sm">
+                  <p className="text-xs uppercase tracking-wider text-gray-600 mb-1">{metric.label}</p>
+                  <p className="text-xl font-medium text-violet-600">{metric.value}</p>
                   <p className="text-sm text-gray-600">{metric.description}</p>
                 </div>
               ))}
