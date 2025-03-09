@@ -8,19 +8,31 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1
+      staggerChildren: 0.1,
+      delayChildren: 0.2
     }
   }
 };
 
 const itemVariants = {
-  hidden: { y: 10, opacity: 0 },
+  hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.4,
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+};
+
+const circleVariants = {
+  hidden: { scale: 0.8, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
       ease: "easeOut"
     }
   }
@@ -28,55 +40,69 @@ const itemVariants = {
 
 const VCInvestingCircle: React.FC = () => {
   return (
-    <Slide 
-      title="The virtuous circle of" 
-      subtitle="investing and building"
+    <Slide
+      title="Investing at the Frontiers of Technology"
     >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex flex-col h-full w-full"
+        className="flex flex-col items-center justify-center h-full w-full"
       >
-        {/* Main content */}
-        <motion.div variants={itemVariants} className="mb-8">
+        {/* Introduction text */}
+        <motion.div variants={itemVariants} className="text-center max-w-3xl mb-12">
           <p className="vc-paragraph">
-            Through the investment process, we often identify whitespaces and internal theses where there are 
-            opportunities to remedy an important part of the world.
+            We partner with entrepreneurs and technologists who are building 
+            the future through creative applications of advanced technology
           </p>
         </motion.div>
         
-        {/* Horizontal divider */}
-        <motion.div variants={itemVariants} className="vc-horizontal-divider" />
-        
-        {/* Two column content */}
-        <div className="vc-two-column mt-4">
-          <motion.div variants={itemVariants} className="space-y-4">
-            <p className="vc-paragraph">
-              We gain exposure through our work to determine the optimal approach to add value, often by
-              tackling messy, legacy technical systems in industries paralyzed by their scale. The Build
-              program creates a powerful channel for BVC to act on these ideas, partnering with ambitious
-              entrepreneurs and engineers, and creating positive feedback loops as we build sustainable businesses.
-              BVC Build companies are either initially driven by these internal theses or our Entrepreneurs-in-
-              Residence, who join BVC with a problem, technology, or vertical in mind.
-            </p>
-          </motion.div>
+        {/* Circular investing model */}
+        <motion.div 
+          variants={circleVariants}
+          className="relative flex items-center justify-center w-[500px] h-[500px]"
+        >
+          {/* Outer circle */}
+          <div className="absolute w-full h-full rounded-full border-2 border-gray-200 flex items-center justify-center">
+            {/* Middle circle */}
+            <div className="w-3/4 h-3/4 rounded-full border-2 border-gray-300 flex items-center justify-center">
+              {/* Inner circle */}
+              <div className="w-2/4 h-2/4 rounded-full bg-violet-600/10 border-2 border-violet-400 flex items-center justify-center">
+                <span className="text-violet-700 font-semibold">CORE</span>
+              </div>
+            </div>
+          </div>
           
-          <motion.div variants={itemVariants} className="space-y-4">
-            <p className="vc-paragraph">
-              BVC Founder and serial entrepreneur Joe Lonsdale is personally involved with each of the BVC Build
-              companies, helping to craft their theses and guide strategy. Partners across the firm work directly
-              with our founders in the Build process to give our companies unfair advantages.
-            </p>
-            
-            <div className="mt-20 text-right">
-              <p className="italic-subheading text-2xl">We are</p>
-              <h3 className="vc-slide-header mt-2">Founders</h3>
+          {/* Quadrant labels */}
+          <motion.div variants={itemVariants} className="absolute top-10 text-center">
+            <div className="bg-white py-1 px-3 rounded-full text-sm font-medium shadow-sm">
+              EARLY STAGE
             </div>
           </motion.div>
-        </div>
+          
+          <motion.div variants={itemVariants} className="absolute right-10 text-center">
+            <div className="bg-white py-1 px-3 rounded-full text-sm font-medium shadow-sm">
+              GROWTH
+            </div>
+          </motion.div>
+          
+          <motion.div variants={itemVariants} className="absolute bottom-10 text-center">
+            <div className="bg-white py-1 px-3 rounded-full text-sm font-medium shadow-sm">
+              PUBLIC
+            </div>
+          </motion.div>
+          
+          <motion.div variants={itemVariants} className="absolute left-10 text-center">
+            <div className="bg-white py-1 px-3 rounded-full text-sm font-medium shadow-sm">
+              LIQUID
+            </div>
+          </motion.div>
+        </motion.div>
         
-        <motion.div variants={itemVariants} className="vc-horizontal-divider mt-8" />
+        {/* Footer note */}
+        <motion.div variants={itemVariants} className="text-center mt-12 text-sm text-gray-500">
+          Investing across the full spectrum of technology markets
+        </motion.div>
       </motion.div>
     </Slide>
   );

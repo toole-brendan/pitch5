@@ -20,7 +20,12 @@ const Navigation = () => {
     { path: "/commercial-user-experience", name: "COMMERCIAL USER EXPERIENCE" },
     { path: "/business-model", name: "BUSINESS MODEL" },
     { path: "/call-to-action", name: "CALL TO ACTION" },
-    { path: "/shell-token-architecture", name: "SHELL TOKEN ARCHITECTURE" }
+    { path: "/shell-token-architecture", name: "SHELL TOKEN ARCHITECTURE" },
+    
+    // VC-styled slides
+    { path: "/vc-investing-circle", name: "VC INVESTING CIRCLE" },
+    { path: "/vc-industry-sectors", name: "INDUSTRY SECTORS" },
+    { path: "/vc-fund-announcement", name: "FUND ANNOUNCEMENT" }
   ];
 
   // Find current index
