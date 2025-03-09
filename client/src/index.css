@@ -8,35 +8,83 @@
   }
 
   body {
-    @apply font-sans antialiased bg-white text-gray-900;
+    @apply font-sans antialiased bg-gray-100 text-gray-900;
   }
   
-  /* Custom font treatments for 8VC theme */
+  /* Custom font treatments for VC theme */
   h1, h2, h3, h4, h5, h6 {
     @apply font-medium tracking-wide;
+  }
+  
+  /* 8VC italics styling for subheadings */
+  .italic-subheading {
+    @apply font-serif italic font-normal text-gray-600;
   }
 }
 
 @layer components {
   /* Background patterns */
   .bg-grid-pattern {
-    @apply bg-gray-50;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+    @apply bg-gray-100;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* VC Slide specific components */
+  .vc-slide-container {
+    @apply p-8 md:p-12 flex flex-col h-full;
+  }
+  
+  .vc-slide-header {
+    @apply text-4xl md:text-5xl font-medium text-gray-900 mb-2;
+  }
+  
+  .vc-slide-subheader {
+    @apply font-serif italic text-lg md:text-xl text-gray-600 mb-8;
+  }
+  
+  .vc-horizontal-divider {
+    @apply h-[1px] bg-gray-300 w-full my-6;
+  }
+  
+  .vc-content-section {
+    @apply py-6;
+  }
+  
+  .vc-two-column {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12;
+  }
+  
+  .vc-three-column {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+  }
+  
+  /* Typography for VC slides */
+  .vc-category {
+    @apply text-sm uppercase tracking-widest font-mono text-violet-600 mb-2;
+  }
+  
+  .vc-date {
+    @apply text-sm text-gray-500 mb-2 flex items-center;
+  }
+  
+  .vc-date::before {
+    content: "";
+    @apply w-1.5 h-1.5 bg-black rounded-full mr-2 inline-block;
+  }
+  
+  .vc-announcement {
+    @apply text-4xl md:text-5xl text-violet-600 font-medium mb-3;
+  }
+  
+  .vc-paragraph {
+    @apply text-base md:text-lg text-gray-800 max-w-3xl;
   }
   
   /* Card components */
   .enterprise-card {
-    @apply border border-gray-200 bg-white p-6 relative shadow-sm;
-  }
-  
-  .enterprise-card-purple {
-    @apply border-purple-200 bg-purple-50;
-  }
-  
-  .enterprise-card-amber {
-    @apply border-amber-200 bg-amber-50;
+    @apply bg-white p-6 relative;
   }
   
   /* Typography helpers */
@@ -65,24 +113,8 @@
     @apply bg-blue-50 text-blue-700 border-blue-200;
   }
   
-  .badge-amber {
-    @apply bg-amber-50 text-amber-700 border-amber-200;
-  }
-  
-  .badge-green {
-    @apply bg-green-50 text-green-700 border-green-200;
-  }
-  
-  .tag {
-    @apply absolute -top-3 left-10 bg-white text-gray-900 text-xs tracking-widest font-mono py-1 px-3 border border-gray-200;
-  }
-  
-  .tag-purple {
-    @apply border-purple-200 bg-purple-50 text-purple-700;
-  }
-  
-  .tag-amber {
-    @apply border-amber-200 bg-amber-50 text-amber-700;
+  .badge-violet {
+    @apply bg-violet-50 text-violet-700 border-violet-200;
   }
   
   /* Data and metrics */
@@ -99,21 +131,12 @@
     @apply h-[1px] bg-gray-200 w-full my-6;
   }
   
-  /* Button treatments */
-  .btn-dark {
-    @apply bg-gray-50 border border-gray-200 py-2 px-4 transition-colors hover:border-purple-400;
+  /* Industry sectors */
+  .industry-sector {
+    @apply uppercase tracking-wider text-xs font-mono border-t border-gray-300 py-4;
   }
   
-  .btn-purple {
-    @apply bg-purple-100 border border-purple-300 py-2 px-4 transition-colors hover:bg-purple-200;
-  }
-  
-  /* Icon containers */
-  .icon-circle {
-    @apply w-8 h-8 rounded-full flex items-center justify-center border border-gray-200;
-  }
-  
-  .icon-square {
-    @apply w-8 h-8 flex items-center justify-center border border-gray-200;
+  .industry-sector-highlight {
+    @apply text-violet-600;
   }
 }
