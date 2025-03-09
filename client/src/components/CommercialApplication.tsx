@@ -43,7 +43,7 @@ const cardVariants = {
 
 const CommercialApplication = () => {
   return (
-    <Slide title="Commercial Application" withGridBackground>
+    <Slide title="Commercial Application">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -51,7 +51,7 @@ const CommercialApplication = () => {
         className="w-full overflow-hidden"
       >
         <div className="flex items-center mb-6">
-          <span className="badge badge-amber">
+          <span className="bg-amber-50 text-amber-800 text-xs tracking-widest font-mono uppercase py-1.5 px-3 border border-amber-200">
             COMMERCIAL SOLUTIONS
           </span>
         </div>
@@ -59,27 +59,27 @@ const CommercialApplication = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Column: Key Features */}
           <div>
-            <div className="section-header mb-8">
-              KEY CAPABILITIES
-            </div>
+            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-700 mb-8">
+              KEY CAPABILITIES_
+            </h3>
 
             <div className="flex flex-col gap-6">
               {/* Card 1 */}
               <motion.div
                 variants={cardVariants}
                 custom={1}
-                className="enterprise-card border-amber-800/50 bg-gradient-to-br from-amber-900/20 to-black transition-all duration-300 hover:border-amber-600"
+                className="bg-white border border-amber-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-amber-400"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="icon-square border-amber-700">
-                    <SearchCode className="w-5 h-5 text-amber-400" />
+                  <div className="w-10 h-10 border border-amber-200 flex items-center justify-center text-amber-700 bg-amber-50">
+                    <SearchCode className="w-5 h-5" />
                   </div>
-                  <h4 className="text-white font-light text-lg">
+                  <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
                     Supply Chain Transparency
                   </h4>
                 </div>
 
-                <p className="text-gray-400 text-sm mb-4">
+                <p className="text-sm text-gray-600 mb-4 font-sans">
                   Complete visibility from sourcing to end customer
                 </p>
 
@@ -89,8 +89,8 @@ const CommercialApplication = () => {
                     "Real-time verification of authenticity and quality standards"
                   ].map((text, index) => (
                     <div key={index} className="flex gap-3 items-start">
-                      <span className="font-mono text-amber-400 mt-0.5">→</span>
-                      <p className="text-xs text-gray-400 leading-relaxed">
+                      <span className="font-mono text-amber-600 mt-0.5">→</span>
+                      <p className="text-xs text-gray-600 leading-relaxed font-sans">
                         {text}
                       </p>
                     </div>
@@ -102,18 +102,18 @@ const CommercialApplication = () => {
               <motion.div
                 variants={cardVariants}
                 custom={2}
-                className="enterprise-card border-amber-800/50 bg-gradient-to-br from-amber-900/20 to-black transition-all duration-300 hover:border-amber-600"
+                className="bg-white border border-amber-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-amber-400"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="icon-square border-amber-700">
-                    <BarChart3 className="w-5 h-5 text-amber-400" />
+                  <div className="w-10 h-10 border border-amber-200 flex items-center justify-center text-amber-700 bg-amber-50">
+                    <BarChart3 className="w-5 h-5" />
                   </div>
-                  <h4 className="text-white font-light text-lg">
+                  <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
                     Inventory Intelligence
                   </h4>
                 </div>
 
-                <p className="text-gray-400 text-sm mb-4">
+                <p className="text-sm text-gray-600 mb-4 font-sans">
                   Data-driven inventory optimization with predictive capabilities
                 </p>
 
@@ -123,8 +123,8 @@ const CommercialApplication = () => {
                     "Minimize stockouts and excess inventory with ML forecasting"
                   ].map((text, index) => (
                     <div key={index} className="flex gap-3 items-start">
-                      <span className="font-mono text-amber-400 mt-0.5">→</span>
-                      <p className="text-xs text-gray-400 leading-relaxed">
+                      <span className="font-mono text-amber-600 mt-0.5">→</span>
+                      <p className="text-xs text-gray-600 leading-relaxed font-sans">
                         {text}
                       </p>
                     </div>
@@ -136,18 +136,18 @@ const CommercialApplication = () => {
               <motion.div
                 variants={cardVariants}
                 custom={3}
-                className="enterprise-card border-amber-800/50 bg-gradient-to-br from-amber-900/20 to-black transition-all duration-300 hover:border-amber-600"
+                className="bg-white border border-amber-200 p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-amber-400"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="icon-square border-amber-700">
-                    <CreditCard className="w-5 h-5 text-amber-400" />
+                  <div className="w-10 h-10 border border-amber-200 flex items-center justify-center text-amber-700 bg-amber-50">
+                    <CreditCard className="w-5 h-5" />
                   </div>
-                  <h4 className="text-white font-light text-lg">
+                  <h4 className="font-sans text-base text-gray-900 font-semibold tracking-wide">
                     Payment Automation
                   </h4>
                 </div>
 
-                <p className="text-gray-400 text-sm mb-4">
+                <p className="text-sm text-gray-600 mb-4 font-sans">
                   Streamlined supplier payments with smart contract capabilities
                 </p>
 
@@ -157,8 +157,8 @@ const CommercialApplication = () => {
                     "Optional Shell token payments with near-zero transaction fees"
                   ].map((text, index) => (
                     <div key={index} className="flex gap-3 items-start">
-                      <span className="font-mono text-amber-400 mt-0.5">→</span>
-                      <p className="text-xs text-gray-400 leading-relaxed">
+                      <span className="font-mono text-amber-600 mt-0.5">→</span>
+                      <p className="text-xs text-gray-600 leading-relaxed font-sans">
                         {text}
                       </p>
                     </div>
@@ -170,9 +170,9 @@ const CommercialApplication = () => {
 
           {/* Right Column: Commercial Applications */}
           <div>
-            <div className="section-header mb-8">
-              COMMERCIAL APPLICATIONS
-            </div>
+            <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-700 mb-8">
+              COMMERCIAL APPLICATIONS_
+            </h3>
 
             <div className="space-y-6">
               {[
@@ -192,12 +192,12 @@ const CommercialApplication = () => {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="enterprise-card relative border-l-4 border-l-amber-700 transition-all duration-300 hover:border-amber-500"
+                  className="bg-amber-50 border border-amber-200 p-6 group transition-all duration-300 hover:bg-white hover:border-amber-400"
                 >
-                  <h4 className="font-mono text-amber-400 mb-3">
+                  <h4 className="font-mono text-sm text-gray-900 tracking-wide mb-3 group-hover:text-amber-700">
                     {application.title}
                   </h4>
-                  <p className="text-sm text-gray-300 leading-relaxed">
+                  <p className="text-xs text-gray-600 leading-relaxed font-sans">
                     {application.description}
                   </p>
                 </motion.div>

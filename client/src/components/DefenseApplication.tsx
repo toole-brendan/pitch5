@@ -35,7 +35,7 @@ const MotionDiv = motion.div;
 
 const DefenseApplication: React.FC = () => {
   return (
-    <Slide title="Defense Application" withGridBackground>
+    <Slide title="Defense Application">
       <MotionDiv
         variants={containerVariants}
         initial="hidden"
@@ -43,7 +43,7 @@ const DefenseApplication: React.FC = () => {
         className="h-full"
       >
         <div className="flex items-center gap-1 mb-8">
-          <span className="badge badge-blue">
+          <span className="bg-blue-50 text-blue-800 px-6 py-2.5 font-mono font-medium text-base border border-blue-200">
             MILITARY
           </span>
         </div>
@@ -51,9 +51,9 @@ const DefenseApplication: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-[calc(100%-48px)]">
           {/* Left Column: Key Features */}
           <div className="md:col-span-5">
-            <div className="section-header mb-6">
-              KEY CAPABILITIES
-            </div>
+            <h2 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-700 mb-6">
+              KEY CAPABILITIES_
+            </h2>
             
             <div className="grid gap-6 h-[calc(100%-40px)]">
               {[
@@ -61,7 +61,7 @@ const DefenseApplication: React.FC = () => {
                   num: 1, 
                   title: "Digital Hand Receipts", 
                   description: "Replace paper forms with blockchain-backed digital records",
-                  icon: <FileText className="w-5 h-5 text-blue-400" />,
+                  icon: <FileText className="w-5 h-5 text-blue-700" />,
                   points: [
                     "Eliminate lost paperwork, reducing property loss by 80%",
                     "Tamper-proof signatures authenticated through DoD credentials"
@@ -71,7 +71,7 @@ const DefenseApplication: React.FC = () => {
                   num: 2, 
                   title: "Inventory Accountability", 
                   description: "Complete audit trail with immutable record-keeping",
-                  icon: <Shield className="w-5 h-5 text-blue-400" />,
+                  icon: <Shield className="w-5 h-5 text-blue-700" />,
                   points: [
                     "Real-time property status visibility across command levels",
                     "Reduce inventory time by 75% with QR code scanning"
@@ -81,7 +81,7 @@ const DefenseApplication: React.FC = () => {
                   num: 3, 
                   title: "Security & Compliance", 
                   description: "Military-grade security standards with full compliance",
-                  icon: <Lock className="w-5 h-5 text-blue-400" />,
+                  icon: <Lock className="w-5 h-5 text-blue-700" />,
                   points: [
                     "FedRAMP, IL4 & IL5 compliant platform",
                     "End-to-end encryption with zero-knowledge proofs"
@@ -93,23 +93,23 @@ const DefenseApplication: React.FC = () => {
                   variants={cardVariants}
                   custom={index + 1}
                 >
-                  <div className="enterprise-card border-blue-800/50 bg-gradient-to-br from-blue-900/20 to-black transition-all duration-300 hover:border-blue-600">
+                  <div className="bg-white border border-blue-200 p-6 transition-all duration-300 hover:shadow-lg hover:border-blue-400 hover:-translate-y-1">
                     <div className="flex items-center gap-4">
-                      <div className="icon-square border-blue-700 flex-shrink-0">
+                      <div className="bg-blue-50 text-blue-700 border border-blue-200 w-10 h-10 flex items-center justify-center flex-shrink-0">
                         {item.icon}
                       </div>
-                      <h3 className="text-white font-light text-lg">
+                      <h3 className="text-base font-semibold tracking-wide text-gray-900">
                         {item.title}
                       </h3>
                     </div>
-                    <p className="text-gray-400 text-sm mt-3">
+                    <p className="text-gray-600 text-sm mt-3">
                       {item.description}
                     </p>
                     <ul className="mt-4 space-y-2">
                       {item.points.map((point, i) => (
                         <li key={i} className="flex items-center gap-2">
-                          <span className="text-blue-400 font-bold">&gt;</span>
-                          <span className="text-xs font-mono text-gray-400">{point}</span>
+                          <span className="text-blue-600 font-bold">&gt;</span>
+                          <span className="text-xs font-mono text-gray-600">{point}</span>
                         </li>
                       ))}
                     </ul>
@@ -121,9 +121,9 @@ const DefenseApplication: React.FC = () => {
           
           {/* Right Column: Field Applications */}
           <div className="md:col-span-7">
-            <div className="section-header mb-6">
-              FIELD APPLICATIONS
-            </div>
+            <h2 className="text-sm font-mono uppercase tracking-[0.2em] text-gray-700 mb-6">
+              FIELD APPLICATIONS_
+            </h2>
             
             {[
               {
@@ -160,18 +160,18 @@ const DefenseApplication: React.FC = () => {
                 custom={index + 4}
                 className="mb-6 last:mb-0"
               >
-                <div className="enterprise-card border-l-4 border-l-blue-700">
-                  <h3 className="font-mono text-blue-400 mb-3">
+                <div className="bg-blue-50 border border-blue-200 p-6 border-l-4 border-l-blue-600">
+                  <h3 className="font-mono font-semibold text-blue-700 mb-3">
                     {section.title}
                   </h3>
-                  <p className="text-sm text-gray-300 mb-4">
+                  <p className="text-sm text-gray-600 mb-4">
                     {section.description}
                   </p>
                   <ul className="space-y-2">
                     {section.points.map((point, i) => (
                       <li key={i} className="flex items-center gap-2">
-                        <span className="text-blue-400 font-bold">&gt;</span>
-                        <span className="text-xs font-mono text-gray-400">{point}</span>
+                        <span className="text-blue-600 font-bold">&gt;</span>
+                        <span className="text-xs font-mono text-gray-600">{point}</span>
                       </li>
                     ))}
                   </ul>
