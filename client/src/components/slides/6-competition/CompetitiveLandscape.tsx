@@ -40,8 +40,8 @@ const slideUp = {
   })
 };
 
-const CompetitiveLandscape: React.FC = () => {
-  // Enhanced competitor list with blockchain-specific companies
+const CompetitiveLandscape = () => {
+  // Updated competitor list with more focus on ERP systems
   const competitors = [
     { 
       id: "handreceipt", 
@@ -70,56 +70,56 @@ const CompetitiveLandscape: React.FC = () => {
       color: "bg-blue-500"
     },
     { 
-      id: "vechain", 
-      name: "VeChain", 
-      x: 0.7, 
-      y: 0.3, 
+      id: "oracle", 
+      name: "Oracle SCM", 
+      x: 0.25, 
+      y: 0.4, 
       key_disadvantages: [
-        "Requires third-party oracles for verification",
-        "No military or defense applications",
-        "Limited integration with legacy ERP systems",
-        "Complex token economics for enterprises"
+        "High cost of ownership",
+        "Complex implementation process",
+        "Limited blockchain integration",
+        "Rigid architecture for defense-specific needs"
+      ],
+      color: "bg-red-500"
+    },
+    { 
+      id: "microsoft", 
+      name: "MS Dynamics 365", 
+      x: 0.3, 
+      y: 0.25, 
+      key_disadvantages: [
+        "Limited supply chain verification features",
+        "No native payment settlement capabilities",
+        "Requires third-party blockchain integration",
+        "Minimal defense sector customization"
       ],
       color: "bg-green-500"
     },
     { 
-      id: "origintrail", 
-      name: "OriginTrail", 
-      x: 0.65, 
-      y: 0.45, 
+      id: "netsuite", 
+      name: "NetSuite SCM", 
+      x: 0.35, 
+      y: 0.2, 
       key_disadvantages: [
-        "No specialized defense compliance features",
-        "Requires external oracles for supply chain data",
-        "Higher transaction costs due to public chain",
-        "Weaker hardware integration capabilities"
+        "Limited military/defense capabilities",
+        "No native blockchain verification",
+        "Requires extensive customization",
+        "No integrated payment solution"
       ],
-      color: "bg-orange-500"
+      color: "bg-yellow-500"
     },
     { 
-      id: "morpheus", 
-      name: "Morpheus.Network", 
-      x: 0.55, 
-      y: 0.35, 
-      key_disadvantages: [
-        "Less military-grade security features",
-        "More focused on documentation than hardware",
-        "More complex implementation timeline",
-        "Requires third-party oracle solutions"
-      ],
-      color: "bg-teal-500"
-    },
-    { 
-      id: "northropGrumman", 
-      name: "Northrop Grumman", 
+      id: "gcssArmy", 
+      name: "GCSS-Army (NG)", 
       x: 0.25, 
       y: 0.75, 
       key_disadvantages: [
-        "GCSS-Army is defense-only, no commercial applications",
-        "SAP-based system without blockchain integration",
-        "Limited mobile functionality in the field",
-        "No payment settlement capabilities"
+        "Defense-only, no commercial applications",
+        "Limited blockchain security features", 
+        "Minimal integration with commercial systems",
+        "Lacks payment settlement capabilities"
       ],
-      color: "bg-yellow-500"
+      color: "bg-blue-700"
     },
     { 
       id: "ibm", 
@@ -132,7 +132,51 @@ const CompetitiveLandscape: React.FC = () => {
         "No native token for payment settlement",
         "Over-engineered for most applications"
       ],
-      color: "bg-red-500"
+      color: "bg-purple-500"
+    }
+  ];
+
+  // Comparison data for ERP systems
+  const comparisonData = [
+    {
+      feature: "Implementation Cost",
+      handreceipt: "$200K-500K",
+      sap: "$2M+",
+      oracle: "$1.5M+",
+      microsoft: "$750K+",
+      netsuite: "$500K+"
+    },
+    {
+      feature: "Implementation Time",
+      handreceipt: "3-6 months",
+      sap: "12-18 months",
+      oracle: "12-24 months",
+      microsoft: "6-12 months",
+      netsuite: "6-10 months"
+    },
+    {
+      feature: "Blockchain Security",
+      handreceipt: "Native",
+      sap: "Limited",
+      oracle: "Third-party",
+      microsoft: "None",
+      netsuite: "None"
+    },
+    {
+      feature: "Payment Settlement",
+      handreceipt: "Immediate",
+      sap: "Traditional",
+      oracle: "Traditional",
+      microsoft: "Traditional",
+      netsuite: "Traditional"
+    },
+    {
+      feature: "Defense Compatibility",
+      handreceipt: "Native",
+      sap: "Moderate",
+      oracle: "Moderate",
+      microsoft: "Limited",
+      netsuite: "Limited"
     }
   ];
 
@@ -160,82 +204,23 @@ const CompetitiveLandscape: React.FC = () => {
     }
   ];
 
-  // Consensus mechanism comparison
-  const consensusMechanisms = [
-    {
-      name: "HandReceipt DPoSC",
-      description: "Delegated Proof of Supply Chain - optimized for trade and logistics",
-      speed: "3-5 seconds",
-      energy: "Very Low",
-      scalability: "High",
-      security: "Military-grade"
-    },
-    {
-      name: "Ethereum PoS",
-      description: "Proof of Stake - general purpose consensus",
-      speed: "12-15 seconds",
-      energy: "Low",
-      scalability: "Medium",
-      security: "High"
-    },
-    {
-      name: "VeChain PoA",
-      description: "Proof of Authority - centralized authority nodes",
-      speed: "10 seconds",
-      energy: "Low",
-      scalability: "Medium",
-      security: "Medium-High"
-    },
-    {
-      name: "Hyperledger PBFT",
-      description: "Practical Byzantine Fault Tolerance - permissioned setup",
-      speed: "1-3 seconds",
-      energy: "Low",
-      scalability: "Limited",
-      security: "High"
-    }
-  ];
-
-  // Oracle system comparison
-  const oracleComparison = [
-    {
-      feature: "Data Source",
-      handreceipt: "Direct from HandReceipt app",
-      competitors: "Third-party oracles (Chainlink)"
-    },
-    {
-      feature: "Verification Speed",
-      handreceipt: "Immediate (same transaction)",
-      competitors: "Multiple block confirmations"
-    },
-    {
-      feature: "Implementation",
-      handreceipt: "Native integration",
-      competitors: "Additional integration required"
-    },
-    {
-      feature: "Cost",
-      handreceipt: "Included in platform",
-      competitors: "Additional oracle fees"
-    }
-  ];
-
   return (
     <Slide 
       title="Competitive Landscape"
-      subtitle="Comprehensive analysis of blockchain and enterprise supply chain competitors"
+      subtitle="Analysis against enterprise ERP systems and blockchain solutions"
       fullWidth={true}
     >      
-      <div className="space-y-6">
-        {/* Top Section: Market Positioning + Our Advantages */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Left: Market Positioning Matrix */}
+      {/* More horizontal, less vertical layout */}
+      <div className="flex flex-col space-y-4">
+        {/* Row 1: Market Positioning + ERP Comparison */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
+          {/* Market Positioning Matrix (3 columns) */}
           <motion.div 
             variants={slideUp}
             initial="hidden"
             animate="visible"
             custom={1}
-            className="bg-white shadow-sm rounded-sm relative"
+            className="bg-white shadow-sm rounded-sm relative p-4 lg:col-span-3"
           >
             <div className="absolute -top-3 left-10">
               <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
@@ -243,273 +228,193 @@ const CompetitiveLandscape: React.FC = () => {
               </span>
             </div>
             
-            <div className="p-4 pt-8 relative">
-              <div className="relative w-full h-[280px] border-l-2 border-b-2 border-gray-300">
-                {/* Grid Lines */}
-                <div className="absolute inset-0">
-                  {[25, 50, 75].map((pos) => (
-                    <React.Fragment key={pos}>
-                      <div className="absolute w-full h-px bg-gray-200" style={{ top: `${pos}%` }} />
-                      <div className="absolute h-full w-px bg-gray-200" style={{ left: `${pos}%` }} />
-                    </React.Fragment>
-                  ))}
-                </div>
-                
-                {/* Axis Labels */}
-                <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs text-gray-600 font-medium">
-                  BLOCKCHAIN CAPABILITY →
-                </span>
-                <span className="absolute -left-10 top-1/2 -translate-y-1/2 -rotate-90 text-xs text-gray-600 font-medium">
-                  DEFENSE COMPLIANCE →
-                </span>
-                
-                {/* Quadrant Labels */}
-                <span className="absolute top-[15%] left-[15%] text-[10px] text-gray-400 opacity-70">
-                  TRADITIONAL ERP
-                </span>
-                <span className="absolute top-[15%] right-[10%] text-[10px] text-gray-400 opacity-70 text-right">
-                  COMMERCIAL BLOCKCHAIN
-                </span>
-                <span className="absolute bottom-[10%] left-[15%] text-[10px] text-gray-400 opacity-70">
-                  DEFENSE-ONLY
-                </span>
-                <span className="absolute bottom-[10%] right-[10%] text-[10px] text-gray-400 opacity-70 text-right">
-                  INTEGRATED SOLUTION
-                </span>
-                
-                {/* Competitors */}
-                {competitors.map((competitor, index) => (
-                  <motion.div
-                    key={competitor.id}
-                    variants={slideUp}
-                    custom={index + 3}
-                    whileHover={{ scale: 1.05 }}
-                    className={`absolute ${competitor.color} ${competitor.id === 'handreceipt' ? 'w-16 h-16 border-2 border-white' : 'w-14 h-14'} rounded-full flex items-center justify-center text-center text-white font-medium text-xs shadow-sm p-1 leading-tight z-10`}
-                    style={{
-                      top: `${(1 - competitor.y) * 100}%`,
-                      left: `${competitor.x * 100}%`,
-                      transform: 'translate(-50%, -50%)'
-                    }}
-                  >
-                    {competitor.name}
-                  </motion.div>
+            <div className="relative w-full h-[280px] border-l-2 border-b-2 border-gray-300 mt-4">
+              {/* Grid Lines */}
+              <div className="absolute inset-0">
+                {[25, 50, 75].map((pos) => (
+                  <React.Fragment key={pos}>
+                    <div className="absolute w-full h-px bg-gray-200" style={{ top: `${pos}%` }} />
+                    <div className="absolute h-full w-px bg-gray-200" style={{ left: `${pos}%` }} />
+                  </React.Fragment>
                 ))}
               </div>
+              
+              {/* Axis Labels */}
+              <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs text-gray-600 font-medium">
+                BLOCKCHAIN CAPABILITY →
+              </span>
+              <span className="absolute -left-10 top-1/2 -translate-y-1/2 -rotate-90 text-xs text-gray-600 font-medium">
+                DEFENSE COMPLIANCE →
+              </span>
+              
+              {/* Quadrant Labels */}
+              <span className="absolute top-[15%] left-[15%] text-[10px] text-gray-400 opacity-70">
+                TRADITIONAL ERP SYSTEMS
+              </span>
+              <span className="absolute top-[15%] right-[10%] text-[10px] text-gray-400 opacity-70 text-right">
+                BLOCKCHAIN PLATFORMS
+              </span>
+              <span className="absolute bottom-[10%] left-[15%] text-[10px] text-gray-400 opacity-70">
+                DEFENSE-SPECIFIC SOLUTIONS
+              </span>
+              <span className="absolute bottom-[10%] right-[10%] text-[10px] text-gray-400 opacity-70 text-right">
+                INTEGRATED SOLUTION
+              </span>
+              
+              {/* Competitors */}
+              {competitors.map((competitor, index) => (
+                <motion.div
+                  key={competitor.id}
+                  variants={slideUp}
+                  custom={index + 3}
+                  whileHover={{ scale: 1.05 }}
+                  className={`absolute ${competitor.color} ${competitor.id === 'handreceipt' ? 'w-16 h-16 border-2 border-white' : 'w-14 h-14'} rounded-full flex items-center justify-center text-center text-white font-medium text-xs shadow-sm p-1 leading-tight z-10`}
+                  style={{
+                    top: `${(1 - competitor.y) * 100}%`,
+                    left: `${competitor.x * 100}%`,
+                    transform: 'translate(-50%, -50%)'
+                  }}
+                >
+                  {competitor.name}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
-          
-          {/* Right: Advantages & Limitations */}
-          <div className="space-y-4">
-            {/* Our Advantages */}
-            <motion.div
-              variants={slideUp}
-              initial="hidden"
-              animate="visible"
-              custom={2}
-              className="bg-white shadow-sm rounded-sm p-4 relative"
-            >
-              <div className="absolute -top-3 left-10">
-                <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-                  OUR ADVANTAGES
-                </span>
-              </div>
-              
-              <div className="mt-4">
-                {competitors.find(c => c.id === 'handreceipt')?.key_advantages?.map((advantage, index) => (
-                  <motion.div
-                    key={index}
-                    variants={slideUp}
-                    custom={index + 5}
-                    className="flex items-center gap-2 mb-2"
-                  >
-                    <Check className="w-4 h-4 text-violet-600 flex-shrink-0" />
-                    <p className="text-sm text-gray-700">{advantage}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-            
-            {/* Competitor Limitations */}
-            <motion.div
-              variants={slideUp}
-              initial="hidden"
-              animate="visible"
-              custom={3}
-              className="bg-white shadow-sm rounded-sm p-4 relative"
-            >
-              <div className="absolute -top-3 left-10">
-                <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-                  COMPETITOR LIMITATIONS
-                </span>
-              </div>
-              
-              <div className="mt-4 grid grid-cols-1 gap-y-2">
-                {competitors.filter(c => c.id !== 'handreceipt').slice(0, 4).map((competitor, index) => (
-                  <div key={competitor.id} className="flex items-start gap-2">
-                    <div className={`w-3 h-3 rounded-full ${competitor.color} mt-1 flex-shrink-0`} />
-                    <div>
-                      <h4 className="font-medium text-sm">
-                        {competitor.name}
-                      </h4>
-                      <p className="text-xs text-gray-600">
-                        {competitor.key_disadvantages?.[0]}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-        
-        {/* Middle Section: Oracle Advantage */}
-        <motion.div 
-          variants={slideUp}
-          initial="hidden"
-          animate="visible"
-          custom={4}
-          className="bg-white shadow-sm rounded-sm p-4 relative"
-        >
-          <div className="absolute -top-3 left-10">
-            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-              ORACLE ADVANTAGE
-            </span>
-          </div>
-          
-          <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-            <div>
-              <div className="flex items-start gap-4 mb-4">
-                <CircuitBoard className="w-6 h-6 text-violet-600 mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-base font-medium text-gray-900">Built-in Oracle Integration</h3>
-                  <p className="text-sm text-gray-600 mt-1">
-                    Unlike competitors who rely on third-party oracle services, HandReceipt's built-in oracle creates a seamless connection between physical world events and blockchain validation. This eliminates an entire layer of complexity and potential security vulnerabilities.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[400px] text-xs">
-                  <thead>
-                    <tr className="bg-gray-50">
-                      <th className="text-left p-2 font-medium text-gray-600">Feature</th>
-                      <th className="text-center p-2 font-medium text-violet-600">HandReceipt</th>
-                      <th className="text-center p-2 font-medium text-gray-600">Competitors</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {oracleComparison.map((row, index) => (
-                      <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                        <td className="p-2 font-medium">{row.feature}</td>
-                        <td className="p-2 text-center bg-violet-50 text-violet-700 font-medium">{row.handreceipt}</td>
-                        <td className="p-2 text-center">{row.competitors}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="text-base font-medium text-center mb-4">Oracle Integration Flow</h4>
-              
-              {/* Visual Comparison Diagram */}
-              <div className="grid grid-cols-2 gap-x-4">
-                <div>
-                  <h5 className="text-sm font-medium text-violet-700 text-center mb-3">HandReceipt Approach</h5>
-                  <div className="flex flex-col items-center">
-                    <div className="bg-violet-100 border border-violet-200 rounded-md p-2 w-full text-center text-xs text-violet-800">
-                      QR Scan in HandReceipt App
-                    </div>
-                    <div className="h-5 w-px bg-violet-300"></div>
-                    <ArrowRight className="text-violet-400 h-4 w-4" />
-                    <div className="h-5 w-px bg-violet-300"></div>
-                    <ArrowRight className="text-violet-400 h-4 w-4" />
-                    <div className="h-5 w-px bg-violet-300"></div>
-                    <ArrowRight className="text-violet-400 h-4 w-4" />
-                    <div className="h-5 w-px bg-violet-300"></div>
-                    <div className="bg-violet-300 border border-violet-400 rounded-md p-2 w-full text-center text-xs text-violet-800">
-                      Payment Settlement
-                    </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <h5 className="text-sm font-medium text-gray-700 text-center mb-3">Competitor Approach</h5>
-                  <div className="flex flex-col items-center">
-                    <div className="bg-gray-100 border border-gray-200 rounded-md p-2 w-full text-center text-xs text-gray-700">
-                      Scan in 3rd Party System
-                    </div>
-                    <div className="h-5 w-px bg-gray-300"></div>
-                    <ArrowRight className="text-gray-400 h-4 w-4" />
-                    <div className="h-5 w-px bg-gray-300"></div>
-                    <div className="bg-gray-100 border border-gray-200 rounded-md p-2 w-full text-center text-xs text-gray-700">
-                      API Call to Oracle Service
-                    </div>
-                    <div className="h-5 w-px bg-gray-300"></div>
-                    <ArrowRight className="text-gray-400 h-4 w-4" />
-                    <div className="h-5 w-px bg-gray-300"></div>
-                    <div className="bg-gray-100 border border-gray-200 rounded-md p-2 w-full text-center text-xs text-gray-700">
-                      Blockchain Transaction
-                    </div>
-                    <div className="h-5 w-px bg-gray-300"></div>
-                    <ArrowRight className="text-gray-400 h-4 w-4" />
-                    <div className="h-5 w-px bg-gray-300"></div>
-                    <div className="bg-gray-100 border border-gray-200 rounded-md p-2 w-full text-center text-xs text-gray-700">
-                      Payment Settlement
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-        
-        {/* Bottom Section: Consensus Comparison + Key Differentiators */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Left: Consensus Mechanism Comparison */}
-          <motion.div 
+
+          {/* Our Advantages (2 columns) */}
+          <motion.div
             variants={slideUp}
             initial="hidden"
             animate="visible"
-            custom={5}
-            className="bg-white shadow-sm rounded-sm p-4 relative"
+            custom={2}
+            className="bg-white shadow-sm rounded-sm p-4 relative lg:col-span-2"
           >
             <div className="absolute -top-3 left-10">
               <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-                CONSENSUS COMPARISON
+                OUR ADVANTAGES
               </span>
             </div>
             
             <div className="mt-4">
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[400px] text-xs">
-                  <thead>
-                    <tr className="bg-gray-50">
-                      <th className="text-left p-2 font-medium text-gray-600">Consensus</th>
-                      <th className="text-left p-2 font-medium text-gray-600">Description</th>
-                      <th className="text-center p-2 font-medium text-gray-600">Speed</th>
-                      <th className="text-center p-2 font-medium text-gray-600">Energy</th>
-                      <th className="text-center p-2 font-medium text-gray-600">Security</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {consensusMechanisms.map((mechanism, index) => (
-                      <tr key={index} className={mechanism.name.includes('HandReceipt') ? 'bg-violet-50' : (index % 2 === 0 ? 'bg-white' : 'bg-gray-50')}>
-                        <td className={`p-2 font-medium ${mechanism.name.includes('HandReceipt') ? 'text-violet-700' : ''}`}>{mechanism.name}</td>
-                        <td className="p-2 text-gray-600">{mechanism.description}</td>
-                        <td className="p-2 text-center">{mechanism.speed}</td>
-                        <td className="p-2 text-center">{mechanism.energy}</td>
-                        <td className="p-2 text-center">{mechanism.security}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+              {competitors.find(c => c.id === 'handreceipt')?.key_advantages?.map((advantage, index) => (
+                <motion.div
+                  key={index}
+                  variants={slideUp}
+                  custom={index + 5}
+                  className="flex items-center gap-2 mb-2"
+                >
+                  <Check className="w-4 h-4 text-violet-600 flex-shrink-0" />
+                  <p className="text-sm text-gray-700">{advantage}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Row 2: Oracle Integration + Competitor Limitations + Key Differentiators */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          {/* Oracle Advantage */}
+          <motion.div 
+            variants={slideUp}
+            initial="hidden"
+            animate="visible"
+            custom={4}
+            className="bg-white shadow-sm rounded-sm p-4 relative"
+          >
+            <div className="absolute -top-3 left-10">
+              <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                ORACLE ADVANTAGE
+              </span>
+            </div>
+            
+            <div className="mt-3">
+              <div className="flex items-start gap-2 mb-2">
+                <CircuitBoard className="w-5 h-5 text-violet-600 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-sm font-medium text-gray-900">Built-in Oracle Integration</h3>
+                  <p className="text-xs text-gray-600 mt-1 leading-tight">
+                    Unlike competitors who rely on third-party oracle services, HandReceipt's built-in oracle creates a seamless connection between physical world events and blockchain validation.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Visual Oracle Flow */}
+              <div className="bg-gray-50 p-3 rounded-sm mt-2">
+                <h4 className="text-xs font-medium text-center mb-2">Oracle Integration Flow</h4>
+                
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <h5 className="text-xs font-medium text-violet-700 text-center mb-2">HandReceipt</h5>
+                    <div className="flex flex-col items-center">
+                      <div className="bg-violet-100 border border-violet-200 rounded-md p-1.5 w-full text-center text-xs text-violet-800">
+                        QR Scan in HandReceipt
+                      </div>
+                      <div className="h-3 w-px bg-violet-300"></div>
+                      <ArrowRight className="text-violet-400 h-3 w-3" />
+                      <div className="h-3 w-px bg-violet-300"></div>
+                      <div className="bg-violet-300 border border-violet-400 rounded-md p-1.5 w-full text-center text-xs text-violet-800">
+                        Payment Settlement
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h5 className="text-xs font-medium text-gray-700 text-center mb-2">Competitors</h5>
+                    <div className="flex flex-col items-center">
+                      <div className="bg-gray-100 border border-gray-200 rounded-md p-1.5 w-full text-center text-xs text-gray-700">
+                        3rd Party System
+                      </div>
+                      <div className="h-3 w-px bg-gray-300"></div>
+                      <ArrowRight className="text-gray-400 h-3 w-3" />
+                      <div className="h-3 w-px bg-gray-300"></div>
+                      <div className="bg-gray-100 border border-gray-200 rounded-md p-1.5 w-full text-center text-xs text-gray-700">
+                        Oracle Service
+                      </div>
+                      <div className="h-3 w-px bg-gray-300"></div>
+                      <ArrowRight className="text-gray-400 h-3 w-3" />
+                      <div className="h-3 w-px bg-gray-300"></div>
+                      <div className="bg-gray-100 border border-gray-200 rounded-md p-1.5 w-full text-center text-xs text-gray-700">
+                        Payment
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
           
-          {/* Right: Key Differentiators */}
+          {/* Competitor Limitations */}
+          <motion.div
+            variants={slideUp}
+            initial="hidden"
+            animate="visible"
+            custom={3}
+            className="bg-white shadow-sm rounded-sm p-4 relative"
+          >
+            <div className="absolute -top-3 left-10">
+              <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+                COMPETITOR LIMITATIONS
+              </span>
+            </div>
+            
+            <div className="mt-4 grid grid-cols-1 gap-y-2">
+              {competitors.filter(c => c.id !== 'handreceipt').slice(0, 4).map((competitor, index) => (
+                <div key={competitor.id} className="flex items-start gap-2">
+                  <div className={`w-3 h-3 rounded-full ${competitor.color} mt-1 flex-shrink-0`} />
+                  <div>
+                    <h4 className="font-medium text-xs">
+                      {competitor.name}
+                    </h4>
+                    <p className="text-xs text-gray-600 leading-tight">
+                      {competitor.key_disadvantages?.[0]}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Key Differentiators */}
           <motion.div
             variants={slideUp}
             initial="hidden"
@@ -523,20 +428,20 @@ const CompetitiveLandscape: React.FC = () => {
               </span>
             </div>
             
-            <div className="mt-4 grid grid-cols-1 gap-3">
-              {differentiators.map((diff, index) => (
+            <div className="mt-4 space-y-2">
+              {differentiators.slice(0, 4).map((diff, index) => (
                 <motion.div
                   key={index}
                   variants={slideUp}
                   custom={index + 7}
-                  className="flex items-start gap-3 p-2 bg-gray-50 rounded-sm border-l-2 border-l-violet-300"
+                  className="flex items-start gap-2 p-2 bg-gray-50 rounded-sm border-l-2 border-l-violet-300"
                 >
                   <div className="flex-shrink-0 mt-0.5">
                     {diff.icon}
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-gray-900 mb-0.5">{diff.title}</h4>
-                    <p className="text-xs text-gray-600">
+                    <h4 className="text-xs font-medium text-gray-900">{diff.title}</h4>
+                    <p className="text-xs text-gray-600 leading-tight">
                       {diff.description}
                     </p>
                   </div>
@@ -545,6 +450,48 @@ const CompetitiveLandscape: React.FC = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Row 3: ERP Comparison Table */}
+        <motion.div
+          variants={slideUp}
+          initial="hidden"
+          animate="visible"
+          custom={3}
+          className="bg-white shadow-sm rounded-sm p-4 relative"
+        >
+          <div className="absolute -top-3 left-10">
+            <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
+              ERP SYSTEMS COMPARISON
+            </span>
+          </div>
+          
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[500px]">
+              <thead>
+                <tr className="bg-gray-50">
+                  <th className="text-left p-2 text-xs font-medium text-gray-600">Feature</th>
+                  <th className="text-center p-2 text-xs font-medium text-violet-700">HandReceipt</th>
+                  <th className="text-center p-2 text-xs font-medium text-gray-600">SAP Ariba</th>
+                  <th className="text-center p-2 text-xs font-medium text-gray-600">Oracle SCM</th>
+                  <th className="text-center p-2 text-xs font-medium text-gray-600">MS Dynamics</th>
+                  <th className="text-center p-2 text-xs font-medium text-gray-600">NetSuite</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonData.map((row, index) => (
+                  <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                    <td className="p-2 text-xs font-medium">{row.feature}</td>
+                    <td className="p-2 text-center bg-violet-50 text-violet-700 text-xs font-medium">{row.handreceipt}</td>
+                    <td className="p-2 text-center text-xs">{row.sap}</td>
+                    <td className="p-2 text-center text-xs">{row.oracle}</td>
+                    <td className="p-2 text-center text-xs">{row.microsoft}</td>
+                    <td className="p-2 text-center text-xs">{row.netsuite}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
       </div>
     </Slide>
   );
