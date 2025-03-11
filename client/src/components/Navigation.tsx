@@ -56,12 +56,6 @@ const Navigation = () => {
           <ChevronRight className="w-6 h-6 text-gray-700" />
         </button>
       </div>
-      
-      <div className="fixed bottom-6 left-0 right-0 flex justify-center items-center">
-        <div className="bg-white border border-gray-200 py-2 px-4 text-xs text-gray-600 font-mono tracking-wider shadow-sm">
-          {currentIndex + 1} / {routes.length}
-        </div>
-      </div>
     </nav>
   );
 };

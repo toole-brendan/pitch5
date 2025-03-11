@@ -1,70 +1,115 @@
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useIsMobile } from './use-mobile';
+
+type Size = {
+  width: number;
+  height: number;
+};
+
+type ScalingOptions = {
+  minScale?: number;
+  maxScale?: number;
+  mode?: 'fit' | 'fill' | 'stretch' | 'none';
+};
 
 /**
  * A hook that handles dynamic content scaling for slides on desktop
  * On desktop: Automatically scales content to fit in viewport without scrolling
  * On mobile: Does nothing (mobile devices should allow scrolling)
  */
-export function useSlideScaling() {
+export function useSlideScaling(options: ScalingOptions = {}) {
+  const {
+    minScale = 0.35, // Lowered minScale to allow more aggressive scaling
+    maxScale = 1.0, 
+    mode = 'fit'
+  } = options;
+  
   const isMobile = useIsMobile();
   const contentRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
-  const [contentHeight, setContentHeight] = useState(0);
-  
-  // Use layout effect to calculate scale before browser paint to avoid flicker
-  useLayoutEffect(() => {
-    if (isMobile) return; // Don't scale on mobile
-    
+  const [contentSize, setContentSize] = useState<Size | null>(null);
+  const [containerSize, setContainerSize] = useState<Size | null>(null);
+
+  useEffect(() => {
+    if (isMobile || !contentRef.current || mode === 'none') {
+      setScale(1);
+      return;
+    }
+
     const calculateScale = () => {
       const content = contentRef.current;
       if (!content) return;
+
+      // Get the parent container dimensions
+      const container = content.parentElement;
+      if (!container) return;
+
+      const containerWidth = container.clientWidth;
+      const containerHeight = container.clientHeight;
       
-      // Reset transform to get accurate measurement
+      // Store for potential use in positioning calculations
+      setContainerSize({
+        width: containerWidth,
+        height: containerHeight
+      });
+
+      // Reset any previous transformations to get true content size
       content.style.transform = 'none';
       
-      // Calculate available height (viewport minus header/padding)
-      // We're using a more generous padding to ensure content fits
-      const availableHeight = window.innerHeight - 180;
+      // Get content dimensions
+      const contentWidth = content.scrollWidth;
+      const contentHeight = content.scrollHeight;
       
-      // Get natural content height
-      const naturalHeight = content.scrollHeight;
-      setContentHeight(naturalHeight);
+      // Store for potential use in positioning calculations
+      setContentSize({
+        width: contentWidth,
+        height: contentHeight
+      });
+
+      // Calculate scales for width and height separately
+      const scaleX = containerWidth / contentWidth;
+      const scaleY = containerHeight / contentHeight;
       
-      // Calculate scale - never scale up, only down
-      if (naturalHeight > availableHeight) {
-        // Scale content to fit available height, with a small safety margin
-        const newScale = (availableHeight / naturalHeight) * 0.95;
-        setScale(newScale);
-      } else {
-        // Content fits naturally, no scaling needed
-        setScale(1);
+      // Determine the final scale based on the mode
+      let newScale = 1;
+      
+      switch (mode) {
+        case 'fit':
+          // Use the smaller scale to ensure content fits completely
+          newScale = Math.min(scaleX, scaleY);
+          break;
+        case 'fill':
+          // Use the larger scale to fill the container
+          newScale = Math.max(scaleX, scaleY);
+          break;
+        case 'stretch':
+          // Apply different scales to x and y axes (not implemented in the component)
+          // This would require separate scaleX and scaleY state variables
+          newScale = scaleX; // Default to scaleX for simplicity
+          break;
+        default:
+          newScale = 1;
       }
+      
+      // Apply min/max constraints
+      newScale = Math.max(minScale, Math.min(newScale, maxScale));
+      
+      setScale(newScale);
     };
+
+    // Calculate on mount and when window resizes
+    calculateScale();
     
-    // Slight delay to ensure content is fully rendered before measuring
-    const timer = setTimeout(() => {
-      calculateScale();
-    }, 50);
-    
-    // Handle window resize
     const handleResize = () => {
-      clearTimeout(timer);
-      setTimeout(calculateScale, 50);
+      calculateScale();
     };
-    
+
     window.addEventListener('resize', handleResize);
     
     return () => {
-      clearTimeout(timer);
       window.removeEventListener('resize', handleResize);
     };
-  }, [isMobile]);
-  
-  return { 
-    contentRef, 
-    scale,
-    contentHeight,
-    isMobile
-  };
+  }, [isMobile, minScale, maxScale, mode]);
+
+  return { contentRef, scale, isMobile, contentSize, containerSize };
 }

@@ -2,27 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Slide from '@/components/core/Slide';
 import { User, Briefcase, GraduationCap, Award, Lightbulb, Target } from 'lucide-react';
+import { modernColors, modernTypography, ModernDivider } from '@/components/modern/ModernSlideStyles';
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.1
-    }
-  }
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (delay: number) => ({
+// Motion variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 10 },
+  visible: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: {
-      delay: delay * 0.1,
-      duration: 0.5,
-      ease: "easeOut"
+      delay: 0.2 + (i * 0.1),
+      duration: 0.4
     }
   })
 };
@@ -31,151 +21,132 @@ const FounderBackground = () => {
   return (
     <Slide 
       title="Founder Background"
-      subtitle="Bridging military logistics and financial expertise"
-    >      
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="mt-4"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          {/* Founder Profile */}
-          <div className="md:col-span-4">
-            <motion.div 
-              className="bg-white shadow-sm rounded-sm p-6 relative"
-              variants={cardVariants}
-              custom={0}
-            >
-              <div className="vc-category mb-6">FOUNDER</div>
-              
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 border border-violet-200 bg-violet-50 rounded-sm flex items-center justify-center">
-                  <User className="w-8 h-8 text-violet-600" />
-                </div>
-                <div>
-                  <h2 className="text-xl font-medium text-gray-900">
-                    Brendan T. Toole
-                  </h2>
-                  <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">
-                    FOUNDER & CEO
-                  </p>
-                </div>
+      subtitle="Military logistics meets financial expertise"
+      variant="default" // Changed to default for better control of spacing
+      alignment="left"
+      accent="#333333" // Matching other slides
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-1"> {/* Reduced top margin */}
+        {/* Left column - Founder Profile */}
+        <div className="space-y-5"> {/* Reduced from space-y-8 */}
+          <motion.div 
+            custom={0}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            className="space-y-4 bg-white shadow-sm rounded-sm p-5 border border-gray-200"
+          >
+            <div className="flex items-center gap-5"> {/* Reduced from gap-8 */}
+              <div className="w-16 h-16 bg-white rounded-full border border-gray-200 shadow-sm flex items-center justify-center">
+                <User className="w-8 h-8 text-gray-400" />
               </div>
-
-              <div className="divider"></div>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className="badge badge-violet">
-                  Finance Expert
-                </span>
-                <span className="badge badge-violet">
-                  Military Leadership
-                </span>
-                <span className="badge badge-violet">
-                  Princeton Economics
-                </span>
+              <div>
+                <h2 className="text-2xl font-medium text-gray-800 mb-1">
+                  Brendan T. Toole
+                </h2>
+                <p className="text-xs text-gray-500 uppercase tracking-wider font-medium">
+                  FOUNDER & CEO
+                </p>
               </div>
-
-              <div className="vc-category mb-4 mt-6">CREDENTIALS</div>
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Briefcase className="w-4 h-4 text-violet-600" />
-                  <p className="text-sm text-gray-700">
-                    Research Analyst, Point72 Asset Management
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Award className="w-4 h-4 text-violet-600" />
-                  <p className="text-sm text-gray-700">
-                    Platoon Leader, 101st Airborne Division
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <GraduationCap className="w-4 h-4 text-violet-600" />
-                  <p className="text-sm text-gray-700">
-                    Princeton University, Economics A.B.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Vision & Journey */}
-          <div className="md:col-span-8 space-y-8">
-            <motion.div 
-              className="bg-white shadow-sm rounded-sm p-6 relative"
-              variants={cardVariants}
-              custom={1}
-            >
-              <div className="absolute -top-3 left-10">
-                <span className="bg-violet-600 text-white text-xs tracking-widest font-mono py-1 px-3 border border-violet-500">
-                  VISION
-                </span>
+            </div>
+            
+            <div className="space-y-0"> {/* Removed space-y-1 and pt-4 */}
+              <div className="flex gap-3 items-center py-2 border-t border-gray-100">
+                <Briefcase className="w-4 h-4 text-gray-500" />
+                <span className="text-gray-600 text-sm">Research Analyst, Point72 Asset Management</span>
               </div>
               
-              <div className="mt-6 space-y-4">
-                <div className="flex items-start gap-4">
-                  <Lightbulb className="w-5 h-5 text-violet-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    Building a blockchain-powered inventory and supply chain management solution that streamlines property tracking and transfers, bridging military precision with commercial agility.
-                  </p>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <Target className="w-5 h-5 text-violet-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">
-                    HandReceipt represents the convergence of military-grade validation adapted for commercial markets, offering immediate payment settlement through Shell token integration.
-                  </p>
-                </div>
+              <div className="flex gap-3 items-center py-2 border-t border-gray-100">
+                <Award className="w-4 h-4 text-gray-500" />
+                <span className="text-gray-600 text-sm">Platoon Leader, 101st Airborne Division</span>
               </div>
-            </motion.div>
-
-            <motion.div 
-              className="bg-white shadow-sm rounded-sm p-6 relative"
-              variants={cardVariants}
-              custom={2}
-            >
-              <div className="vc-category mb-4">ORIGIN STORY</div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="border-l-2 border-violet-400 pl-4">
-                  <h4 className="text-gray-900 font-medium text-lg mb-2">
-                    Military Experience
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    As a Platoon Leader in the 101st Airborne Division, I witnessed the inefficiencies of paper-based supply tracking and the critical need for reliable, secure inventory management.
-                  </p>
-                </div>
-
-                <div className="border-l-2 border-violet-400 pl-4">
-                  <h4 className="text-gray-900 font-medium text-lg mb-2">
-                    Financial Insight
-                  </h4>
-                  <p className="text-sm text-gray-600">
-                    At Point72, I analyzed supply chain dynamics across multiple sectors, recognizing a market opportunity to solve these challenges with blockchain technology.
-                  </p>
-                </div>
+              
+              <div className="flex gap-3 items-center py-2 border-t border-gray-100">
+                <GraduationCap className="w-4 h-4 text-gray-500" />
+                <span className="text-gray-600 text-sm">Princeton University, Economics A.B.</span>
               </div>
-            </motion.div>
-
-            <motion.div 
-              className="bg-white shadow-sm rounded-sm p-6 relative"
-              variants={cardVariants}
-              custom={3}
-            >
-              <div className="vc-category mb-4">WHY I STARTED HANDRECEIPT</div>
-
-              <p className="text-gray-700 mb-4">
-                I've personally experienced the challenges of managing critical inventory with outdated systems. The military's paper-based "hand receipt" system represents a vulnerability in national security and an inefficiency that can be solved with modern technology. These same challenges exist in commercial supply chains, and I'm uniquely positioned to bridge both worlds.
-              </p>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            custom={2}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+          >
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-gray-50 border border-gray-200 text-gray-600 text-xs rounded-full">Finance Expert</span>
+              <span className="px-3 py-1 bg-gray-50 border border-gray-200 text-gray-600 text-xs rounded-full">Military Leadership</span>
+              <span className="px-3 py-1 bg-gray-50 border border-gray-200 text-gray-600 text-xs rounded-full">Princeton Economics</span>
+            </div>
+          </motion.div>
         </div>
-      </motion.div>
+
+        {/* Right column - Vision & Journey */}
+        <div className="space-y-5"> {/* Reduced from space-y-8 */}
+          <motion.div 
+            custom={1}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            className="bg-white shadow-sm rounded-sm p-5 border border-gray-200"
+          >
+            <div className="bg-gray-50 text-gray-600 text-xs tracking-[0.2em] font-mono uppercase py-1 px-2 border border-gray-200 inline-block mb-3">
+              VISION
+            </div>
+            
+            <div className="space-y-4"> {/* Reduced from space-y-6 */}
+              <div className="flex items-start gap-3">
+                <Lightbulb className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                <p className="text-sm text-gray-600">
+                  Building a blockchain-powered inventory and supply chain management solution that streamlines property tracking and transfers.
+                </p>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <Target className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
+                <p className="text-sm text-gray-600">
+                  HandReceipt represents the convergence of military-grade validation adapted for commercial markets.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            custom={3}
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            className="bg-white shadow-sm rounded-sm p-5 border border-gray-200"
+          >
+            <div className="bg-gray-50 text-gray-600 text-xs tracking-[0.2em] font-mono uppercase py-1 px-2 border border-gray-200 inline-block mb-3">
+              ORIGIN STORY
+            </div>
+            
+            <div className="grid grid-cols-1 gap-4"> {/* Changed from 2 cols to 1 col for better space usage */}
+              <div className="border-l-2 border-gray-200 pl-3">
+                <h4 className="text-gray-800 font-medium mb-1">
+                  Military Experience
+                </h4>
+                <p className="text-sm text-gray-600">
+                  As a Platoon Leader in the 101st Airborne Division, I witnessed the inefficiencies of paper-based supply tracking systems.
+                </p>
+              </div>
+
+              <div className="border-l-2 border-gray-200 pl-3">
+                <h4 className="text-gray-800 font-medium mb-1">
+                  Financial Insight
+                </h4>
+                <p className="text-sm text-gray-600">
+                  At Point72, I analyzed supply chain dynamics across multiple sectors, recognizing a market opportunity.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
     </Slide>
   );
 };
 
-export default FounderBackground; 
+export default FounderBackground;
